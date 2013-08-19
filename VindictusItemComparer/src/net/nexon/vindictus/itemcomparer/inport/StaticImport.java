@@ -320,7 +320,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(375, 150, 0));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(char_melee);
+		iset.setUsefulChars(fiona + " " + vella);
 
 		Shoes s = new Shoes(iset, "Boots", 80, ItemTyp.LIGHT, 986, 113, 0, 67,
 				13);
@@ -1286,21 +1286,23 @@ public class StaticImport {
 		pants.add(p);
 		armors.add(a);
 		helms.add(h);
-	
-		Gloves gg = new Gloves(iset, "Gloves", 54, ItemTyp.PLATE, 496, 86, 0, 9,
+
+		Gloves gg = new Gloves(iset, "Gloves", 54, ItemTyp.PLATE, 496, 86, 0,
+				9, 8);
+		Shoes ss = new Shoes(iset, "Shoes", 54, ItemTyp.PLATE, 524, 88, 0, 10,
 				8);
-		Shoes ss = new Shoes(iset, "Shoes", 54, ItemTyp.PLATE, 524, 88, 0, 10, 8);
-		Pants pp = new Pants(iset, "Pants", 54, ItemTyp.PLATE, 617, 89, 0, 11, 9);
+		Pants pp = new Pants(iset, "Pants", 54, ItemTyp.PLATE, 617, 89, 0, 11,
+				9);
 		Helm hh = new Helm(iset, "Helm", 54, ItemTyp.PLATE, 583, 90, 0, 9, 9);
 		Armor aa = new Armor(iset, "Armor", 54, ItemTyp.PLATE, 689, 87, 0, 10,
 				11);
-		sets.add(setname+" 3*");
+		sets.add(setname + " 3*");
 		ss.setStars(3);
 		gg.setStars(3);
 		pp.setStars(3);
 		aa.setStars(3);
 		hh.setStars(3);
-		
+
 		shoes.add(ss);
 		gloves.add(gg);
 		pants.add(pp);
@@ -1401,7 +1403,7 @@ public class StaticImport {
 		generatePirateLeather();
 		generatePirate();
 		generateNobleseWitch();
-		
+
 		// neue sets
 		generateWEdge();
 		generateK9();
@@ -1449,7 +1451,7 @@ public class StaticImport {
 	private static void exportPricesCSV() {
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("id;price;Typ;Set;Itemname;Level;Stars;");
+		sb.append("id;price;Typ;Set;Itemname;Level;Stars;Useful;Armortype;");
 		sb.append("\n");
 
 		for (Shoes s : shoes) {
@@ -1457,7 +1459,8 @@ public class StaticImport {
 			x = x.replace(".", ",");
 			sb.append(s.getId() + ";" + x + ";Shoes;"
 					+ s.getItemset().getName() + ";" + s.getName() + ";"
-					+ s.getLevel() + ";" + s.getStars() + ";");
+					+ s.getLevel() + ";" + s.getStars() + ";"
+					+ s.getItemset().getUsefulChars() + ";" + s.getTyp());
 			sb.append("\n");
 		}
 		for (Pants s : pants) {
@@ -1465,7 +1468,8 @@ public class StaticImport {
 			x = x.replace(".", ",");
 			sb.append(s.getId() + ";" + x + ";Pants;"
 					+ s.getItemset().getName() + ";" + s.getName() + ";"
-					+ s.getLevel() + ";" + s.getStars() + ";");
+					+ s.getLevel() + ";" + s.getStars() + ";"
+					+ s.getItemset().getUsefulChars() + ";" + s.getTyp());
 			sb.append("\n");
 		}
 		for (Gloves s : gloves) {
@@ -1473,7 +1477,8 @@ public class StaticImport {
 			x = x.replace(".", ",");
 			sb.append(s.getId() + ";" + x + ";Gloves;"
 					+ s.getItemset().getName() + ";" + s.getName() + ";"
-					+ s.getLevel() + ";" + s.getStars() + ";");
+					+ s.getLevel() + ";" + s.getStars() + ";"
+					+ s.getItemset().getUsefulChars() + ";" + s.getTyp());
 			sb.append("\n");
 		}
 		for (Armor s : armors) {
@@ -1481,7 +1486,8 @@ public class StaticImport {
 			x = x.replace(".", ",");
 			sb.append(s.getId() + ";" + x + ";Armor;"
 					+ s.getItemset().getName() + ";" + s.getName() + ";"
-					+ s.getLevel() + ";" + s.getStars() + ";");
+					+ s.getLevel() + ";" + s.getStars() + ";"
+					+ s.getItemset().getUsefulChars() + ";" + s.getTyp());
 			sb.append("\n");
 		}
 		for (Helm s : helms) {
@@ -1489,7 +1495,8 @@ public class StaticImport {
 			x = x.replace(".", ",");
 			sb.append(s.getId() + ";" + x + ";Helm;" + s.getItemset().getName()
 					+ ";" + s.getName() + ";" + s.getLevel() + ";"
-					+ s.getStars() + ";");
+					+ s.getStars() + ";" + s.getItemset().getUsefulChars()
+					+ ";" + s.getTyp());
 			sb.append("\n");
 		}
 

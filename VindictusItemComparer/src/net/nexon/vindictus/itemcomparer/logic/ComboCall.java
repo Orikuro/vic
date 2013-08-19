@@ -52,7 +52,7 @@ public class ComboCall implements Callable<List<Combo>> {
 		double a_p = 0;
 		double h_p = 0;
 
-		int thresh = results + 40;
+		int thresh = results *2;
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getPrice();

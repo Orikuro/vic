@@ -15,18 +15,18 @@ import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
-import net.nexon.vindictus.itemcomparer.modell.Armor;
-import net.nexon.vindictus.itemcomparer.modell.Gloves;
-import net.nexon.vindictus.itemcomparer.modell.Helm;
 import net.nexon.vindictus.itemcomparer.modell.Item;
 import net.nexon.vindictus.itemcomparer.modell.ItemSet;
 import net.nexon.vindictus.itemcomparer.modell.ItemSetBonus;
 import net.nexon.vindictus.itemcomparer.modell.ItemSets;
-import net.nexon.vindictus.itemcomparer.modell.ItemTyp;
 import net.nexon.vindictus.itemcomparer.modell.Items;
-import net.nexon.vindictus.itemcomparer.modell.Pants;
-import net.nexon.vindictus.itemcomparer.modell.Shoes;
-import net.nexon.vindictus.itemcomparer.modell.VChar;
+import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
+import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
+import net.nexon.vindictus.itemcomparer.modell.ext.Armor;
+import net.nexon.vindictus.itemcomparer.modell.ext.Gloves;
+import net.nexon.vindictus.itemcomparer.modell.ext.Helm;
+import net.nexon.vindictus.itemcomparer.modell.ext.Pants;
+import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 
 public class StaticImport {
 
@@ -1505,7 +1505,7 @@ public class StaticImport {
 			outd.mkdirs();
 			BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream("data" + File.separator
-							+ "_prices.csv"), "UTF-8"));
+							+ "prices.csv"), "UTF-8"));
 
 			out.write(sb.toString());
 			out.close();
@@ -1520,7 +1520,7 @@ public class StaticImport {
 		try {
 			BufferedReader br = new BufferedReader(
 					new InputStreamReader(new FileInputStream("data"
-							+ File.separator + "_prices.csv"), "UTF-8"));
+							+ File.separator + "prices.csv"), "UTF-8"));
 
 			String line = br.readLine();
 			slist.add(line);
@@ -1592,12 +1592,12 @@ public class StaticImport {
 	public static void main(String[] args) {
 		staticImAndExport();
 		staticExportSets();
-		File prices = new File("data" + File.separator + "_prices.csv");
+		File prices = new File("data" + File.separator + "prices.csv");
 		if (!prices.exists()) {
-			System.out.println("_prices.csv not found, generating it...");
+			System.out.println("prices.csv not found, generating it...");
 			exportPricesCSV();
 		} else {
-			System.out.println("_prices.csv found, correcting prices");
+			System.out.println("prices.csv found, correcting prices");
 			importPrices();
 		}
 		exportItems();

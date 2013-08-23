@@ -1,18 +1,122 @@
 package net.nexon.vindictus.itemcomparer.modell;
 
+import javax.xml.bind.annotation.XmlTransient;
+
+import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
+import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Pre;
+import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Suf;
+
 public class Item {
+
+	//TODO, wegen JAXB wo anders hinmachen!
+	public void calcTotaldef(){
+	
+		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
+		int defbonus = (int) (def * starbonus_def[stars - 1]);
+		int sbonus = scroll_pre.getDef() + scroll_suf.getDef();
+		
+		totalDef = agibonus+def+defbonus+sbonus;//+getPlusDef(); // ohne def massiv speed!
+	}
+	
+	
+	public int getTotaldef(){
+		return totalDef;
+	}
+	
+	public Integer getStarMatk() {
+		if (stars < 1 || stars == 2 || stars > 5) {
+			return 0;
+		}
+	
+		int bonus = (int) (2 * vint * starbonus[stars - 1]);
+	
+		return bonus;
+	}
+
+	public double getStarAtk() {
+		if (stars < 1 || stars == 2 || stars > 5) {
+			return 0;
+		}
+	
+		double bonus = (2.7 * str * starbonus[stars - 1]);
+	
+		return bonus;
+	}
+
+	public Integer getStarDef() {
+		if (stars < 1 || stars == 2 || stars > 5) {
+			return 0;
+		}
+	
+		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
+		int defbonus = (int) (def * starbonus_def[stars - 1]);
+	
+		return agibonus + defbonus;
+	}
+
+	public Integer getScrollDef() {
+	
+		int defbonus = scroll_pre.getDef() + scroll_suf.getDef();
+	
+		return defbonus;
+	}
+
+	public Integer getPlusDef() {
+	
+		if (plus <= 0 || plus > 15) {
+			return 0;
+		}
+	
+		if (typ.equals(ItemTyp.PLATE)) {
+			return plus_plate[plus];
+		}
+		if (typ.equals(ItemTyp.HEAVY)) {
+			return plus_heavy[plus];
+		}
+		if (typ.equals(ItemTyp.LIGHT)) {
+			return plus_light[plus];
+		}
+	
+		return plus_cloth[plus];
+	
+	}
+
+	public Integer getScrollSta() {
+	
+		int stami = scroll_pre.getStamina() + scroll_suf.getStamina();
+	
+		return stami;
+	}
+
+	public double getScrollAtk() {
+	
+		int bonus = scroll_pre.getAtk() + scroll_suf.getAtk();
+		double strbonus = (2.7 * (scroll_pre.getStr() + scroll_suf.getStr()));
+	
+		return bonus + strbonus;
+	}
+
+	public Integer getScrollMatk() {
+	
+		int bonus = scroll_pre.getMatk() + scroll_suf.getMatk();
+		int intbonus = 2 * scroll_pre.getVint() + scroll_suf.getVint();
+	
+		return bonus + intbonus;
+	}
 
 	private static int counter = 0;
 	private int id;
-	
+
 	@Override
 	public String toString() {
-		return String.format(" [+%s %s %s %s*, %s %s]", plus,itemset, name, stars,
-				scroll_pre, scroll_suf);
+		return String.format(" [+%s %s %s %s*, %s %s]", plus, itemset, name,
+				stars, scroll_pre, scroll_suf);
 	}
 
 	public Item() {
-
+		scroll_pre = new Scroll_Pre();
+		scroll_suf = new Scroll_Suf();
+		itemset = new ItemSet();	
 	}
 
 	public Item(ItemSet iset, String name, int level2, ItemTyp typ, int def,
@@ -51,6 +155,7 @@ public class Item {
 		this.scroll_pre = item.scroll_pre;
 		this.scroll_suf = item.scroll_suf;
 		this.itemset = item.itemset;
+		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 	}
 
 	float[] starbonus = { -0.2f, 0.00f, 0.15f, 0.2f, 0.25f };
@@ -63,87 +168,6 @@ public class Item {
 			196, 220, 255, 290 };
 	int[] plus_plate = { 0, 13, 26, 39, 57, 75, 93, 117, 141, 165, 189, 224,
 			259, 294, 339, 384 };
-
-	public Integer getStarMatk() {
-		if (stars < 1 || stars == 2 || stars > 5) {
-			return 0;
-		}
-
-		int bonus = (int) (2 * vint * starbonus[stars - 1]);
-
-		return bonus;
-	}
-
-	public double getStarAtk() {
-		if (stars < 1 || stars == 2 || stars > 5) {
-			return 0;
-		}
-
-		double bonus = (2.7 * str * starbonus[stars - 1]);
-
-		return bonus;
-	}
-
-	public Integer getStarDef() {
-		if (stars < 1 || stars == 2 || stars > 5) {
-			return 0;
-		}
-
-		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
-		int defbonus = (int) (def * starbonus_def[stars - 1]);
-
-		return agibonus + defbonus;
-	}
-
-	public Integer getScrollDef() {
-
-		int defbonus = scroll_pre.getDef() + scroll_suf.getDef();
-
-		return defbonus;
-	}
-
-	public Integer getPlusDef() {
-
-		if (plus < 0 || plus > 15) {
-			return 0;
-		}
-		
-		if (typ.equals(ItemTyp.PLATE)) {
-			return plus_plate[plus];
-		}
-		if (typ.equals(ItemTyp.HEAVY)) {
-			return plus_heavy[plus];
-		}
-		if (typ.equals(ItemTyp.LIGHT)) {
-			return plus_light[plus];
-		}
-
-		return plus_cloth[plus];
-
-	}
-
-	public Integer getScrollSta() {
-
-		int stami = scroll_pre.getStamina() + scroll_suf.getStamina();
-
-		return stami;
-	}
-
-	public double getScrollAtk() {
-
-		int bonus = scroll_pre.getAtk() + scroll_suf.getAtk();
-		double strbonus = (2.7 * (scroll_pre.getStr() + scroll_suf.getStr()));
-
-		return bonus + strbonus;
-	}
-
-	public Integer getScrollMatk() {
-
-		int bonus = scroll_pre.getMatk() + scroll_suf.getMatk();
-		int intbonus = 2 * scroll_pre.getVint() + scroll_suf.getVint();
-
-		return bonus + intbonus;
-	}
 
 	private String name;
 	private int level;
@@ -165,7 +189,12 @@ public class Item {
 	private Scroll_Suf scroll_suf;
 
 	private ItemSet itemset;
+	@XmlTransient
+	private double totalprice;
 
+	@XmlTransient
+	private int totalDef;
+	
 	public String getName() {
 		return name;
 	}
@@ -222,11 +251,16 @@ public class Item {
 		this.stamina = stamina;
 	}
 
+	public double getTotalPrice() {
+		return totalprice;
+	}
+	
 	public double getPrice() {
-		return price + scroll_pre.getPrice() + scroll_suf.getPrice();
+		return price;
 	}
 
 	public void setPrice(double price) {
+		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 		this.price = price;
 	}
 
@@ -259,6 +293,7 @@ public class Item {
 	}
 
 	public void setScroll_pre(Scroll_Pre scroll_pre) {
+		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 		this.scroll_pre = scroll_pre;
 	}
 
@@ -267,6 +302,7 @@ public class Item {
 	}
 
 	public void setScroll_suf(Scroll_Suf scroll_suf) {
+		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 		this.scroll_suf = scroll_suf;
 	}
 

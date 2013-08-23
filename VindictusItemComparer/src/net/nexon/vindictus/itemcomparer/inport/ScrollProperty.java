@@ -30,7 +30,6 @@ public class ScrollProperty {
 			tut = new Double(props.getProperty("tutelary"));
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.err.println("Error reading scrolls.properties, using defaults");
 		}
 	}

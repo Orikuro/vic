@@ -7,6 +7,15 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import net.nexon.vindictus.itemcomparer.inport.ScrollProperty;
+import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
+import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
+import net.nexon.vindictus.itemcomparer.modell.ext.Armor;
+import net.nexon.vindictus.itemcomparer.modell.ext.Gloves;
+import net.nexon.vindictus.itemcomparer.modell.ext.Helm;
+import net.nexon.vindictus.itemcomparer.modell.ext.Pants;
+import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Pre;
+import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Suf;
+import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 
 @XmlRootElement
 public class Items {
@@ -17,6 +26,10 @@ public class Items {
 	private List<Armor> armors;
 	private List<Helm> helms;
 
+	private List<ItemSet> isets;
+	private List<Scroll_Pre> pres;
+	private List<Scroll_Suf> sufs;
+	
 	private List<Shoes> shoes_changed = new ArrayList<>();
 	private List<Pants> pants_changed = new ArrayList<>();
 	private List<Gloves> gloves_changed = new ArrayList<>();
@@ -204,6 +217,7 @@ public class Items {
 				+ " new Items added");
 
 	}
+
 	public void duplicateTA_Enthu(boolean keepChanged) {
 		HashSet<ItemTyp> allowed = new HashSet<>();
 		allowed.add(ItemTyp.CLOTH);
@@ -245,6 +259,7 @@ public class Items {
 				+ " new Items added");
 
 	}
+
 	public void duplicateTutResistant(boolean keepChanged) {
 
 		HashSet<ItemTyp> allowed_tut = new HashSet<>();
@@ -777,6 +792,7 @@ public class Items {
 				+ " new Items added");
 
 	}
+
 	public void duplicateTs_Ta_Enthu(boolean keepChanged) {
 		HashSet<ItemTyp> allowed = new HashSet<>();
 		allowed.add(ItemTyp.HEAVY);
@@ -784,7 +800,7 @@ public class Items {
 
 		HashSet<ItemTyp> allowed_arm = new HashSet<>();
 		allowed_arm.add(ItemTyp.HEAVY);
-		
+
 		HashSet<ItemTyp> allowed_enth = new HashSet<>();
 		allowed_enth.add(ItemTyp.CLOTH);
 		allowed_enth.add(ItemTyp.LIGHT);
@@ -834,6 +850,7 @@ public class Items {
 				+ " new Items added");
 
 	}
+
 	public void duplicateTs_Ta(boolean keepChanged) {
 		HashSet<ItemTyp> allowed = new HashSet<>();
 		allowed.add(ItemTyp.HEAVY);
@@ -983,6 +1000,58 @@ public class Items {
 		System.out.println(count + " Items removed due to ignore ( " + ignore
 				+ " )");
 
+	}
+
+	public void filterPrice(double price) {
+		if (price == Double.MAX_VALUE) {
+			return;
+		}
+
+		int count = 0;
+		List<Shoes> sho = new ArrayList<>();
+		List<Pants> pan = new ArrayList<>();
+		List<Gloves> glo = new ArrayList<>();
+		List<Armor> arm = new ArrayList<>();
+		List<Helm> hel = new ArrayList<>();
+
+		for (Shoes s : shoes) {
+			if (s.getTotalPrice() > price) {
+				sho.add(s);
+				count++;
+			}
+		}
+		for (Pants s : pants) {
+			if (s.getTotalPrice() > price) {
+				pan.add(s);
+				count++;
+			}
+		}
+		for (Gloves s : gloves) {
+			if (s.getTotalPrice() > price) {
+				glo.add(s);
+				count++;
+			}
+		}
+		for (Armor s : armors) {
+			if (s.getTotalPrice() > price) {
+				arm.add(s);
+				count++;
+			}
+		}
+		for (Helm s : helms) {
+			if (s.getTotalPrice() > price) {
+				hel.add(s);
+				count++;
+			}
+		}
+
+		shoes.removeAll(sho);
+		pants.removeAll(pan);
+		helms.removeAll(hel);
+		armors.removeAll(arm);
+		gloves.removeAll(glo);
+		System.out.println(count + " Items removed due to price ( " + price
+				+ " )");
 	}
 
 }

@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import net.nexon.vindictus.itemcomparer.modell.ext.Armor;
+import net.nexon.vindictus.itemcomparer.modell.ext.Gloves;
+import net.nexon.vindictus.itemcomparer.modell.ext.Helm;
+import net.nexon.vindictus.itemcomparer.modell.ext.Pants;
+import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
+
 public class Combo {
 
 	public static final String OUTPUT_HEAD = "id;def;matk;atk;sta;c_res;price;shoes;pants;gloves;armor;helm;";
@@ -150,8 +156,8 @@ public class Combo {
 		setDef();
 		setMatk();
 		setAtk();
-		price = s.getPrice() + p.getPrice() + g.getPrice() + a.getPrice()
-				+ h.getPrice();
+		price = s.getTotalPrice() + p.getTotalPrice() + g.getTotalPrice() + a.getTotalPrice()
+				+ h.getTotalPrice();
 		c_res = s.getCrit_res() + p.getCrit_res() + g.getCrit_res()
 				+ a.getCrit_res() + h.getCrit_res();
 		setSta();

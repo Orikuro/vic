@@ -10,8 +10,8 @@ import net.nexon.vindictus.itemcomparer.logic.ThreadStarter;
 import net.nexon.vindictus.itemcomparer.logic.comparators.*;
 import net.nexon.vindictus.itemcomparer.modell.Combo;
 import net.nexon.vindictus.itemcomparer.modell.Items;
-import net.nexon.vindictus.itemcomparer.modell.VChar;
-import net.nexon.vindictus.itemcomparer.modell.VScroll;
+import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
+import net.nexon.vindictus.itemcomparer.modell.enu.VScroll;
 
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
@@ -110,7 +110,7 @@ public class Main {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println("ALPHA 1.5.2 - 19.08.13 - by Nekuro/Orikuro");
+		System.out.println("ALPHA 1.7 - 24.08.13 - by Nekuro/Orikuro");
 
 		if (Arrays.asList(args).contains("-export")) {
 			System.out.println("Exporting static info then closing");
@@ -146,6 +146,7 @@ public class Main {
 			System.err.println("Import of items.xml failed");
 			System.err
 					.println("Use -export and rename static.xml to items.xml");
+		e.printStackTrace();
 			System.exit(1);
 		}
 
@@ -154,6 +155,7 @@ public class Main {
 		items.filterStars(smin, smax);
 		items.filterLevel(min, max);
 		items.filterChar(vchar);
+		items.filterPrice(price);
 
 		// exit when not enough left
 		if (items.isNotEnough()) {

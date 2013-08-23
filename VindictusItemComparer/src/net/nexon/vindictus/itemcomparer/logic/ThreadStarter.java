@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -17,13 +18,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import net.nexon.vindictus.itemcomparer.modell.Armor;
 import net.nexon.vindictus.itemcomparer.modell.Combo;
-import net.nexon.vindictus.itemcomparer.modell.Gloves;
-import net.nexon.vindictus.itemcomparer.modell.Helm;
+import net.nexon.vindictus.itemcomparer.modell.ItemSet;
 import net.nexon.vindictus.itemcomparer.modell.Items;
-import net.nexon.vindictus.itemcomparer.modell.Pants;
-import net.nexon.vindictus.itemcomparer.modell.Shoes;
+import net.nexon.vindictus.itemcomparer.modell.ext.Armor;
+import net.nexon.vindictus.itemcomparer.modell.ext.Gloves;
+import net.nexon.vindictus.itemcomparer.modell.ext.Helm;
+import net.nexon.vindictus.itemcomparer.modell.ext.Pants;
+import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 
 /*
  * 
@@ -48,14 +50,15 @@ public class ThreadStarter {
 
 	private void start(int cpus, int results, double price,
 			Comparator<Combo> defc, List<Shoes> shoes, List<Pants> pants,
-			List<Gloves> glov, List<Armor> armors, List<Helm> helms, boolean noinfo) {
+			List<Gloves> glov, List<Armor> armors, List<Helm> helms,
+			boolean noinfo) {
 		StringBuffer sb = new StringBuffer();
 		long total = 1l * shoes.size() * pants.size() * glov.size()
 				* armors.size() * helms.size();
 		DecimalFormat df = new DecimalFormat(",###");
 		List<Combo> combs = new ArrayList<Combo>();
 		HashSet<String> setnames = new HashSet<>();
-
+		HashSet<ItemSet> sets = new HashSet<>();
 		// Debug Infos...
 		sb.append("Shoes:\n");
 		sb.append(shoes);
@@ -73,22 +76,35 @@ public class ThreadStarter {
 		sb.append(helms);
 		for (Shoes s : shoes) {
 			setnames.add(s.getItemset().getName());
+			sets.add(s.getItemset());
+			s.calcTotaldef();
 		}
 		for (Pants s : pants) {
 			setnames.add(s.getItemset().getName());
+			sets.add(s.getItemset());
+			s.calcTotaldef();
 		}
 		for (Gloves s : glov) {
 			setnames.add(s.getItemset().getName());
+			sets.add(s.getItemset());
+			s.calcTotaldef();
 		}
 		for (Armor s : armors) {
 			setnames.add(s.getItemset().getName());
+			sets.add(s.getItemset());
+			s.calcTotaldef();
 		}
 		for (Helm s : helms) {
 			setnames.add(s.getItemset().getName());
+			sets.add(s.getItemset());
+			s.calcTotaldef();
 		}
 		sb.append("");
 		sb.append("Sets:");
 		sb.append(setnames);
+		
+		calcBestSets(sets);
+		
 		System.out.println("\nSets:\n" + setnames);
 
 		String i_anzahl = "sets " + setnames.size() + "\tshoes " + shoes.size()
@@ -99,9 +115,11 @@ public class ThreadStarter {
 				+ defc.getClass().getSimpleName().replace("Comparator", "")
 				+ "\tPrice " + price + "\n";
 		String i_comp = df.format(total) + " Comparisons." + "\tCPUs: " + cpus
-				+ "\tTasks:"+shoes.size()+"\n";
+				+ "\tTasks:" + shoes.size() + "\n";
 		System.out.println(i_anzahl + i_res + i_comp);
-		System.out.println("Each dot is 1m checks. x means 1 Task finished. 1 Task has "+df.format(total/shoes.size())+" comparisons.");
+		System.out
+				.println("Each dot is 1m checks. x means 1 Task finished. 1 Task has "
+						+ df.format(total / shoes.size()) + " comparisons.");
 
 		long start = System.currentTimeMillis();
 		try {
@@ -141,11 +159,10 @@ public class ThreadStarter {
 			// 4/4 Closing
 			executor.shutdown();
 		} catch (InterruptedException | ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		long end = System.currentTimeMillis();
-		
+
 		System.out.println();
 		String i_end1 = "------ DONE ------ Time = " + (end - start) + " ms\n";
 		String i_end2 = "------ DONE ------ "
@@ -173,12 +190,38 @@ public class ThreadStarter {
 			}
 		}
 
-		writeResults(combs, sb.toString(), noinfo );
+		writeResults(combs, sb.toString(), noinfo);
 
 	}
 
-	private void writeResults(List<Combo> combs, String infos,
-			boolean noinfo) {
+	private void calcBestSets(HashSet<ItemSet> sets) {
+	
+		List<Integer> def = new ArrayList<>();
+		HashMap<Integer, String> i_s = new HashMap<>();
+		for (ItemSet set_a:sets){
+			def.add(set_a.getDefBonus(5));
+			for (ItemSet set_b:sets){
+				if (set_a.equals(set_b)) continue;
+				else {
+					int def1 = set_a.getDefBonus(2)+set_b.getDefBonus(2);
+					int def2 = set_a.getDefBonus(2)+set_b.getDefBonus(3);
+					def.add(def1);
+					i_s.put(def1, set_a+" 2 2 "+set_b);
+					def.add(def2);
+					i_s.put(def2, set_a+" 2 3 "+set_b);
+				}
+			}
+		}
+		
+		int maxdef = Collections.max(def);
+		System.out.println("maxdef "+maxdef);
+		System.out.println(i_s.get(maxdef));
+		
+//		System.exit(0);
+		
+	}
+
+	private void writeResults(List<Combo> combs, String infos, boolean noinfo) {
 		File out = new File("_out" + File.separator);
 		out.mkdirs();
 		if (combs == null || combs.size() < 1)

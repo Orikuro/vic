@@ -2,11 +2,35 @@ package net.nexon.vindictus.itemcomparer.modell;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ItemSet {
 
+	public void calcBonus(){
+		setDefBonus();
+		setIntBonus();
+		setAtkBonus();
+		setMatkBonus();
+	}
+	
+	private static int counter = 0;
+
+	@XmlAttribute
+	@XmlID
+	private String id;
+
+	@XmlTransient
 	private int[] totaldefBonus = new int[6];
+	@XmlTransient
 	private int[] totalIntBonus = new int[6];
+	@XmlTransient
 	private double[] totalAtkBonus = new double[6];
+	@XmlTransient
 	private int[] totalMatkBonus = new int[6];
 
 	public int getDefBonus(int count) {
@@ -78,7 +102,7 @@ public class ItemSet {
 	private String usefulChars = "evie fiona lann vella karok kai hurk";
 
 	public ItemSet() {
-
+		id = counter++ + "";
 	}
 
 	public ItemSet(String setname, List<ItemSetBonus> boni2) {
@@ -88,6 +112,7 @@ public class ItemSet {
 		setIntBonus();
 		setAtkBonus();
 		setMatkBonus();
+		id = counter++ + "";
 	}
 
 	public String getName() {
@@ -104,7 +129,7 @@ public class ItemSet {
 
 	public void setBoni(List<ItemSetBonus> boni) {
 		this.boni = boni;
-		if (boni.size()==4){
+		if (boni.size() == 4) {
 			setDefBonus();
 			setIntBonus();
 			setAtkBonus();
@@ -143,6 +168,14 @@ public class ItemSet {
 
 	public void setUsefulChars(String usefulChars) {
 		this.usefulChars = usefulChars;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

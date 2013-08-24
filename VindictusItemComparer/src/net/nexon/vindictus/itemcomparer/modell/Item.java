@@ -1,107 +1,114 @@
 package net.nexon.vindictus.itemcomparer.modell;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlTransient;
 
 import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
 import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Pre;
 import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Suf;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Item {
-
-	//TODO, wegen JAXB wo anders hinmachen!
-	public void calcTotaldef(){
 	
+	private void calcTotaldef() {
+
 		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
 		int defbonus = (int) (def * starbonus_def[stars - 1]);
 		int sbonus = scroll_pre.getDef() + scroll_suf.getDef();
-		
-		totalDef = agibonus+def+defbonus+sbonus;//+getPlusDef(); // ohne def massiv speed!
+
+		totalDef = agibonus + def + defbonus + sbonus + getPlusDef();
 	}
-	
-	
-	public int getTotaldef(){
+
+	public int getTotaldef() {
 		return totalDef;
 	}
+
+	public void calcBonus() {
+		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
+		plusdef = calcPlusDef();
+		calcTotaldef();
+		starmatk = (int) (2 * vint * starbonus[stars - 1]);
+		staratk = (2.7 * str * starbonus[stars - 1]);
+		stardef = (int) (0.5f * agi * starbonus[stars - 1])
+				+ (int) (def * starbonus_def[stars - 1]);
+		scrolldef = scroll_pre.getDef() + scroll_suf.getDef();
 	
-	public Integer getStarMatk() {
-		if (stars < 1 || stars == 2 || stars > 5) {
-			return 0;
-		}
 	
-		int bonus = (int) (2 * vint * starbonus[stars - 1]);
-	
-		return bonus;
+		scrollsta = scroll_pre.getStamina() + scroll_suf.getStamina();
+		scrollatk = scroll_pre.getAtk() + scroll_suf.getAtk()
+				+ (2.7 * (scroll_pre.getStr() + scroll_suf.getStr()));
+
+		scrollmatk = scroll_pre.getMatk() + scroll_suf.getMatk() + 2
+				* scroll_pre.getVint() + scroll_suf.getVint();
+	}
+
+	@XmlTransient
+	private int starmatk;
+	@XmlTransient
+	private double staratk;
+	@XmlTransient
+	private int stardef;
+	@XmlTransient
+	private int scrolldef;
+	@XmlTransient
+	private int plusdef;
+	@XmlTransient
+	private int scrollsta;
+	@XmlTransient
+	private double scrollatk;
+	@XmlTransient
+	private int scrollmatk;
+
+	public int getStarMatk() {
+		return starmatk;
 	}
 
 	public double getStarAtk() {
-		if (stars < 1 || stars == 2 || stars > 5) {
-			return 0;
-		}
-	
-		double bonus = (2.7 * str * starbonus[stars - 1]);
-	
-		return bonus;
+		return staratk;
 	}
 
-	public Integer getStarDef() {
-		if (stars < 1 || stars == 2 || stars > 5) {
-			return 0;
-		}
-	
-		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
-		int defbonus = (int) (def * starbonus_def[stars - 1]);
-	
-		return agibonus + defbonus;
+	public int getStarDef() {
+		return stardef;
 	}
 
-	public Integer getScrollDef() {
-	
-		int defbonus = scroll_pre.getDef() + scroll_suf.getDef();
-	
-		return defbonus;
+	public int getScrollDef() {
+		return scrolldef;
 	}
 
-	public Integer getPlusDef() {
-	
+	private int calcPlusDef() {
 		if (plus <= 0 || plus > 15) {
 			return 0;
 		}
-	
+
 		if (typ.equals(ItemTyp.PLATE)) {
 			return plus_plate[plus];
 		}
 		if (typ.equals(ItemTyp.HEAVY)) {
-			return plus_heavy[plus];
+			return  plus_heavy[plus];
 		}
 		if (typ.equals(ItemTyp.LIGHT)) {
-			return plus_light[plus];
+			return  plus_light[plus];
 		}
-	
-		return plus_cloth[plus];
-	
+
+		return  plus_cloth[plus];
 	}
 
-	public Integer getScrollSta() {
-	
-		int stami = scroll_pre.getStamina() + scroll_suf.getStamina();
-	
-		return stami;
+	public int getPlusDef() {
+		return plusdef;
+	}
+
+	public int getScrollSta() {
+		return scrollsta;
 	}
 
 	public double getScrollAtk() {
-	
-		int bonus = scroll_pre.getAtk() + scroll_suf.getAtk();
-		double strbonus = (2.7 * (scroll_pre.getStr() + scroll_suf.getStr()));
-	
-		return bonus + strbonus;
+		return scrollatk;
 	}
 
-	public Integer getScrollMatk() {
-	
-		int bonus = scroll_pre.getMatk() + scroll_suf.getMatk();
-		int intbonus = 2 * scroll_pre.getVint() + scroll_suf.getVint();
-	
-		return bonus + intbonus;
+	public int getScrollMatk() {
+		return scrollmatk;
 	}
 
 	private static int counter = 0;
@@ -116,7 +123,7 @@ public class Item {
 	public Item() {
 		scroll_pre = new Scroll_Pre();
 		scroll_suf = new Scroll_Suf();
-		itemset = new ItemSet();	
+		itemset = new ItemSet();
 	}
 
 	public Item(ItemSet iset, String name, int level2, ItemTyp typ, int def,
@@ -158,14 +165,20 @@ public class Item {
 		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 	}
 
+	@XmlTransient
 	float[] starbonus = { -0.2f, 0.00f, 0.15f, 0.2f, 0.25f };
+	@XmlTransient
 	float[] starbonus_def = { -0.04f, 0.00f, 0.02f, 0.04f, 0.04f };
+	@XmlTransient
 	int[] plus_cloth = { 0, 5, 10, 15, 22, 29, 36, 46, 56, 66, 76, 91, 106,
 			121, 141, 161 };
+	@XmlTransient
 	int[] plus_light = { 0, 7, 14, 21, 31, 41, 51, 65, 79, 93, 107, 131, 155,
 			179, 214, 249 };
+	@XmlTransient
 	int[] plus_heavy = { 0, 10, 20, 30, 44, 58, 72, 91, 110, 129, 148, 172,
 			196, 220, 255, 290 };
+	@XmlTransient
 	int[] plus_plate = { 0, 13, 26, 39, 57, 75, 93, 117, 141, 165, 189, 224,
 			259, 294, 339, 384 };
 
@@ -188,13 +201,15 @@ public class Item {
 	private Scroll_Pre scroll_pre;
 	private Scroll_Suf scroll_suf;
 
+	@XmlIDREF
 	private ItemSet itemset;
+
 	@XmlTransient
 	private double totalprice;
 
 	@XmlTransient
 	private int totalDef;
-	
+
 	public String getName() {
 		return name;
 	}
@@ -254,7 +269,7 @@ public class Item {
 	public double getTotalPrice() {
 		return totalprice;
 	}
-	
+
 	public double getPrice() {
 		return price;
 	}

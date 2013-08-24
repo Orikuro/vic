@@ -39,6 +39,7 @@ public class StaticImport {
 	private static HashMap<Integer, Item> itemmap = new HashMap<>();
 
 	private static HashSet<String> sets = new HashSet<>();
+	private static HashSet<ItemSet> isets = new HashSet<>();
 
 	private static String evie = VChar.evie.toString();
 	private static String vella = VChar.vella.toString();
@@ -1429,7 +1430,7 @@ public class StaticImport {
 		for (Helm s : helms) {
 			setnames.add(s.getItemset());
 		}
-
+		isets = setnames;
 		try {
 			File outd = new File("data" + File.separator);
 			outd.mkdirs();
@@ -1503,9 +1504,9 @@ public class StaticImport {
 		try {
 			File outd = new File("data" + File.separator);
 			outd.mkdirs();
-			BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
-					new FileOutputStream("data" + File.separator
-							+ "prices.csv"), "UTF-8"));
+			BufferedWriter out = new BufferedWriter(
+					new OutputStreamWriter(new FileOutputStream("data"
+							+ File.separator + "prices.csv"), "UTF-8"));
 
 			out.write(sb.toString());
 			out.close();
@@ -1575,7 +1576,7 @@ public class StaticImport {
 			JAXBContext context = JAXBContext.newInstance(Items.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-			m.marshal(new Items(shoes, pants, gloves, armors, helms), out);
+			m.marshal(new Items(isets, shoes, pants, gloves, armors, helms), out);
 			System.out.println("Static Export finished");
 			System.out.println("Shoes: " + shoes.size());
 			System.out.println("Pants: " + pants.size());

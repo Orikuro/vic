@@ -6,6 +6,7 @@ import java.util.Comparator;
 
 import net.nexon.vindictus.itemcomparer.inport.StaticImport;
 import net.nexon.vindictus.itemcomparer.inport.XMLImport;
+import net.nexon.vindictus.itemcomparer.logic.ItemLogic;
 import net.nexon.vindictus.itemcomparer.logic.ThreadStarter;
 import net.nexon.vindictus.itemcomparer.logic.comparators.*;
 import net.nexon.vindictus.itemcomparer.modell.Combo;
@@ -110,7 +111,7 @@ public class Main {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println("ALPHA 1.7 - 24.08.13 - by Nekuro/Orikuro");
+		System.out.println("ALPHA 1.7 - 25.08.13 - by Nekuro/Orikuro");
 
 		if (Arrays.asList(args).contains("-export")) {
 			System.out.println("Exporting static info then closing");
@@ -150,15 +151,16 @@ public class Main {
 			System.exit(1);
 		}
 
+		ItemLogic il = new ItemLogic();
 		// filtering
-		items.filterSetNames(ignore);
-		items.filterStars(smin, smax);
-		items.filterLevel(min, max);
-		items.filterChar(vchar);
-		items.filterPrice(price);
+		il.filterSetNames(items,ignore);
+		il.filterStars(items,smin, smax);
+		il.filterLevel(items,min, max);
+		il.filterChar(items,vchar);
+		il.filterPrice(items,price);
 
 		// exit when not enough left
-		if (items.isNotEnough()) {
+		if (il.isNotEnough(items)) {
 			System.err.println("Not enough items left for full sets!");
 			System.exit(1);
 		}
@@ -167,40 +169,40 @@ public class Main {
 		if (vscroll != null) {
 			switch (vscroll) {
 			case enthu:
-				items.duplicateEnthu(KEEP);
+				il.duplicateEnthu(items,KEEP);
 				break;
 			case force:
-				items.duplicateForce(KEEP);
+				il.duplicateForce(items,KEEP);
 				break;
 			case f_enthu:
-				items.duplicateForceAndEnthu(KEEP);
+				il.duplicateF_Enthu(items,KEEP);
 				break;
 			case ts_enthu:
-				items.duplicateTutSentAndEnthu(KEEP);
+				il.duplicateTS_Enthu(items,KEEP);
 				break;
 			case ta_enthu:
-				items.duplicateTA_Enthu(KEEP);
+				il.duplicateTA_Enthu(items,KEEP);
 				break;
 			case tutresis:
-				items.duplicateTutResistant(KEEP);
+				il.duplicateTutResistant(items,KEEP);
 				break;
 			case tutsenti:
-				items.duplicateTutSentinel(KEEP);
+				il.duplicateTutSentinel(items,KEEP);
 				break;
 			case tutarma:
-				items.duplicateTutArmadilo(KEEP);
+				il.duplicateTutArmadilo(items,KEEP);
 				break;
 			case ts_tr_ta:
-				items.duplicateTs_Tr_Ta(KEEP);
+				il.duplicateTs_Tr_Ta(items,KEEP);
 				break;
 			case ts_ta:
-				items.duplicateTs_Ta(KEEP);
+				il.duplicateTs_Ta(items,KEEP);
 				break;
 			case ts_tr:
-				items.duplicateTs_Tr(KEEP);
+				il.duplicateTs_Tr(items,KEEP);
 				break;
 			case ts_ta_enthu:
-				items.duplicateTs_Ta_Enthu(KEEP);
+				il.duplicateTs_Ta_Enthu(items,KEEP);
 				break;
 			default:
 				break;
@@ -208,7 +210,7 @@ public class Main {
 		}
 
 		// overwrite enhance level
-		items.forcePlus(plus);
+		il.forcePlus(items, plus);
 
 		new ThreadStarter(args, CPUS, results, price, COMBOSORT, items, NOINFO);
 

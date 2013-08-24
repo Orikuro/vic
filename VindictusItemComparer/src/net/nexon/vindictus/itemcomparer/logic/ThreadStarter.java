@@ -75,36 +75,41 @@ public class ThreadStarter {
 		sb.append("Helms:\n");
 		sb.append(helms);
 		for (Shoes s : shoes) {
+			s.getItemset().calcBonus();
 			setnames.add(s.getItemset().getName());
 			sets.add(s.getItemset());
-			s.calcTotaldef();
+			s.calcBonus();
 		}
 		for (Pants s : pants) {
+			s.getItemset().calcBonus();
 			setnames.add(s.getItemset().getName());
 			sets.add(s.getItemset());
-			s.calcTotaldef();
+			s.calcBonus();
 		}
 		for (Gloves s : glov) {
+			s.getItemset().calcBonus();
 			setnames.add(s.getItemset().getName());
 			sets.add(s.getItemset());
-			s.calcTotaldef();
+			s.calcBonus();
 		}
 		for (Armor s : armors) {
+			s.getItemset().calcBonus();
 			setnames.add(s.getItemset().getName());
 			sets.add(s.getItemset());
-			s.calcTotaldef();
+			s.calcBonus();
 		}
 		for (Helm s : helms) {
+			s.getItemset().calcBonus();
 			setnames.add(s.getItemset().getName());
 			sets.add(s.getItemset());
-			s.calcTotaldef();
+			s.calcBonus();
 		}
 		sb.append("");
 		sb.append("Sets:");
 		sb.append(setnames);
-		
+
 		calcBestSets(sets);
-		
+
 		System.out.println("\nSets:\n" + setnames);
 
 		String i_anzahl = "sets " + setnames.size() + "\tshoes " + shoes.size()
@@ -138,7 +143,7 @@ public class ThreadStarter {
 			// 3/4 Joining Results
 			for (Future<List<Combo>> res : f_combos) {
 				combs.addAll(res.get());
-				if (combs.size() > results + 40) {
+				if (combs.size() > results * 2) {
 					Collections.sort(combs, defc);
 					combs = new ArrayList<>(combs.subList(0, results));
 				}
@@ -164,9 +169,8 @@ public class ThreadStarter {
 		long end = System.currentTimeMillis();
 
 		System.out.println();
-		String i_end1 = "------ DONE ------ Time = " + (end - start) + " ms\n";
-		String i_end2 = "------ DONE ------ "
-				+ df.format(1.0d * total / (end - start) * 1000)
+		String i_end1 = "------ DONE ------ Time = " + (end - start) + " ms";
+		String i_end2 = "\t" + df.format(1.0d * total / (end - start) * 1000)
 				+ " checks / s\n";
 		System.out.println(i_end1 + i_end2 + "Results:");
 		sb.insert(0, i_end2);
@@ -195,30 +199,35 @@ public class ThreadStarter {
 	}
 
 	private void calcBestSets(HashSet<ItemSet> sets) {
-	
+
 		List<Integer> def = new ArrayList<>();
+		//TODO: atk, matk, stamina max
+//		List<Integer> def = new ArrayList<>();
+//		List<Integer> def = new ArrayList<>();
+//		List<Integer> def = new ArrayList<>();
 		HashMap<Integer, String> i_s = new HashMap<>();
-		for (ItemSet set_a:sets){
+		for (ItemSet set_a : sets) {
 			def.add(set_a.getDefBonus(5));
-			for (ItemSet set_b:sets){
-				if (set_a.equals(set_b)) continue;
+			for (ItemSet set_b : sets) {
+				if (set_a.equals(set_b))
+					continue;
 				else {
-					int def1 = set_a.getDefBonus(2)+set_b.getDefBonus(2);
-					int def2 = set_a.getDefBonus(2)+set_b.getDefBonus(3);
+					int def1 = set_a.getDefBonus(2) + set_b.getDefBonus(2);
+					int def2 = set_a.getDefBonus(2) + set_b.getDefBonus(3);
 					def.add(def1);
-					i_s.put(def1, set_a+" 2 2 "+set_b);
+					i_s.put(def1, set_a + " 2 2 " + set_b);
 					def.add(def2);
-					i_s.put(def2, set_a+" 2 3 "+set_b);
+					i_s.put(def2, set_a + " 2 3 " + set_b);
 				}
 			}
 		}
-		
+
 		int maxdef = Collections.max(def);
-		System.out.println("maxdef "+maxdef);
+		System.out.println("maxdef " + maxdef);
 		System.out.println(i_s.get(maxdef));
-		
-//		System.exit(0);
-		
+
+		//System.exit(0);
+
 	}
 
 	private void writeResults(List<Combo> combs, String infos, boolean noinfo) {

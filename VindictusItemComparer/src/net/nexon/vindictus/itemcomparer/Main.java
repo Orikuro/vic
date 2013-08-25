@@ -111,7 +111,7 @@ public class Main {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println("ALPHA 1.7 - 25.08.13 - by Nekuro/Orikuro");
+		System.out.println("ALPHA 1.7.1 - 25.08.13 - by Nekuro/Orikuro");
 
 		if (Arrays.asList(args).contains("-export")) {
 			System.out.println("Exporting static info then closing");

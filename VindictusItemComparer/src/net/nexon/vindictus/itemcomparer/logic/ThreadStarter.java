@@ -108,7 +108,7 @@ public class ThreadStarter {
 		sb.append("Sets:");
 		sb.append(setnames);
 
-		calcBestSets(sets);
+		int[] maxis = calcBestSets(sets);
 
 		System.out.println("\nSets:\n" + setnames);
 
@@ -131,7 +131,7 @@ public class ThreadStarter {
 			// 1/4 Loadbalancing - Forking
 			List<Callable<List<Combo>>> tasks = new ArrayList<>();
 			for (int i = 0; i < shoes.size(); i++) {
-				Callable<List<Combo>> c = new ComboCall(price, shoes.subList(i,
+				Callable<List<Combo>> c = new ComboCall(price,maxis, shoes.subList(i,
 						i + 1), pants, glov, armors, helms, results, defc);
 				tasks.add(c);
 			}
@@ -198,16 +198,27 @@ public class ThreadStarter {
 
 	}
 
-	private void calcBestSets(HashSet<ItemSet> sets) {
+	private int[] calcBestSets(HashSet<ItemSet> sets) {
 
 		List<Integer> def = new ArrayList<>();
 		//TODO: atk, matk, stamina max
-//		List<Integer> def = new ArrayList<>();
-//		List<Integer> def = new ArrayList<>();
-//		List<Integer> def = new ArrayList<>();
+		List<Integer> atk = new ArrayList<>();
+		List<Integer> matk = new ArrayList<>();
+		
 		HashMap<Integer, String> i_s = new HashMap<>();
 		for (ItemSet set_a : sets) {
-			def.add(set_a.getDefBonus(5));
+			int def0 = set_a.getDefBonus(5);
+			def.add(def0);
+			i_s.put(def0, set_a + " 5");
+			
+			int atk0 = (int) set_a.getAtkBonus(5);
+			atk.add(atk0);
+			i_s.put(atk0, set_a + " 5");
+			
+			int matk0 = set_a.getMatkBonus(5);
+			matk.add(matk0);
+			i_s.put(matk0, set_a + " 5");
+			
 			for (ItemSet set_b : sets) {
 				if (set_a.equals(set_b))
 					continue;
@@ -218,15 +229,40 @@ public class ThreadStarter {
 					i_s.put(def1, set_a + " 2 2 " + set_b);
 					def.add(def2);
 					i_s.put(def2, set_a + " 2 3 " + set_b);
+			
+					int atk1 = (int)(set_a.getAtkBonus(2) + set_b.getAtkBonus(2));
+					int atk2 = (int)(set_a.getAtkBonus(2) + set_b.getAtkBonus(3));
+					atk.add(atk1);
+					i_s.put(atk1, set_a + " 2 2 " + set_b);
+					atk.add(atk2);
+					i_s.put(atk2, set_a + " 2 3 " + set_b);
+				
+					int matk1 = set_a.getMatkBonus(2) + set_b.getMatkBonus(2);
+					int matk2 = set_a.getMatkBonus(2) + set_b.getMatkBonus(3);
+					matk.add(matk1);
+					i_s.put(matk1, set_a + " 2 2 " + set_b);
+					matk.add(matk2);
+					i_s.put(matk2, set_a + " 2 3 " + set_b);
+				
+				
 				}
 			}
 		}
 
 		int maxdef = Collections.max(def);
-		System.out.println("maxdef " + maxdef);
-		System.out.println(i_s.get(maxdef));
-
+		int maxatk = Collections.max(atk);
+		int maxmatk = Collections.max(matk);
+		int[] maximums = new int[3];
+		maximums[0] = maxdef;
+		maximums[1] = maxatk+6; // to offset some rounding issues
+		maximums[2] = maxmatk;
+		
+		System.out.println(Arrays.toString(maximums));
+		System.out.println("Def:  "+i_s.get(maxdef));
+		System.out.println("Atk:  "+i_s.get(maxatk));
+		System.out.println("Matk: "+i_s.get(maxmatk));
 		//System.exit(0);
+		return maximums;
 
 	}
 

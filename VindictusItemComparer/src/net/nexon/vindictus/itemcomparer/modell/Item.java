@@ -24,7 +24,23 @@ public class Item {
 	public int getTotaldef() {
 		return totalDef;
 	}
+	public int getTotalatk() {
+		return totalAtk;
+	}
+	public int getTotalmatk() {
+		return totalMatk;
+	}
+	public int getTotalsta() {
+		return totalSta;
+	}
+	
+	
+	@XmlTransient
+	private int totalAtk;
+	@XmlTransient
+	private int totalMatk;
 
+	//TODO: use totalatk / matk instead
 	public void calcBonus() {
 		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 		plusdef = calcPlusDef();
@@ -34,16 +50,18 @@ public class Item {
 		stardef = (int) (0.5f * agi * starbonus[stars - 1])
 				+ (int) (def * starbonus_def[stars - 1]);
 		scrolldef = scroll_pre.getDef() + scroll_suf.getDef();
-	
-	
 		scrollsta = scroll_pre.getStamina() + scroll_suf.getStamina();
 		scrollatk = scroll_pre.getAtk() + scroll_suf.getAtk()
 				+ (2.7 * (scroll_pre.getStr() + scroll_suf.getStr()));
 
 		scrollmatk = scroll_pre.getMatk() + scroll_suf.getMatk() + 2
-				* scroll_pre.getVint() + scroll_suf.getVint();
+				* (scroll_pre.getVint() + scroll_suf.getVint());
+		totalAtk = (int) (2.7*str+atk+staratk+scrollatk);
+		totalMatk = matk + 2*vint + starmatk+scrollmatk;
+		totalSta = scrollsta+stamina;
 	}
-
+	@XmlTransient
+	private int totalSta;
 	@XmlTransient
 	private int starmatk;
 	@XmlTransient

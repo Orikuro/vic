@@ -4,7 +4,7 @@ import net.nexon.vindictus.itemcomparer.modell.Items;
 import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
 
 public interface IItemLocal {
-
+	
 	public void filterChar(Items items, VChar vchar);
 
 	public void filterLevel(Items items, int min, int max);
@@ -42,4 +42,6 @@ public interface IItemLocal {
 	public void duplicateTs_Tr_Ta(Items items, boolean keepChanged);
 
 	public void duplicateTs_Ta_Enthu(Items items, boolean keepChanged);
+	
+	public void sortItems(Items items);
 }

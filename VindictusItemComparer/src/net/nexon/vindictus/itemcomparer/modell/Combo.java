@@ -46,25 +46,13 @@ public class Combo {
 	}
 
 	private void setDef() {
-		int itemdef = shoes.getDef() + pants.getDef() + gloves.getDef()
-				+ armor.getDef() + helm.getDef();
+		int itemdef = shoes.getTotaldef() + gloves.getTotaldef()
+				+ pants.getTotaldef() + helm.getTotaldef()
+				+ armor.getTotaldef();
 
 		int setdef = calcSetDef();
 
-		int stardef = shoes.getStarDef() + pants.getStarDef()
-				+ gloves.getStarDef() + armor.getStarDef() + helm.getStarDef();
-
-		int scrolldef = shoes.getScrollDef() + pants.getScrollDef()
-				+ gloves.getScrollDef() + armor.getScrollDef()
-				+ helm.getScrollDef();
-
-		int agidef = (int) (0.5f * (shoes.getAgi() + gloves.getAgi()
-				+ pants.getAgi() + armor.getAgi() + helm.getAgi()));
-
-		int plusdef = shoes.getPlusDef() + gloves.getPlusDef()
-				+ pants.getPlusDef() + armor.getPlusDef() + helm.getPlusDef();
-
-		this.def = itemdef + setdef + stardef + scrolldef + agidef + plusdef;
+		this.def = itemdef + setdef;
 	}
 
 	private int calcSetDef() {
@@ -109,35 +97,20 @@ public class Combo {
 
 	private void setMatk() {
 
-		int matk_from_int = shoes.getVint() * 2 + pants.getVint() * 2
-				+ gloves.getVint() * 2 + armor.getVint() * 2 + helm.getVint()
-				* 2;
+		int totalmatk = shoes.getTotalmatk() + pants.getTotalmatk()
+				+ gloves.getTotalmatk() + helm.getTotalmatk()
+				+ armor.getTotalmatk();
 
-		int matk_from_stars = shoes.getStarMatk() + pants.getStarMatk()
-				+ gloves.getStarMatk() + armor.getStarMatk()
-				+ helm.getStarMatk();
-
-		int scroll_matk = shoes.getScrollMatk() + pants.getScrollMatk()
-				+ gloves.getScrollMatk() + armor.getScrollMatk()
-				+ helm.getScrollMatk();
-
-		this.matk = calcSetMatk() + matk_from_int + matk_from_stars
-				+ scroll_matk;
+		this.matk = calcSetMatk() + totalmatk;
 	}
 
 	private void setAtk() {
 
-		double atk_from_int = (2.7 * (shoes.getStr() + pants.getStr()
-				+ gloves.getStr() + armor.getStr() + helm.getStr()));
+		int totalatk = shoes.getTotalatk() + pants.getTotalatk()
+				+ armor.getTotalatk() + helm.getTotalatk()
+				+ gloves.getTotalatk();
 
-		double atk_from_stars = shoes.getStarAtk() + pants.getStarAtk()
-				+ gloves.getStarAtk() + armor.getStarAtk() + helm.getStarAtk();
-
-		double scroll_atk = shoes.getScrollAtk() + pants.getScrollAtk()
-				+ gloves.getScrollAtk() + armor.getScrollAtk()
-				+ helm.getScrollAtk();
-
-		this.atk = calcSetAtk() + atk_from_int + atk_from_stars + scroll_atk;
+		this.atk = calcSetAtk() + totalatk;
 	}
 
 	private Shoes shoes;
@@ -156,22 +129,18 @@ public class Combo {
 		setDef();
 		setMatk();
 		setAtk();
-		price = s.getTotalPrice() + p.getTotalPrice() + g.getTotalPrice() + a.getTotalPrice()
-				+ h.getTotalPrice();
+		price = s.getTotalPrice() + p.getTotalPrice() + g.getTotalPrice()
+				+ a.getTotalPrice() + h.getTotalPrice();
 		c_res = s.getCrit_res() + p.getCrit_res() + g.getCrit_res()
 				+ a.getCrit_res() + h.getCrit_res();
 		setSta();
 	}
 
 	private void setSta() {
-		int staeq = shoes.getStamina() + pants.getStamina()
-				+ gloves.getStamina() + armor.getStamina() + helm.getStamina();
-		int stascr = shoes.getScrollSta() + pants.getScrollSta()
-				+ gloves.getScrollSta() + armor.getScrollSta()
-				+ helm.getScrollSta();
-
-		sta = staeq + stascr;
-
+		int staeq = shoes.getTotalsta() + pants.getTotalsta()
+				+ gloves.getTotalsta() + armor.getTotalsta()
+				+ helm.getTotalsta();
+		sta = staeq;
 	}
 
 	private List<ItemSet> setlist = new ArrayList<>();

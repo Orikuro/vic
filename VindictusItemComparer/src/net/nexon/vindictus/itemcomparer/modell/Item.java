@@ -15,10 +15,11 @@ public class Item {
 	private void calcTotaldef() {
 
 		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
+		int agibon = (int) (0.5f*agi);
 		int defbonus = (int) (def * starbonus_def[stars - 1]);
 		int sbonus = scroll_pre.getDef() + scroll_suf.getDef();
 
-		totalDef = agibonus + def + defbonus + sbonus + getPlusDef();
+		totalDef = agibonus +agibon+ def + defbonus + sbonus + getPlusDef();
 	}
 
 	public int getTotaldef() {

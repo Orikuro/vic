@@ -38,10 +38,20 @@ public class ComboCall implements Callable<List<Combo>> {
 		helms = hes;
 		results = result;
 		comp = defc;
-		MAXIS=maxima;
+		MAXIS = maxima;
 	}
 
-	static int min = -1;
+	private static int min = -1;
+
+	private List<Combo> combos = new ArrayList<>();
+
+	private double total_p = 0;
+	private double s_p = 0;
+	private double p_p = 0;
+	private double g_p = 0;
+	private double a_p = 0;
+	private double h_p = 0;
+	private int thresh = results * 2;
 
 	@Override
 	public List<Combo> call() throws Exception {
@@ -62,22 +72,9 @@ public class ComboCall implements Callable<List<Combo>> {
 		default:
 			return callStandard();
 		}
-		
-
 	}
 
 	private List<Combo> callStandard() throws Exception {
-
-		List<Combo> combos = new ArrayList<>();
-
-		double total_p = 0;
-		double s_p = 0;
-		double p_p = 0;
-		double g_p = 0;
-		double a_p = 0;
-		double h_p = 0;
-
-		int thresh = results * 2;
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getTotalPrice();
@@ -112,26 +109,15 @@ public class ComboCall implements Callable<List<Combo>> {
 		return combos;
 
 	}
-	
+
 	private List<Combo> callDef() throws Exception {
-
-		List<Combo> combos = new ArrayList<>();
-
-		double total_p = 0;
-		double s_p = 0;
-		double p_p = 0;
-		double g_p = 0;
-		double a_p = 0;
-		double h_p = 0;
-
 		int total_def = 0;
 		int s_def = 0;
 		int p_def = 0;
 		int g_def = 0;
 		int a_def = 0;
 		int h_def = 0;
-
-		int thresh = results * 2;
+		
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getTotalPrice();
@@ -152,12 +138,8 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							total_def = s_def + p_def + h_def + a_def + g_def
 									+ h_def;
-							// TODO: dynamic maxdef
-							if (total_p <= PRICE && (total_def+MAXIS[0])>=min) {
-//							if (total_p <= PRICE) {
-								// this is way more expensive than sorting
-								// complex object => lots of overhead
-								// the less this is called, the faster it gets!
+							if (total_p <= PRICE
+									&& (total_def + MAXIS[0]) >= min) {
 								combos.add(new Combo(s, p, g, a, h));
 							}
 							i++;
@@ -182,17 +164,7 @@ public class ComboCall implements Callable<List<Combo>> {
 
 	}
 
-	
 	private List<Combo> callAtk() throws Exception {
-
-		List<Combo> combos = new ArrayList<>();
-
-		double total_p = 0;
-		double s_p = 0;
-		double p_p = 0;
-		double g_p = 0;
-		double a_p = 0;
-		double h_p = 0;
 
 		int total_def = 0;
 		int s_def = 0;
@@ -201,7 +173,6 @@ public class ComboCall implements Callable<List<Combo>> {
 		int a_def = 0;
 		int h_def = 0;
 
-		int thresh = results * 2;
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getTotalPrice();
@@ -222,12 +193,9 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							total_def = s_def + p_def + h_def + a_def + g_def
 									+ h_def;
-							// TODO: dynamic maxdef
-							 if (total_p <= PRICE && (total_def+MAXIS[1])>=min) {
-//							if (total_p <= PRICE) {
-								// this is way more expensive than sorting
-								// complex object => lots of overhead
-								// the less this is called, the faster it gets!
+
+							if (total_p <= PRICE
+									&& (total_def + MAXIS[1]) >= min) {
 								combos.add(new Combo(s, p, g, a, h));
 							}
 							i++;
@@ -239,7 +207,8 @@ public class ComboCall implements Callable<List<Combo>> {
 								combos = new ArrayList<Combo>(combos.subList(0,
 										results));
 								synchronized (this) {
-									min = (int) combos.get(results - 1).getAtk();
+									min = (int) combos.get(results - 1)
+											.getAtk();
 								}
 							}
 						}
@@ -251,18 +220,8 @@ public class ComboCall implements Callable<List<Combo>> {
 		return combos;
 
 	}
-	
+
 	private List<Combo> callMatk() throws Exception {
-
-		List<Combo> combos = new ArrayList<>();
-
-		double total_p = 0;
-		double s_p = 0;
-		double p_p = 0;
-		double g_p = 0;
-		double a_p = 0;
-		double h_p = 0;
-
 		int total_def = 0;
 		int s_def = 0;
 		int p_def = 0;
@@ -270,7 +229,6 @@ public class ComboCall implements Callable<List<Combo>> {
 		int a_def = 0;
 		int h_def = 0;
 
-		int thresh = results * 2;
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getTotalPrice();
@@ -291,12 +249,9 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							total_def = s_def + p_def + h_def + a_def + g_def
 									+ h_def;
-							// TODO: dynamic maxdef
-							 if (total_p <= PRICE && (total_def+MAXIS[2])>=min) {
-//							if (total_p <= PRICE) {
-								// this is way more expensive than sorting
-								// complex object => lots of overhead
-								// the less this is called, the faster it gets!
+
+							if (total_p <= PRICE
+									&& (total_def + MAXIS[2]) >= min) {
 								combos.add(new Combo(s, p, g, a, h));
 							}
 							i++;
@@ -320,17 +275,8 @@ public class ComboCall implements Callable<List<Combo>> {
 		return combos;
 
 	}
-	
+
 	private List<Combo> callSta() throws Exception {
-
-		List<Combo> combos = new ArrayList<>();
-
-		double total_p = 0;
-		double s_p = 0;
-		double p_p = 0;
-		double g_p = 0;
-		double a_p = 0;
-		double h_p = 0;
 
 		int total_def = 0;
 		int s_def = 0;
@@ -339,7 +285,6 @@ public class ComboCall implements Callable<List<Combo>> {
 		int a_def = 0;
 		int h_def = 0;
 
-		int thresh = results * 2;
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getTotalPrice();
@@ -360,12 +305,7 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							total_def = s_def + p_def + h_def + a_def + g_def
 									+ h_def;
-							// TODO: dynamic maxdef
-							 if (total_p <= PRICE && (total_def)>=min) {
-//							if (total_p <= PRICE) {
-								// this is way more expensive than sorting
-								// complex object => lots of overhead
-								// the less this is called, the faster it gets!
+							if (total_p <= PRICE && (total_def) >= min) {
 								combos.add(new Combo(s, p, g, a, h));
 							}
 							i++;

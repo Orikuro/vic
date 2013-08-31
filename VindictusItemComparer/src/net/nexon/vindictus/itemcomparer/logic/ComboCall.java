@@ -39,6 +39,7 @@ public class ComboCall implements Callable<List<Combo>> {
 		results = result;
 		comp = defc;
 		MAXIS = maxima;
+		thresh = results * 2;
 	}
 
 	private static int min = -1;
@@ -51,7 +52,7 @@ public class ComboCall implements Callable<List<Combo>> {
 	private double g_p = 0;
 	private double a_p = 0;
 	private double h_p = 0;
-	private int thresh = results * 2;
+	private int thresh;
 
 	@Override
 	public List<Combo> call() throws Exception {

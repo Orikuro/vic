@@ -34,24 +34,23 @@ import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 public class ThreadStarter {
 	private String PARAMETER = "";
 
-	public ThreadStarter(String[] args, int cpus, int results, double price,
+	public ThreadStarter(String[] args, int cpus, int results, double price,int atk, int matk,
 			Comparator<Combo> defc, Items items, boolean noinfo) {
 		PARAMETER = Arrays.toString(args).replace(",", "").replace("[", "")
 				.replace("]", "");
 
-		start(cpus, results, price, defc, items, noinfo);
-	}
+		start(cpus, results, price,atk,matk, defc, items, noinfo);	}
 
-	private void start(int cpus, int results, double price,
+	private void start(int cpus, int results, double price, int atk, int matk,
 			Comparator<Combo> defc, Items items, boolean noinfo) {
-		start(cpus, results, price, defc, items.getShoes(), items.getPants(),
+		start(cpus, results, price,atk,matk, defc, items.getShoes(), items.getPants(),
 				items.getGloves(), items.getArmors(), items.getHelms(), noinfo);
 	}
 
 	private StringBuffer sb = new StringBuffer();
 	private DecimalFormat df = new DecimalFormat(",###");
 	
-	private void start(int cpus, int results, double price,
+	private void start(int cpus, int results, double price,int atk, int matk,
 			Comparator<Combo> defc, List<Shoes> shoes, List<Pants> pants,
 			List<Gloves> glov, List<Armor> armors, List<Helm> helms,
 			boolean noinfo) {
@@ -122,9 +121,10 @@ public class ThreadStarter {
 		String i_res = "Results: " + results + "\t"
 				+ defc.getClass().getSimpleName().replace("Comparator", "")
 				+ "\tPrice " + price + "\n";
+		String i_atk = "Atk: "+atk+"\tMatk: "+matk+"\n";
 		String i_comp = df.format(total) + " Comparisons." + "\tCPUs: " + cpus
 				+ "\tTasks:" + shoes.size() + "\n";
-		System.out.println(i_anzahl + i_res + i_comp);
+		System.out.println(i_anzahl + i_res+i_atk + i_comp);
 		System.out
 				.println("Each dot is 1m checks. x means 1 Task finished. 1 Task has "
 						+ df.format(total / shoes.size()) + " comparisons.");
@@ -134,7 +134,7 @@ public class ThreadStarter {
 			// 1/4 Loadbalancing - Forking
 			List<Callable<List<Combo>>> tasks = new ArrayList<>();
 			for (int i = 0; i < shoes.size(); i++) {
-				Callable<List<Combo>> c = new ComboCall(price, maxis,
+				Callable<List<Combo>> c = new ComboCall(price,atk,matk, maxis,
 						shoes.subList(i, i + 1), pants, glov, armors, helms,
 						results, defc);
 				tasks.add(c);
@@ -180,6 +180,7 @@ public class ThreadStarter {
 		sb.insert(0, i_end2);
 		sb.insert(0, i_end1);
 		sb.insert(0, i_comp);
+		sb.insert(0,i_atk);
 		sb.insert(0, i_res);
 		sb.insert(0, i_anzahl);
 		sb.insert(0, PARAMETER + "\n");

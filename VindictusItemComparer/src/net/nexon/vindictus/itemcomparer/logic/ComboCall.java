@@ -25,11 +25,13 @@ public class ComboCall implements Callable<List<Combo>> {
 
 	private int results = 30;
 	private double PRICE;
+	private int ATK;
+	private int MATK;
 	private int[] MAXIS;
 
-	public ComboCall(double pri, int[] maxima, List<Shoes> sho,
-			List<Pants> pan, List<Gloves> glov, List<Armor> arms,
-			List<Helm> hes, int result, Comparator<Combo> defc) {
+	public ComboCall(double pri, int atk, int matk, int[] maxima,
+			List<Shoes> sho, List<Pants> pan, List<Gloves> glov,
+			List<Armor> arms, List<Helm> hes, int result, Comparator<Combo> defc) {
 		PRICE = pri;
 		shoes = sho;
 		pants = pan;
@@ -39,6 +41,8 @@ public class ComboCall implements Callable<List<Combo>> {
 		results = result;
 		comp = defc;
 		MAXIS = maxima;
+		ATK = atk;
+		MATK = matk;
 		thresh = results * 2;
 	}
 
@@ -118,7 +122,7 @@ public class ComboCall implements Callable<List<Combo>> {
 		int g_def = 0;
 		int a_def = 0;
 		int h_def = 0;
-		
+
 		int i = 0;
 		for (Shoes s : shoes) {
 			s_p = s.getTotalPrice();
@@ -141,7 +145,10 @@ public class ComboCall implements Callable<List<Combo>> {
 									+ h_def;
 							if (total_p <= PRICE
 									&& (total_def + MAXIS[0]) >= min) {
-								combos.add(new Combo(s, p, g, a, h));
+								Combo c = new Combo(s, p, g, a, h);
+								if (c.getAtk() <= ATK && c.getMatk() <= MATK) {
+									combos.add(c);
+								}
 							}
 							i++;
 							if (i % 1000000 == 0) {
@@ -197,7 +204,10 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							if (total_p <= PRICE
 									&& (total_def + MAXIS[1]) >= min) {
-								combos.add(new Combo(s, p, g, a, h));
+								Combo c = new Combo(s, p, g, a, h);
+								if (c.getAtk() <= ATK) {
+									combos.add(c);
+								}
 							}
 							i++;
 							if (i % 1000000 == 0) {
@@ -253,7 +263,11 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							if (total_p <= PRICE
 									&& (total_def + MAXIS[2]) >= min) {
-								combos.add(new Combo(s, p, g, a, h));
+								
+								Combo c = new Combo(s, p, g, a, h);
+								if (c.getMatk() <= MATK) {
+									combos.add(c);
+								}
 							}
 							i++;
 							if (i % 1000000 == 0) {

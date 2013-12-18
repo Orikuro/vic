@@ -12,7 +12,7 @@ XML GUI Client
 DRY-Refaktoring
 
 **Timeline**  
-Beta: ~30.09.13
+Beta: ~06.10.13
 
 Howto install (build-info):
 ---

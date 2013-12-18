@@ -1,216 +1,241 @@
-id;price;Typ;Set;Itemname;Level;Stars
-0;0,26;Shoes;Wonderland;Walkers;60;3
-1;4;Pants;Wonderland;Mini Dress;60;3
-2;0,18;Gloves;Wonderland;Belt Gloves;60;3
-3;3,5;Armor;Wonderland;Chain Boleru;60;3
-4;0,14;Helm;Wonderland;Rabbit Hat;60;3
-5;0,11;Shoes;Wonderland;Walkers;60;2
-6;1,4;Pants;Wonderland;Mini Dress;60;2
-7;0,09;Gloves;Wonderland;Belt Gloves;60;2
-8;1;Armor;Wonderland;Chain Boleru;60;2
-9;0,1;Helm;Wonderland;Rabbit Hat;60;2
-10;1,5;Shoes;Wonderland;Walkers;60;4
-11;7;Pants;Wonderland;Mini Dress;60;4
-12;0,7;Gloves;Wonderland;Belt Gloves;60;4
-13;6;Armor;Wonderland;Chain Boleru;60;4
-14;0,7;Helm;Wonderland;Rabbit Hat;60;4
-15;1,1;Armor;Lightwind;Armor;60;2
-16;0,2;Shoes;Lightwind;Shoes;60;2
-17;0,2;Gloves;Lightwind;Gloves;60;2
-18;0,6;Helm;Lightwind;Helm;60;2
-19;1,2;Pants;Lightwind;Pants;60;2
-20;3;Armor;Lightwind;Armor;60;3
-21;0,7;Shoes;Lightwind;Shoes;60;3
-22;0,3;Gloves;Lightwind;Gloves;60;3
-23;1,8;Helm;Lightwind;Helm;60;3
-24;3;Pants;Lightwind;Pants;60;3
-25;0,2;Shoes;Raiders;Shoes;60;2
-26;0,02;Helm;Raiders;Helm;60;2
-27;0,05;Gloves;Raiders;Gloves;60;2
-28;0,4;Armor;Raiders;Armor;60;2
-29;0,8;Pants;Raiders;Pants;60;2
-30;0,35;Shoes;Raiders;Shoes;60;3
-31;0,25;Helm;Raiders;Helm;60;3
-32;0,6;Gloves;Raiders;Gloves;60;3
-33;1,8;Armor;Raiders;Armor;60;3
-34;3;Pants;Raiders;Pants;60;3
-35;0,3;Shoes;Black Hammer;Shoes;60;2
-36;0,2;Gloves;Black Hammer;Gloves;60;2
-37;0,4;Pants;Black Hammer;Pants;60;2
-38;0,5;Helm;Black Hammer;Helm;60;2
-39;0,35;Armor;Black Hammer;Armor;60;2
-40;0,65;Shoes;Black Hammer;Shoes;60;3
-41;0,7;Gloves;Black Hammer;Gloves;60;3
-42;1,6;Pants;Black Hammer;Pants;60;3
-43;2;Helm;Black Hammer;Helm;60;3
-44;2;Armor;Black Hammer;Armor;60;3
-45;0,05;Shoes;Shining Will;Shoes;54;2
-46;0,09;Gloves;Shining Will;Gloves;54;2
-47;0,1;Helm;Shining Will;Helm;54;2
-48;0,2;Armor;Shining Will;Armor;54;2
-49;0,1;Pants;Shining Will;Pants;54;2
-50;0,1;Shoes;Shining Will;Shoes;54;3
-51;0,1;Gloves;Shining Will;Gloves;54;3
-52;0,3;Helm;Shining Will;Helm;54;3
-53;0,55;Armor;Shining Will;Armor;54;3
-54;0,3;Pants;Shining Will;Pants;54;3
-55;0,3;Shoes;Swift;Shoes;60;2
-56;0,3;Gloves;Swift;Gloves;60;2
-57;0,25;Pants;Swift;Pants;60;2
-58;0,3;Helm;Swift;Helm;60;2
-59;0,3;Armor;Swift;Armor;60;2
-60;0,65;Shoes;Swift;Shoes;60;3
-61;1;Gloves;Swift;Gloves;60;3
-62;0,9;Pants;Swift;Pants;60;3
-63;1;Helm;Swift;Helm;60;3
-64;0,65;Armor;Swift;Armor;60;3
-65;0,15;Shoes;Silent  Quemielle;Shoes;60;2
-66;1;Armor;Silent  Quemielle;Armor;60;2
-67;0,2;Gloves;Silent  Quemielle;Gloves;60;2
-68;0,1;Helm;Silent  Quemielle;Helm;60;2
-69;1,2;Pants;Silent  Quemielle;Pants;60;2
-70;0,3;Gloves;Holy Wing;Gloves;60;2
-71;0,02;Helm;Holy Wing;Helm;60;2
-72;0,3;Shoes;Holy Wing;Shoes;60;2
-73;0,04;Armor;Holy Wing;Armor;60;2
-74;0,1;Pants;Holy Wing;Pants;60;2
-75;1,5;Gloves;Champion;Gloves;70;2
-76;1,2;Shoes;Champion;Shoes;70;2
-77;2;Pants;Champion;Pants;70;2
-78;1,5;Helm;Champion;Helm;70;2
-79;1,1;Armor;Champion;Armor;70;2
-80;1,5;Gloves;Champion Soft;Gloves;70;2
-81;1,2;Shoes;Champion Soft;Shoes;70;2
-82;2;Pants;Champion Soft;Pants;70;2
-83;1,5;Helm;Champion Soft;Helm;70;2
-84;1,1;Armor;Champion Soft;Armor;70;2
-85;0,8;Shoes;Imperial Guard Hard;Shoes;70;2
-86;0,7;Gloves;Imperial Guard Hard;Gloves;70;2
-87;1,6;Pants;Imperial Guard Hard;Pants;70;2
-88;2;Helm;Imperial Guard Hard;Helm;70;2
-89;1;Armor;Imperial Guard Hard;Armor;70;2
-90;0,7;Shoes;Imperial Guard Soft;Shoes;70;2
-91;0,7;Gloves;Imperial Guard Soft;Gloves;70;2
-92;1,6;Pants;Imperial Guard Soft;Pants;70;2
-93;2;Helm;Imperial Guard Soft;Helm;70;2
-94;1;Armor;Imperial Guard Soft;Armor;70;2
-95;1,6;Shoes;Royal Guard Heavy;Shoes;70;2
-96;0,8;Gloves;Royal Guard Heavy;Gloves;70;2
-97;1,8;Pants;Royal Guard Heavy;Pants;70;2
-98;1,1;Helm;Royal Guard Heavy;Helm;70;2
-99;0,5;Armor;Royal Guard Heavy;Armor;70;2
-100;0,8;Gloves;Mhara;Armguard;70;2
-101;0,6;Shoes;Mhara;Boots;70;2
-102;7,5;Pants;Mhara;Chaps;70;2
-103;8;Helm;Mhara;Fur Cap;70;2
-104;8;Armor;Mhara;Scale Coat;70;2
-105;5;Armor;Everlasting(Evie);Armor;70;2
-106;3,5;Shoes;Everlasting(Evie);Boots;70;2
-107;3,5;Gloves;Everlasting(Evie);Gloves;70;2
-108;5;Helm;Everlasting(Evie);Helmet;70;2
-109;6;Pants;Everlasting(Evie);Pants;70;2
-110;8,5;Helm;Apocryphal;Helmet;70;2
-111;0,9;Shoes;Apocryphal;Boots;70;2
-112;7,5;Armor;Apocryphal;Armor;70;2
-113;0,85;Gloves;Apocryphal;Gloves;70;2
-114;7,5;Pants;Apocryphal;Pants;70;2
-115;5;Armor;Everlasting;Armor;70;2
-116;3,5;Shoes;Everlasting;Boots;70;2
-117;3,5;Gloves;Everlasting;Gloves;70;2
-118;5;Helm;Everlasting;Helmet;70;2
-119;6;Pants;Everlasting;Pants;70;2
-120;1,2;Shoes;Nighthawk;Boots;70;2
-121;1,5;Helm;Nighthawk;Helmet;70;2
-122;1,5;Gloves;Nighthawk;Gloves;70;2
-123;1,1;Armor;Nighthawk;Armor;70;2
-124;2;Pants;Nighthawk;Pants;70;2
-125;0,7;Shoes;Phantom Heavy;Boots;70;2
-126;0,65;Gloves;Phantom Heavy;Gloves;70;2
-127;2,5;Pants;Phantom Heavy;Pants;70;2
-128;0,3;Helm;Phantom Heavy;Helmet;70;2
-129;0,3;Armor;Phantom Heavy;Armor;70;2
-130;1,6;Shoes;Royal Guard Light;Boots;70;2
-131;0,8;Gloves;Royal Guard Light;Gloves;70;2
-132;1,8;Pants;Royal Guard Light;Pants;70;2
-133;1,1;Helm;Royal Guard Light;Helmet;70;2
-134;0,5;Armor;Royal Guard Light;Armor;70;2
-135;1,2;Shoes;Nighthawk Light;Shoes;70;2
-136;1,5;Helm;Nighthawk Light;Helm;70;2
-137;1,5;Gloves;Nighthawk Light;Gloves;70;2
-138;1,1;Armor;Nighthawk Light;Armor;70;2
-139;2;Pants;Nighthawk Light;Pants;70;2
-140;0,7;Shoes;Phantom Light;Shoes;70;2
-141;0,65;Gloves;Phantom Light;Gloves;70;2
-142;2,5;Pants;Phantom Light;Pants;70;2
-143;0,3;Helm;Phantom Light;Helm;70;2
-144;0,3;Armor;Phantom Light;Armor;70;2
-145;33;Gloves;Skeleton;Gloves;80;2
-146;33;Shoes;Skeleton;Shoes;80;2
-147;33;Pants;Skeleton;Pants;80;2
-148;33;Helm;Skeleton;Helm;80;2
-149;33;Armor;Skeleton;Armor;80;2
-150;33;Gloves;Skeleton Witch;Gloves;80;2
-151;33;Shoes;Skeleton Witch;Shoes;80;2
-152;33;Pants;Skeleton Witch;Pants;80;2
-153;33;Helm;Skeleton Witch;Helm;80;2
-154;33;Armor;Skeleton Witch;Armor;80;2
-155;40;Shoes;Classic Black Pearl;Boots;80;2
-156;40;Gloves;Classic Black Pearl;Gauntlets;80;2
-157;40;Pants;Classic Black Pearl;Greaves;80;2
-158;40;Helm;Classic Black Pearl;Helmet;80;2
-159;40;Armor;Classic Black Pearl;Mail;80;2
-160;40;Shoes;Black Pearl;Boots;80;2
-161;40;Gloves;Black Pearl;Gloves;80;2
-162;40;Pants;Black Pearl;Pants;80;2
-163;40;Helm;Black Pearl;Helmet;80;2
-164;40;Armor;Black Pearl;Armor;80;2
-165;20;Shoes;Heremon;Boots;80;2
-166;20;Armor;Heremon;Armor;80;2
-167;20;Gloves;Heremon;Gloves;80;2
-168;20;Pants;Heremon;Pants;80;2
-169;20;Helm;Heremon;Helmet;80;2
-170;27;Shoes;Noblesse;Boots;80;2
-171;27;Gloves;Noblesse;Gloves;80;2
-172;27;Pants;Noblesse;Pants;80;2
-173;27;Helm;Noblesse;Helmet;80;2
-174;27;Armor;Noblesse;Armor;80;2
-175;20;Shoes;Heremon Soft;Shoes;80;2
-176;20;Armor;Heremon Soft;Armor;80;2
-177;20;Gloves;Heremon Soft;Gloves;80;2
-178;20;Pants;Heremon Soft;Pants;80;2
-179;20;Helm;Heremon Soft;Helm;80;2
-180;40;Shoes;Leather Pirate;Shoes;80;2
-181;40;Gloves;Leather Pirate;Gloves;80;2
-182;40;Pants;Leather Pirate;Pants;80;2
-183;40;Helm;Leather Pirate;Helm;80;2
-184;40;Armor;Leather Pirate;Armor;80;2
-185;40;Shoes;Pirate;Shoes;80;2
-186;40;Gloves;Pirate;Gloves;80;2
-187;40;Pants;Pirate;Pants;80;2
-188;40;Helm;Pirate;Helm;80;2
-189;40;Armor;Pirate;Armor;80;2
-190;27;Shoes;Noblese Witch;Shoes;80;2
-191;27;Gloves;Noblese Witch;Gloves;80;2
-192;27;Pants;Noblese Witch;Pants;80;2
-193;27;Helm;Noblese Witch;Helm;80;2
-194;27;Armor;Noblese Witch;Armor;80;2
-195;0,09;Gloves;Warrior Edge;Gloves;54;2
-196;0,05;Shoes;Warrior Edge;Shoes;54;2
-197;0,1;Pants;Warrior Edge;Pants;54;2
-198;0,1;Helm;Warrior Edge;Helm;54;2
-199;0,2;Armor;Warrior Edge;Armor;54;2
-200;0,1;Gloves;Warrior Edge;Gloves;54;3
-201;0,1;Shoes;Warrior Edge;Shoes;54;3
-202;0,3;Pants;Warrior Edge;Pants;54;3
-203;0,3;Helm;Warrior Edge;Helm;54;3
-204;0,55;Armor;Warrior Edge;Armor;54;3
-205;0,3;Gloves;K-9;Gloves;60;2
-206;0,3;Shoes;K-9;Shoes;60;2
-207;0,1;Pants;K-9;Pants;60;2
-208;0,02;Helm;K-9;Helm;60;2
-209;0,04;Armor;K-9;Armor;60;2
-210;0,2;Gloves;Hundred Magnum;Gloves;60;2
-211;0,2;Shoes;Hundred Magnum;Shoes;60;2
-212;1,2;Pants;Hundred Magnum;Pants;60;2
-213;0,6;Helm;Hundred Magnum;Helm;60;2
-214;1,1;Armor;Hundred Magnum;Armor;60;2
+id;price;Typ;Set;Itemname;Level;Stars;Useful;Armortype
+0;0,26;Shoes;Wonderland;Walkers;60;3;evie;CLOTH
+1;4;Pants;Wonderland;Mini Dress;60;3;evie;CLOTH
+2;0,18;Gloves;Wonderland;Belt Gloves;60;3;evie;CLOTH
+3;3,5;Armor;Wonderland;Chain Boleru;60;3;evie;CLOTH
+4;0,14;Helm;Wonderland;Rabbit Hat;60;3;evie;CLOTH
+5;0,11;Shoes;Wonderland;Walkers;60;2;evie;CLOTH
+6;1,4;Pants;Wonderland;Mini Dress;60;2;evie;CLOTH
+7;0,09;Gloves;Wonderland;Belt Gloves;60;2;evie;CLOTH
+8;1;Armor;Wonderland;Chain Boleru;60;2;evie;CLOTH
+9;0,1;Helm;Wonderland;Rabbit Hat;60;2;evie;CLOTH
+10;1,5;Shoes;Wonderland;Walkers;60;4;evie;CLOTH
+11;7;Pants;Wonderland;Mini Dress;60;4;evie;CLOTH
+12;0,7;Gloves;Wonderland;Belt Gloves;60;4;evie;CLOTH
+13;6;Armor;Wonderland;Chain Boleru;60;4;evie;CLOTH
+14;0,7;Helm;Wonderland;Rabbit Hat;60;4;evie;CLOTH
+15;1,1;Armor;Lightwind;Armor;60;2;vella;PLATE
+16;0,2;Shoes;Lightwind;Shoes;60;2;vella;PLATE
+17;0,2;Gloves;Lightwind;Gloves;60;2;vella;HEAVY
+18;0,6;Helm;Lightwind;Helm;60;2;vella;HEAVY
+19;1,2;Pants;Lightwind;Pants;60;2;vella;PLATE
+20;3;Armor;Lightwind;Armor;60;3;vella;PLATE
+21;0,7;Shoes;Lightwind;Shoes;60;3;vella;PLATE
+22;0,3;Gloves;Lightwind;Gloves;60;3;vella;HEAVY
+23;1,8;Helm;Lightwind;Helm;60;3;vella;HEAVY
+24;3;Pants;Lightwind;Pants;60;3;vella;PLATE
+25;0,2;Shoes;Raiders;Shoes;60;2;vella fiona lann hurk karok kai;LIGHT
+26;0,02;Helm;Raiders;Helm;60;2;vella fiona lann hurk karok kai;LIGHT
+27;0,05;Gloves;Raiders;Gloves;60;2;vella fiona lann hurk karok kai;LIGHT
+28;0,4;Armor;Raiders;Armor;60;2;vella fiona lann hurk karok kai;LIGHT
+29;0,8;Pants;Raiders;Pants;60;2;vella fiona lann hurk karok kai;LIGHT
+30;0,35;Shoes;Raiders;Shoes;60;3;vella fiona lann hurk karok kai;LIGHT
+31;0,25;Helm;Raiders;Helm;60;3;vella fiona lann hurk karok kai;LIGHT
+32;0,6;Gloves;Raiders;Gloves;60;3;vella fiona lann hurk karok kai;LIGHT
+33;1,8;Armor;Raiders;Armor;60;3;vella fiona lann hurk karok kai;LIGHT
+34;3;Pants;Raiders;Pants;60;3;vella fiona lann hurk karok kai;LIGHT
+35;0,3;Shoes;Black Hammer;Shoes;60;2;vella fiona lann hurk karok kai;HEAVY
+36;0,2;Gloves;Black Hammer;Gloves;60;2;vella fiona lann hurk karok kai;HEAVY
+37;0,4;Pants;Black Hammer;Pants;60;2;vella fiona lann hurk karok kai;PLATE
+38;0,5;Helm;Black Hammer;Helm;60;2;vella fiona lann hurk karok kai;PLATE
+39;0,35;Armor;Black Hammer;Armor;60;2;vella fiona lann hurk karok kai;PLATE
+40;0,65;Shoes;Black Hammer;Shoes;60;3;vella fiona lann hurk karok kai;HEAVY
+41;0,7;Gloves;Black Hammer;Gloves;60;3;vella fiona lann hurk karok kai;HEAVY
+42;1,6;Pants;Black Hammer;Pants;60;3;vella fiona lann hurk karok kai;PLATE
+43;2;Helm;Black Hammer;Helm;60;3;vella fiona lann hurk karok kai;PLATE
+44;2;Armor;Black Hammer;Armor;60;3;vella fiona lann hurk karok kai;PLATE
+45;0,05;Shoes;Shining Will;Shoes;54;2;fiona;PLATE
+46;0,09;Gloves;Shining Will;Gloves;54;2;fiona;PLATE
+47;0,1;Helm;Shining Will;Helm;54;2;fiona;PLATE
+48;0,2;Armor;Shining Will;Armor;54;2;fiona;PLATE
+49;0,1;Pants;Shining Will;Pants;54;2;fiona;PLATE
+50;0,1;Shoes;Shining Will;Shoes;54;3;fiona;PLATE
+51;0,1;Gloves;Shining Will;Gloves;54;3;fiona;PLATE
+52;0,3;Helm;Shining Will;Helm;54;3;fiona;PLATE
+53;0,55;Armor;Shining Will;Armor;54;3;fiona;PLATE
+54;0,3;Pants;Shining Will;Pants;54;3;fiona;PLATE
+55;0,3;Shoes;Swift;Shoes;60;2;vella fiona lann hurk karok kai;HEAVY
+56;0,3;Gloves;Swift;Gloves;60;2;vella fiona lann hurk karok kai;HEAVY
+57;0,25;Pants;Swift;Pants;60;2;vella fiona lann hurk karok kai;PLATE
+58;0,3;Helm;Swift;Helm;60;2;vella fiona lann hurk karok kai;PLATE
+59;0,3;Armor;Swift;Armor;60;2;vella fiona lann hurk karok kai;PLATE
+60;0,65;Shoes;Swift;Shoes;60;3;vella fiona lann hurk karok kai;HEAVY
+61;1;Gloves;Swift;Gloves;60;3;vella fiona lann hurk karok kai;HEAVY
+62;0,9;Pants;Swift;Pants;60;3;vella fiona lann hurk karok kai;PLATE
+63;1;Helm;Swift;Helm;60;3;vella fiona lann hurk karok kai;PLATE
+64;0,65;Armor;Swift;Armor;60;3;vella fiona lann hurk karok kai;PLATE
+65;0,15;Shoes;Silent  Quemielle;Shoes;60;2;fiona;PLATE
+66;1;Armor;Silent  Quemielle;Armor;60;2;fiona;PLATE
+67;0,2;Gloves;Silent  Quemielle;Gloves;60;2;fiona;PLATE
+68;0,1;Helm;Silent  Quemielle;Helm;60;2;fiona;PLATE
+69;1,2;Pants;Silent  Quemielle;Pants;60;2;fiona;PLATE
+70;0,3;Gloves;Holy Wing;Gloves;60;2;fiona;PLATE
+71;0,02;Helm;Holy Wing;Helm;60;2;fiona;PLATE
+72;0,3;Shoes;Holy Wing;Shoes;60;2;fiona;PLATE
+73;0,04;Armor;Holy Wing;Armor;60;2;fiona;PLATE
+74;0,1;Pants;Holy Wing;Pants;60;2;fiona;PLATE
+75;1,5;Gloves;Champion;Gloves;70;2;vella fiona lann hurk karok kai;LIGHT
+76;1,2;Shoes;Champion;Shoes;70;2;vella fiona lann hurk karok kai;LIGHT
+77;2;Pants;Champion;Pants;70;2;vella fiona lann hurk karok kai;LIGHT
+78;1,5;Helm;Champion;Helm;70;2;vella fiona lann hurk karok kai;LIGHT
+79;1,1;Armor;Champion;Armor;70;2;vella fiona lann hurk karok kai;LIGHT
+80;1,5;Gloves;Champion Soft;Gloves;70;2;evie;LIGHT
+81;1,2;Shoes;Champion Soft;Shoes;70;2;evie;LIGHT
+82;2;Pants;Champion Soft;Pants;70;2;evie;LIGHT
+83;1,5;Helm;Champion Soft;Helm;70;2;evie;LIGHT
+84;1,1;Armor;Champion Soft;Armor;70;2;evie;LIGHT
+85;0,8;Shoes;Imperial Guard Hard;Shoes;70;2;fiona vella;HEAVY
+86;0,7;Gloves;Imperial Guard Hard;Gloves;70;2;fiona vella;HEAVY
+87;1,6;Pants;Imperial Guard Hard;Pants;70;2;fiona vella;HEAVY
+88;2;Helm;Imperial Guard Hard;Helm;70;2;fiona vella;HEAVY
+89;1;Armor;Imperial Guard Hard;Armor;70;2;fiona vella;HEAVY
+90;0,7;Shoes;Imperial Guard Soft;Shoes;70;2;evie;LIGHT
+91;0,7;Gloves;Imperial Guard Soft;Gloves;70;2;evie;LIGHT
+92;1,6;Pants;Imperial Guard Soft;Pants;70;2;evie;LIGHT
+93;2;Helm;Imperial Guard Soft;Helm;70;2;evie;LIGHT
+94;1;Armor;Imperial Guard Soft;Armor;70;2;evie;LIGHT
+95;1,6;Shoes;Royal Guard Heavy;Shoes;70;2;lann hurk karok kai;HEAVY
+96;0,8;Gloves;Royal Guard Heavy;Gloves;70;2;lann hurk karok kai;HEAVY
+97;1,8;Pants;Royal Guard Heavy;Pants;70;2;lann hurk karok kai;HEAVY
+98;1,1;Helm;Royal Guard Heavy;Helm;70;2;lann hurk karok kai;HEAVY
+99;0,5;Armor;Royal Guard Heavy;Armor;70;2;lann hurk karok kai;HEAVY
+100;0,8;Gloves;Mhara;Armguard;70;2;evie;LIGHT
+101;0,6;Shoes;Mhara;Boots;70;2;evie;LIGHT
+102;7,5;Pants;Mhara;Chaps;70;2;evie;LIGHT
+103;8;Helm;Mhara;Fur Cap;70;2;evie;LIGHT
+104;8;Armor;Mhara;Scale Coat;70;2;evie;LIGHT
+105;5;Armor;Everlasting(Evie);Armor;70;2;evie;LIGHT
+106;3,5;Shoes;Everlasting(Evie);Boots;70;2;evie;LIGHT
+107;3,5;Gloves;Everlasting(Evie);Gloves;70;2;evie;LIGHT
+108;5;Helm;Everlasting(Evie);Helmet;70;2;evie;LIGHT
+109;6;Pants;Everlasting(Evie);Pants;70;2;evie;LIGHT
+110;8,5;Helm;Apocryphal;Helmet;70;2;vella fiona lann hurk karok kai;PLATE
+111;0,9;Shoes;Apocryphal;Boots;70;2;vella fiona lann hurk karok kai;PLATE
+112;7,5;Armor;Apocryphal;Armor;70;2;vella fiona lann hurk karok kai;PLATE
+113;0,85;Gloves;Apocryphal;Gloves;70;2;vella fiona lann hurk karok kai;PLATE
+114;7,5;Pants;Apocryphal;Pants;70;2;vella fiona lann hurk karok kai;LIGHT
+115;5;Armor;Everlasting;Armor;70;2;vella fiona lann hurk karok kai;PLATE
+116;3,5;Shoes;Everlasting;Boots;70;2;vella fiona lann hurk karok kai;PLATE
+117;3,5;Gloves;Everlasting;Gloves;70;2;vella fiona lann hurk karok kai;PLATE
+118;5;Helm;Everlasting;Helmet;70;2;vella fiona lann hurk karok kai;PLATE
+119;6;Pants;Everlasting;Pants;70;2;vella fiona lann hurk karok kai;LIGHT
+120;1,2;Shoes;Nighthawk;Boots;70;2;vella fiona lann hurk karok kai;HEAVY
+121;1,5;Helm;Nighthawk;Helmet;70;2;vella fiona lann hurk karok kai;HEAVY
+122;1,5;Gloves;Nighthawk;Gloves;70;2;vella fiona lann hurk karok kai;PLATE
+123;1,1;Armor;Nighthawk;Armor;70;2;vella fiona lann hurk karok kai;PLATE
+124;2;Pants;Nighthawk;Pants;70;2;vella fiona lann hurk karok kai;PLATE
+125;0,7;Shoes;Phantom Heavy;Boots;70;2;vella fiona lann hurk karok kai;HEAVY
+126;0,65;Gloves;Phantom Heavy;Gloves;70;2;vella fiona lann hurk karok kai;HEAVY
+127;2,5;Pants;Phantom Heavy;Pants;70;2;vella fiona lann hurk karok kai;HEAVY
+128;0,3;Helm;Phantom Heavy;Helmet;70;2;vella fiona lann hurk karok kai;HEAVY
+129;0,3;Armor;Phantom Heavy;Armor;70;2;vella fiona lann hurk karok kai;HEAVY
+130;1,6;Shoes;Royal Guard Light;Boots;70;2;vella fiona lann hurk karok kai;HEAVY
+131;0,8;Gloves;Royal Guard Light;Gloves;70;2;vella fiona lann hurk karok kai;HEAVY
+132;1,8;Pants;Royal Guard Light;Pants;70;2;vella fiona lann hurk karok kai;HEAVY
+133;1,1;Helm;Royal Guard Light;Helmet;70;2;vella fiona lann hurk karok kai;HEAVY
+134;0,5;Armor;Royal Guard Light;Armor;70;2;vella fiona lann hurk karok kai;HEAVY
+135;1,2;Shoes;Nighthawk Light;Shoes;70;2;evie;LIGHT
+136;1,5;Helm;Nighthawk Light;Helm;70;2;evie;LIGHT
+137;1,5;Gloves;Nighthawk Light;Gloves;70;2;evie;HEAVY
+138;1,1;Armor;Nighthawk Light;Armor;70;2;evie;HEAVY
+139;2;Pants;Nighthawk Light;Pants;70;2;evie;HEAVY
+140;0,7;Shoes;Phantom Light;Shoes;70;2;evie;LIGHT
+141;0,65;Gloves;Phantom Light;Gloves;70;2;evie;LIGHT
+142;2,5;Pants;Phantom Light;Pants;70;2;evie;LIGHT
+143;0,3;Helm;Phantom Light;Helm;70;2;evie;LIGHT
+144;0,3;Armor;Phantom Light;Armor;70;2;evie;LIGHT
+145;33;Gloves;Skeleton;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+146;33;Shoes;Skeleton;Shoes;80;2;vella fiona lann hurk karok kai;PLATE
+147;33;Pants;Skeleton;Pants;80;2;vella fiona lann hurk karok kai;PLATE
+148;33;Helm;Skeleton;Helm;80;2;vella fiona lann hurk karok kai;PLATE
+149;33;Armor;Skeleton;Armor;80;2;vella fiona lann hurk karok kai;PLATE
+150;33;Gloves;Skeleton Witch;Gloves;80;2;evie;PLATE
+151;33;Shoes;Skeleton Witch;Shoes;80;2;evie;PLATE
+152;33;Pants;Skeleton Witch;Pants;80;2;evie;PLATE
+153;33;Helm;Skeleton Witch;Helm;80;2;evie;PLATE
+154;33;Armor;Skeleton Witch;Armor;80;2;evie;PLATE
+155;40;Shoes;Classic Black Pearl;Boots;80;2;evie;HEAVY
+156;40;Gloves;Classic Black Pearl;Gauntlets;80;2;evie;LIGHT
+157;40;Pants;Classic Black Pearl;Greaves;80;2;evie;LIGHT
+158;40;Helm;Classic Black Pearl;Helmet;80;2;evie;LIGHT
+159;40;Armor;Classic Black Pearl;Mail;80;2;evie;LIGHT
+160;40;Shoes;Black Pearl;Boots;80;2;fiona vella;LIGHT
+161;40;Gloves;Black Pearl;Gloves;80;2;fiona vella;HEAVY
+162;40;Pants;Black Pearl;Pants;80;2;fiona vella;LIGHT
+163;40;Helm;Black Pearl;Helmet;80;2;fiona vella;LIGHT
+164;40;Armor;Black Pearl;Armor;80;2;fiona vella;LIGHT
+165;20;Shoes;Heremon;Boots;80;2;vella fiona lann hurk karok kai;HEAVY
+166;20;Armor;Heremon;Armor;80;2;vella fiona lann hurk karok kai;PLATE
+167;20;Gloves;Heremon;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+168;20;Pants;Heremon;Pants;80;2;vella fiona lann hurk karok kai;HEAVY
+169;20;Helm;Heremon;Helmet;80;2;vella fiona lann hurk karok kai;PLATE
+170;27;Shoes;Noblesse;Boots;80;2;vella fiona lann hurk karok kai;PLATE
+171;27;Gloves;Noblesse;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+172;27;Pants;Noblesse;Pants;80;2;vella fiona lann hurk karok kai;HEAVY
+173;27;Helm;Noblesse;Helmet;80;2;vella fiona lann hurk karok kai;PLATE
+174;27;Armor;Noblesse;Armor;80;2;vella fiona lann hurk karok kai;HEAVY
+175;20;Shoes;Heremon Soft;Shoes;80;2;evie;LIGHT
+176;20;Armor;Heremon Soft;Armor;80;2;evie;HEAVY
+177;20;Gloves;Heremon Soft;Gloves;80;2;evie;HEAVY
+178;20;Pants;Heremon Soft;Pants;80;2;evie;LIGHT
+179;20;Helm;Heremon Soft;Helm;80;2;evie;LIGHT
+180;40;Shoes;Leather Pirate;Shoes;80;2;lann kai;HEAVY
+181;40;Gloves;Leather Pirate;Gloves;80;2;lann kai;HEAVY
+182;40;Pants;Leather Pirate;Pants;80;2;lann kai;LIGHT
+183;40;Helm;Leather Pirate;Helm;80;2;lann kai;LIGHT
+184;40;Armor;Leather Pirate;Armor;80;2;lann kai;LIGHT
+185;40;Shoes;Pirate;Shoes;80;2;lann hurk karok kai;HEAVY
+186;40;Gloves;Pirate;Gloves;80;2;lann hurk karok kai;HEAVY
+187;40;Pants;Pirate;Pants;80;2;lann hurk karok kai;HEAVY
+188;40;Helm;Pirate;Helm;80;2;lann hurk karok kai;LIGHT
+189;40;Armor;Pirate;Armor;80;2;lann hurk karok kai;LIGHT
+190;27;Shoes;Noblese Witch;Shoes;80;2;evie;PLATE
+191;27;Gloves;Noblese Witch;Gloves;80;2;evie;PLATE
+192;27;Pants;Noblese Witch;Pants;80;2;evie;HEAVY
+193;27;Helm;Noblese Witch;Helm;80;2;evie;PLATE
+194;27;Armor;Noblese Witch;Armor;80;2;evie;HEAVY
+195;0,09;Gloves;Warrior Edge;Gloves;54;2;hurk;PLATE
+196;0,05;Shoes;Warrior Edge;Shoes;54;2;hurk;PLATE
+197;0,1;Pants;Warrior Edge;Pants;54;2;hurk;PLATE
+198;0,1;Helm;Warrior Edge;Helm;54;2;hurk;PLATE
+199;0,2;Armor;Warrior Edge;Armor;54;2;hurk;PLATE
+200;0,1;Gloves;Warrior Edge;Gloves;54;3;hurk;PLATE
+201;0,1;Shoes;Warrior Edge;Shoes;54;3;hurk;PLATE
+202;0,3;Pants;Warrior Edge;Pants;54;3;hurk;PLATE
+203;0,3;Helm;Warrior Edge;Helm;54;3;hurk;PLATE
+204;0,55;Armor;Warrior Edge;Armor;54;3;hurk;PLATE
+205;0,3;Gloves;K-9;Gloves;60;2;hurk;HEAVY
+206;0,3;Shoes;K-9;Shoes;60;2;hurk;HEAVY
+207;0,1;Pants;K-9;Pants;60;2;hurk;PLATE
+208;0,02;Helm;K-9;Helm;60;2;hurk;HEAVY
+209;0,04;Armor;K-9;Armor;60;2;hurk;PLATE
+210;0,2;Gloves;Hundred Magnum;Gloves;60;2;hurk;PLATE
+211;0,2;Shoes;Hundred Magnum;Shoes;60;2;hurk;PLATE
+212;1,2;Pants;Hundred Magnum;Pants;60;2;hurk;PLATE
+213;0,6;Helm;Hundred Magnum;Helm;60;2;hurk;PLATE
+214;1,1;Armor;Hundred Magnum;Armor;60;2;hurk;PLATE
+215;10;Gloves;Majest;Gloves;70;2;lann hurk karok kai;PLATE
+216;10;Shoes;Majest;Shoes;70;2;lann hurk karok kai;PLATE
+217;10;Pants;Majest;Pants;70;2;lann hurk karok kai;PLATE
+218;10;Helm;Majest;Helm;70;2;lann hurk karok kai;LIGHT
+219;10;Armor;Majest;Armor;70;2;lann hurk karok kai;PLATE
+220;10;Gloves;Majest Leather;Gloves;70;2;vella fiona;LIGHT
+221;10;Shoes;Majest Leather;Shoes;70;2;vella fiona;LIGHT
+222;10;Pants;Majest Leather;Pants;70;2;vella fiona;LIGHT
+223;10;Helm;Majest Leather;Helm;70;2;vella fiona;LIGHT
+224;10;Armor;Majest Leather;Armor;70;2;vella fiona;LIGHT
+225;10;Gloves;Majest Soft;Gloves;70;2;evie;LIGHT
+226;10;Shoes;Majest Soft;Shoes;70;2;evie;LIGHT
+227;10;Pants;Majest Soft;Pants;70;2;evie;LIGHT
+228;10;Helm;Majest Soft;Helm;70;2;evie;LIGHT
+229;10;Armor;Majest Soft;Armor;70;2;evie;LIGHT
+230;40;Gloves;Armageddon;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+231;40;Shoes;Armageddon;Shoes;80;2;vella fiona lann hurk karok kai;PLATE
+232;40;Pants;Armageddon;Pants;80;2;vella fiona lann hurk karok kai;PLATE
+233;40;Helm;Armageddon;Helm;80;2;vella fiona lann hurk karok kai;PLATE
+234;40;Armor;Armageddon;Armor;80;2;vella fiona lann hurk karok kai;PLATE
+235;40;Gloves;Armageddon Witch;Gloves;80;2;evie;HEAVY
+236;40;Shoes;Armageddon Witch;Shoes;80;2;evie;PLATE
+237;40;Pants;Armageddon Witch;Pants;80;2;evie;HEAVY
+238;40;Helm;Armageddon Witch;Helm;80;2;evie;PLATE
+239;40;Armor;Armageddon Witch;Armor;80;2;evie;LIGHT

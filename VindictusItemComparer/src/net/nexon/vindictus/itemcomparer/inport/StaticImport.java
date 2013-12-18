@@ -1366,6 +1366,151 @@ public class StaticImport {
 		helms.add(h);
 	}
 
+	static void generateMajest() {
+		String setname = "Majest";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(192, 58, 0));
+		boni.add(new ItemSetBonus(212, 82, 0));
+		boni.add(new ItemSetBonus(287, 110, 0));
+		boni.add(new ItemSetBonus(365, 140, 0));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(char_lan_kai_kar);
+
+		Gloves g = new Gloves(iset, "Gloves", 70, ItemTyp.PLATE, 721, 100, 0,
+				17, 7);
+		Shoes s = new Shoes(iset, "Shoes", 70, ItemTyp.PLATE, 714, 100, 0, 17,
+				7);
+		Pants p = new Pants(iset, "Pants", 70, ItemTyp.PLATE, 734, 114, 0, 24,
+				10);
+		Helm h = new Helm(iset, "Helm", 70, ItemTyp.LIGHT, 555, 100, 0, 19, 9);
+		Armor a = new Armor(iset, "Armor", 70, ItemTyp.PLATE, 794, 114, 0, 25,
+				11);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateMajestLeather() {
+		String setname = "Majest Leather";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(192, 58, 0));
+		boni.add(new ItemSetBonus(212, 82, 0));
+		boni.add(new ItemSetBonus(287, 110, 0));
+		boni.add(new ItemSetBonus(365, 140, 0));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(vella + " " + fiona);
+
+		Gloves g = new Gloves(iset, "Gloves", 70, ItemTyp.LIGHT, 621, 105, 0,
+				17, 7);
+		Shoes s = new Shoes(iset, "Shoes", 70, ItemTyp.LIGHT, 614, 105, 0, 17,
+				7);
+		Pants p = new Pants(iset, "Pants", 70, ItemTyp.LIGHT, 634, 119, 0, 24,
+				10);
+		Helm h = new Helm(iset, "Helm", 70, ItemTyp.LIGHT, 455, 105, 0, 19, 9);
+		Armor a = new Armor(iset, "Armor", 70, ItemTyp.LIGHT, 694, 119, 0, 25,
+				11);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateMajestSoft() {
+		String setname = "Majest Soft";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(196, 0, 75));
+		boni.add(new ItemSetBonus(231, 0, 95));
+		boni.add(new ItemSetBonus(315, 0, 115));
+		boni.add(new ItemSetBonus(387, 0, 135));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(evie);
+
+		Gloves g = new Gloves(iset, "Gloves", 70, ItemTyp.LIGHT, 369, 0, 114,
+				19, 7);
+		Shoes s = new Shoes(iset, "Shoes", 70, ItemTyp.LIGHT, 383, 0, 114, 19,
+				7);
+		Pants p = new Pants(iset, "Pants", 70, ItemTyp.LIGHT, 444, 0, 140, 16,
+				10);
+		Helm h = new Helm(iset, "Helm", 70, ItemTyp.LIGHT, 418, 0, 121, 21, 9);
+		Armor a = new Armor(iset, "Armor", 70, ItemTyp.LIGHT, 491, 0, 148, 28,
+				11);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateArmageddon() {
+		String setname = "Armageddon";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(135, 60, 0));
+		boni.add(new ItemSetBonus(210, 90, 0));
+		boni.add(new ItemSetBonus(285, 120, 0));
+		boni.add(new ItemSetBonus(360, 150, 0));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(char_melee);
+
+		Gloves g = new Gloves(iset, "Gloves", 80, ItemTyp.PLATE, 1030, 138, 4,
+				53, 12);
+		Shoes s = new Shoes(iset, "Shoes", 80, ItemTyp.PLATE, 940, 140, 4, 58,
+				12);
+		Pants p = new Pants(iset, "Pants", 80, ItemTyp.PLATE, 1040, 153, 4, 43,
+				15);
+		Helm h = new Helm(iset, "Helm", 80, ItemTyp.PLATE, 1190, 138, 4, 49, 14);
+		Armor a = new Armor(iset, "Armor", 80, ItemTyp.PLATE, 1240, 154, 4, 43,
+				16);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateArmageddonWitch() {
+		String setname = "Armageddon Witch";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(284, 0, 80));
+		boni.add(new ItemSetBonus(334, 0, 110));
+		boni.add(new ItemSetBonus(384, 0, 140));
+		boni.add(new ItemSetBonus(434, 0, 170));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(evie);
+
+		Gloves g = new Gloves(iset, "Gloves", 80, ItemTyp.HEAVY, 885, 25, 160,
+				43, 13);
+		Shoes s = new Shoes(iset, "Shoes", 80, ItemTyp.PLATE, 925, 24, 127, 43,
+				10);
+		Pants p = new Pants(iset, "Pants", 80, ItemTyp.HEAVY, 972, 30, 150, 48,
+				13);
+		Helm h = new Helm(iset, "Helm", 80, ItemTyp.PLATE, 954, 29, 139, 44, 12);
+		Armor a = new Armor(iset, "Armor", 80, ItemTyp.LIGHT, 919, 31, 215, 50,
+				15);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
 	public static void staticImAndExport() {
 		// 60 sets
 		generateWonderland();
@@ -1409,6 +1554,13 @@ public class StaticImport {
 		generateWEdge();
 		generateK9();
 		generateHMagnum();
+
+		// Episode 4 Season 2
+		generateMajest();
+		generateMajestLeather();
+		generateMajestSoft();
+		generateArmageddon();
+		generateArmageddonWitch();
 
 	}
 
@@ -1576,7 +1728,8 @@ public class StaticImport {
 			JAXBContext context = JAXBContext.newInstance(Items.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-			m.marshal(new Items(isets, shoes, pants, gloves, armors, helms), out);
+			m.marshal(new Items(isets, shoes, pants, gloves, armors, helms),
+					out);
 			System.out.println("Static Export finished");
 			System.out.println("Shoes: " + shoes.size());
 			System.out.println("Pants: " + pants.size());

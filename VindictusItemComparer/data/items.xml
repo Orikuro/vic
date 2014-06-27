@@ -1728,6 +1728,114 @@
         </scroll_suf>
         <itemset>39</itemset>
     </shoes>
+    <shoes>
+        <id>241</id>
+        <name>Shoes</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>524</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>88</str>
+        <vint>0</vint>
+        <agi>10</agi>
+        <crit_res>8</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>40</itemset>
+    </shoes>
+    <shoes>
+        <id>246</id>
+        <name>Shoes</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>530</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>92</str>
+        <vint>0</vint>
+        <agi>20</agi>
+        <crit_res>9</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>41</itemset>
+    </shoes>
+    <shoes>
+        <id>251</id>
+        <name>Shoes</name>
+        <level>60</level>
+        <typ>PLATE</typ>
+        <def>650</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>92</str>
+        <vint>0</vint>
+        <agi>20</agi>
+        <crit_res>9</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>42</itemset>
+    </shoes>
     <pants>
         <id>1</id>
         <name>Mini Dress</name>
@@ -3455,6 +3563,114 @@
             <price>0.0</price>
         </scroll_suf>
         <itemset>39</itemset>
+    </pants>
+    <pants>
+        <id>242</id>
+        <name>Pants</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>617</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>89</str>
+        <vint>0</vint>
+        <agi>11</agi>
+        <crit_res>9</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>40</itemset>
+    </pants>
+    <pants>
+        <id>247</id>
+        <name>Pants</name>
+        <level>60</level>
+        <typ>PLATE</typ>
+        <def>657</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>110</str>
+        <vint>0</vint>
+        <agi>25</agi>
+        <crit_res>10</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>41</itemset>
+    </pants>
+    <pants>
+        <id>252</id>
+        <name>Pants</name>
+        <level>60</level>
+        <typ>PLATE</typ>
+        <def>677</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>110</str>
+        <vint>0</vint>
+        <agi>25</agi>
+        <crit_res>10</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>42</itemset>
     </pants>
     <gloves>
         <id>2</id>
@@ -5184,6 +5400,114 @@
         </scroll_suf>
         <itemset>39</itemset>
     </gloves>
+    <gloves>
+        <id>240</id>
+        <name>Gloves</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>496</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>86</str>
+        <vint>0</vint>
+        <agi>9</agi>
+        <crit_res>8</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>40</itemset>
+    </gloves>
+    <gloves>
+        <id>245</id>
+        <name>Gloves</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>496</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>92</str>
+        <vint>0</vint>
+        <agi>20</agi>
+        <crit_res>9</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>41</itemset>
+    </gloves>
+    <gloves>
+        <id>250</id>
+        <name>Gloves</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>413</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>92</str>
+        <vint>0</vint>
+        <agi>55</agi>
+        <crit_res>9</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>42</itemset>
+    </gloves>
     <armors>
         <id>3</id>
         <name>Chain Boleru</name>
@@ -6911,6 +7235,114 @@
             <price>0.0</price>
         </scroll_suf>
         <itemset>39</itemset>
+    </armors>
+    <armors>
+        <id>244</id>
+        <name>Armor</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>689</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>87</str>
+        <vint>0</vint>
+        <agi>10</agi>
+        <crit_res>11</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>40</itemset>
+    </armors>
+    <armors>
+        <id>249</id>
+        <name>Armor</name>
+        <level>60</level>
+        <typ>PLATE</typ>
+        <def>743</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>107</str>
+        <vint>0</vint>
+        <agi>25</agi>
+        <crit_res>12</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>41</itemset>
+    </armors>
+    <armors>
+        <id>254</id>
+        <name>Armor</name>
+        <level>60</level>
+        <typ>PLATE</typ>
+        <def>763</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>107</str>
+        <vint>0</vint>
+        <agi>25</agi>
+        <crit_res>12</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>42</itemset>
     </armors>
     <helms>
         <id>4</id>
@@ -8640,6 +9072,114 @@
         </scroll_suf>
         <itemset>39</itemset>
     </helms>
+    <helms>
+        <id>243</id>
+        <name>Helm</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>583</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>90</str>
+        <vint>0</vint>
+        <agi>9</agi>
+        <crit_res>9</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>40</itemset>
+    </helms>
+    <helms>
+        <id>248</id>
+        <name>Helm</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>598</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>99</str>
+        <vint>0</vint>
+        <agi>18</agi>
+        <crit_res>10</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>41</itemset>
+    </helms>
+    <helms>
+        <id>253</id>
+        <name>Helm</name>
+        <level>60</level>
+        <typ>HEAVY</typ>
+        <def>594</def>
+        <atk>0</atk>
+        <matk>0</matk>
+        <str>99</str>
+        <vint>0</vint>
+        <agi>60</agi>
+        <crit_res>10</crit_res>
+        <stamina>0</stamina>
+        <price>0.0</price>
+        <stars>2</stars>
+        <plus>0</plus>
+        <scroll_pre>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_pre>
+        <scroll_suf>
+            <def>0</def>
+            <atk>0</atk>
+            <matk>0</matk>
+            <str>0</str>
+            <vint>0</vint>
+            <stamina>0</stamina>
+            <price>0.0</price>
+        </scroll_suf>
+        <itemset>42</itemset>
+    </helms>
     <anitemset id="26">
         <name>Heremon</name>
         <boni>
@@ -8670,7 +9210,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="25">
         <name>Black Pearl</name>
@@ -8704,6 +9244,38 @@
         </boni>
         <usefulChars>fiona vella</usefulChars>
     </anitemset>
+    <anitemset id="42">
+        <name>Dancing Blade</name>
+        <boni>
+            <def>99</def>
+            <str>65</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>109</def>
+            <str>94</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>126</def>
+            <str>125</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>137</def>
+            <str>154</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <usefulChars>lynn</usefulChars>
+    </anitemset>
     <anitemset id="27">
         <name>Noblesse</name>
         <boni>
@@ -8734,7 +9306,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="14">
         <name>Everlasting(Evie)</name>
@@ -8798,7 +9370,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="4">
         <name>Shining Will</name>
@@ -8926,7 +9498,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="31">
         <name>Noblese Witch</name>
@@ -9086,7 +9658,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="16">
         <name>Everlasting</name>
@@ -9118,7 +9690,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="18">
         <name>Phantom Heavy</name>
@@ -9150,7 +9722,39 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
+    </anitemset>
+    <anitemset id="41">
+        <name>Oriental Odyssey</name>
+        <boni>
+            <def>99</def>
+            <str>65</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>109</def>
+            <str>94</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>126</def>
+            <str>125</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>137</def>
+            <str>154</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <usefulChars>lynn</usefulChars>
     </anitemset>
     <anitemset id="37">
         <name>Majest Soft</name>
@@ -9246,7 +9850,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="19">
         <name>Royal Guard Light</name>
@@ -9278,7 +9882,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="32">
         <name>Warrior Edge</name>
@@ -9342,7 +9946,7 @@
             <agi>95</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="13">
         <name>Mhara</name>
@@ -9470,7 +10074,7 @@
             <agi>45</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="7">
         <name>Holy Wing</name>
@@ -9534,7 +10138,39 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
+    </anitemset>
+    <anitemset id="40">
+        <name>Soul Loop</name>
+        <boni>
+            <def>150</def>
+            <str>35</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>165</def>
+            <str>50</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>0</atk>
+        </boni>
+        <boni>
+            <def>180</def>
+            <str>70</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>246</atk>
+        </boni>
+        <boni>
+            <def>210</def>
+            <str>90</str>
+            <vint>0</vint>
+            <agi>0</agi>
+            <atk>246</atk>
+        </boni>
+        <usefulChars>lynn</usefulChars>
     </anitemset>
     <anitemset id="10">
         <name>Imperial Guard Hard</name>
@@ -9790,7 +10426,7 @@
             <agi>0</agi>
             <atk>0</atk>
         </boni>
-        <usefulChars>vella fiona lann hurk karok kai</usefulChars>
+        <usefulChars>lynn vella fiona lann hurk karok kai</usefulChars>
     </anitemset>
     <anitemset id="21">
         <name>Phantom Light</name>

@@ -48,9 +48,10 @@ public class StaticImport {
 	private static String hurk = VChar.hurk.toString();
 	private static String karok = VChar.karok.toString();
 	private static String kai = VChar.kai.toString();
+	private static String lynn = VChar.lynn.toString();
 
-	private static String char_melee = vella + " " + fiona + " " + lann + " "
-			+ hurk + " " + karok + " " + kai;
+	private static String char_melee = lynn + " " + vella + " " + fiona + " "
+			+ lann + " " + hurk + " " + karok + " " + kai;
 
 	private static String char_lan_kai = lann + " " + kai;
 	private static String char_lan_kai_kar = lann + " " + hurk + " " + karok
@@ -1511,6 +1512,93 @@ public class StaticImport {
 		helms.add(h);
 	}
 
+	static void generateSoulloop() {
+		String setname = "Soul Loop";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(150, 35, 0));
+		boni.add(new ItemSetBonus(165, 50, 0));
+		ItemSetBonus ab = new ItemSetBonus(180, 70, 0);
+		ab.setAtk(246);
+		boni.add(ab);
+		ItemSetBonus b = new ItemSetBonus(210, 90, 0);
+		b.setAtk(246);
+		boni.add(b);
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(lynn);
+
+		Gloves g = new Gloves(iset, "Gloves", 60, ItemTyp.HEAVY, 496, 86, 0, 9,
+				8);
+		Shoes s = new Shoes(iset, "Shoes", 60, ItemTyp.HEAVY, 524, 88, 0, 10, 8);
+		Pants p = new Pants(iset, "Pants", 60, ItemTyp.HEAVY, 617, 89, 0, 11, 9);
+		Helm h = new Helm(iset, "Helm", 60, ItemTyp.HEAVY, 583, 90, 0, 9, 9);
+		Armor a = new Armor(iset, "Armor", 60, ItemTyp.HEAVY, 689, 87, 0, 10,
+				11);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateOriental() {
+		String setname = "Oriental Odyssey";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(99, 65, 0));
+		boni.add(new ItemSetBonus(109, 94, 0));
+		boni.add(new ItemSetBonus(126, 125, 0));
+		boni.add(new ItemSetBonus(137, 154, 0));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(lynn);
+
+		Gloves g = new Gloves(iset, "Gloves", 60, ItemTyp.HEAVY, 496, 92, 0,
+				20, 9);
+		Shoes s = new Shoes(iset, "Shoes", 60, ItemTyp.HEAVY, 530, 92, 0, 20, 9);
+		Pants p = new Pants(iset, "Pants", 60, ItemTyp.PLATE, 657, 110, 0, 25,
+				10);
+		Helm h = new Helm(iset, "Helm", 60, ItemTyp.HEAVY, 598, 99, 0, 18, 10);
+		Armor a = new Armor(iset, "Armor", 60, ItemTyp.PLATE, 743, 107, 0, 25,
+				12);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateDancing() {
+		String setname = "Dancing Blade";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(99, 65, 0));
+		boni.add(new ItemSetBonus(109, 94, 0));
+		boni.add(new ItemSetBonus(126, 125, 0));
+		boni.add(new ItemSetBonus(137, 154, 0));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(lynn);
+
+		Gloves g = new Gloves(iset, "Gloves", 60, ItemTyp.HEAVY, 413, 92, 0,
+				55, 9);
+		Shoes s = new Shoes(iset, "Shoes", 60, ItemTyp.PLATE, 650, 92, 0, 20, 9);
+		Pants p = new Pants(iset, "Pants", 60, ItemTyp.PLATE, 677, 110, 0, 25,
+				10);
+		Helm h = new Helm(iset, "Helm", 60, ItemTyp.HEAVY, 594, 99, 0, 60, 10);
+		Armor a = new Armor(iset, "Armor", 60, ItemTyp.PLATE, 763, 107, 0, 25,
+				12);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
 	public static void staticImAndExport() {
 		// 60 sets
 		generateWonderland();
@@ -1562,6 +1650,10 @@ public class StaticImport {
 		generateArmageddon();
 		generateArmageddonWitch();
 
+		// Lynn
+		generateSoulloop();
+		generateOriental();
+		generateDancing();
 	}
 
 	public static void staticExportSets() {

@@ -70,12 +70,12 @@ public class Main {
 	@Option(name = "-results", aliases = { "-r" }, usage = "the number of results, default: 30")
 	private int results = 30;
 
-	@Option(name = "-atk", usage = "maximum atk the combo may have, default: None")
-	private int ATK = Integer.MAX_VALUE;
+	@Option(name = "-atk", usage = "minimum atk the combo must have, default: None")
+	private int ATK = Integer.MIN_VALUE;
 	
-	@Option(name = "-matk", usage = "maximum matk the combo may have, default: None")
-	private int MATK = Integer.MAX_VALUE;
-	
+	@Option(name = "-matk", usage = "minimum matk the combo must have, default: None")
+	private int MATK = Integer.MIN_VALUE;
+		
 	@Option(name = "-min", usage = "minimum level of items to include, default: 50")
 	private int min = 50;
 
@@ -117,7 +117,7 @@ public class Main {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println("ALPHA 1.9 - 01.09.13 - by Nekuro/Orikuro");
+		System.out.println("ALPHA 2.0 - 03.07.14 - by Nekuro/Orikuro");
 
 		if (Arrays.asList(args).contains("-export")) {
 			System.out.println("Exporting static info then closing");

@@ -553,7 +553,7 @@
         <agi>37</agi>
         <crit_res>8</crit_res>
         <stamina>4</stamina>
-        <price>1.2</price>
+        <price>3.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1057,7 +1057,7 @@
         <agi>73</agi>
         <crit_res>14</crit_res>
         <stamina>5</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1093,7 +1093,7 @@
         <agi>49</agi>
         <crit_res>13</crit_res>
         <stamina>5</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1129,7 +1129,7 @@
         <agi>45</agi>
         <crit_res>12</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1165,7 +1165,7 @@
         <agi>67</agi>
         <crit_res>13</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1201,7 +1201,7 @@
         <agi>70</agi>
         <crit_res>14</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1237,7 +1237,7 @@
         <agi>66</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1273,7 +1273,7 @@
         <agi>49</agi>
         <crit_res>12</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1309,7 +1309,7 @@
         <agi>67</agi>
         <crit_res>13</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1345,7 +1345,7 @@
         <agi>63</agi>
         <crit_res>14</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -1381,7 +1381,7 @@
         <agi>54</agi>
         <crit_res>13</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -2389,7 +2389,7 @@
         <agi>41</agi>
         <crit_res>10</crit_res>
         <stamina>6</stamina>
-        <price>2.0</price>
+        <price>4.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -2893,7 +2893,7 @@
         <agi>57</agi>
         <crit_res>17</crit_res>
         <stamina>7</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -2929,7 +2929,7 @@
         <agi>53</agi>
         <crit_res>16</crit_res>
         <stamina>7</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -2965,7 +2965,7 @@
         <agi>49</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3001,7 +3001,7 @@
         <agi>52</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3037,7 +3037,7 @@
         <agi>60</agi>
         <crit_res>18</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3073,7 +3073,7 @@
         <agi>53</agi>
         <crit_res>17</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3109,7 +3109,7 @@
         <agi>54</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3145,7 +3145,7 @@
         <agi>52</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3181,7 +3181,7 @@
         <agi>48</agi>
         <crit_res>17</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -3217,7 +3217,7 @@
         <agi>59</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4225,7 +4225,7 @@
         <agi>37</agi>
         <crit_res>8</crit_res>
         <stamina>4</stamina>
-        <price>1.5</price>
+        <price>3.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4729,7 +4729,7 @@
         <agi>68</agi>
         <crit_res>14</crit_res>
         <stamina>5</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4765,7 +4765,7 @@
         <agi>49</agi>
         <crit_res>13</crit_res>
         <stamina>5</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4801,7 +4801,7 @@
         <agi>45</agi>
         <crit_res>12</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4837,7 +4837,7 @@
         <agi>62</agi>
         <crit_res>12</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4873,7 +4873,7 @@
         <agi>66</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4909,7 +4909,7 @@
         <agi>60</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4945,7 +4945,7 @@
         <agi>49</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -4981,7 +4981,7 @@
         <agi>62</agi>
         <crit_res>13</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -5017,7 +5017,7 @@
         <agi>58</agi>
         <crit_res>14</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -5053,7 +5053,7 @@
         <agi>54</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6061,7 +6061,7 @@
         <agi>51</agi>
         <crit_res>12</crit_res>
         <stamina>6</stamina>
-        <price>1.1</price>
+        <price>4.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6565,7 +6565,7 @@
         <agi>57</agi>
         <crit_res>18</crit_res>
         <stamina>7</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6601,7 +6601,7 @@
         <agi>55</agi>
         <crit_res>17</crit_res>
         <stamina>7</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6637,7 +6637,7 @@
         <agi>50</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6673,7 +6673,7 @@
         <agi>52</agi>
         <crit_res>17</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6709,7 +6709,7 @@
         <agi>55</agi>
         <crit_res>20</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6745,7 +6745,7 @@
         <agi>49</agi>
         <crit_res>19</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6781,7 +6781,7 @@
         <agi>55</agi>
         <crit_res>18</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6817,7 +6817,7 @@
         <agi>52</agi>
         <crit_res>17</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6853,7 +6853,7 @@
         <agi>48</agi>
         <crit_res>18</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -6889,7 +6889,7 @@
         <agi>61</agi>
         <crit_res>18</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -7897,7 +7897,7 @@
         <agi>43</agi>
         <crit_res>9</crit_res>
         <stamina>5</stamina>
-        <price>1.5</price>
+        <price>3.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8401,7 +8401,7 @@
         <agi>63</agi>
         <crit_res>15</crit_res>
         <stamina>6</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8437,7 +8437,7 @@
         <agi>50</agi>
         <crit_res>15</crit_res>
         <stamina>6</stamina>
-        <price>33.0</price>
+        <price>9.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8473,7 +8473,7 @@
         <agi>46</agi>
         <crit_res>14</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8509,7 +8509,7 @@
         <agi>58</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8545,7 +8545,7 @@
         <agi>60</agi>
         <crit_res>17</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8581,7 +8581,7 @@
         <agi>55</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8617,7 +8617,7 @@
         <agi>50</agi>
         <crit_res>14</crit_res>
         <stamina>0</stamina>
-        <price>20.0</price>
+        <price>13.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8653,7 +8653,7 @@
         <agi>58</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8689,7 +8689,7 @@
         <agi>54</agi>
         <crit_res>16</crit_res>
         <stamina>0</stamina>
-        <price>40.0</price>
+        <price>23.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>
@@ -8725,7 +8725,7 @@
         <agi>55</agi>
         <crit_res>15</crit_res>
         <stamina>0</stamina>
-        <price>27.0</price>
+        <price>18.0</price>
         <stars>2</stars>
         <plus>0</plus>
         <scroll_pre>

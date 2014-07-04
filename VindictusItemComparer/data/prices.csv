@@ -74,11 +74,11 @@ id;price;Typ;Set;Itemname;Level;Stars;Useful;Armortype
 72;0,3;Shoes;Holy Wing;Shoes;60;2;fiona;PLATE
 73;0,04;Armor;Holy Wing;Armor;60;2;fiona;PLATE
 74;0,1;Pants;Holy Wing;Pants;60;2;fiona;PLATE
-75;1,5;Gloves;Champion;Gloves;70;2;vella fiona lann hurk karok kai;LIGHT
-76;1,2;Shoes;Champion;Shoes;70;2;vella fiona lann hurk karok kai;LIGHT
-77;2;Pants;Champion;Pants;70;2;vella fiona lann hurk karok kai;LIGHT
-78;1,5;Helm;Champion;Helm;70;2;vella fiona lann hurk karok kai;LIGHT
-79;1,1;Armor;Champion;Armor;70;2;vella fiona lann hurk karok kai;LIGHT
+75;3;Gloves;Champion;Gloves;70;2;vella fiona lann hurk karok kai;LIGHT
+76;3;Shoes;Champion;Shoes;70;2;vella fiona lann hurk karok kai;LIGHT
+77;4;Pants;Champion;Pants;70;2;vella fiona lann hurk karok kai;LIGHT
+78;3;Helm;Champion;Helm;70;2;vella fiona lann hurk karok kai;LIGHT
+79;4;Armor;Champion;Armor;70;2;vella fiona lann hurk karok kai;LIGHT
 80;1,5;Gloves;Champion Soft;Gloves;70;2;evie;LIGHT
 81;1,2;Shoes;Champion Soft;Shoes;70;2;evie;LIGHT
 82;2;Pants;Champion Soft;Pants;70;2;evie;LIGHT
@@ -144,56 +144,56 @@ id;price;Typ;Set;Itemname;Level;Stars;Useful;Armortype
 142;2,5;Pants;Phantom Light;Pants;70;2;evie;LIGHT
 143;0,3;Helm;Phantom Light;Helm;70;2;evie;LIGHT
 144;0,3;Armor;Phantom Light;Armor;70;2;evie;LIGHT
-145;33;Gloves;Skeleton;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
-146;33;Shoes;Skeleton;Shoes;80;2;vella fiona lann hurk karok kai;PLATE
-147;33;Pants;Skeleton;Pants;80;2;vella fiona lann hurk karok kai;PLATE
-148;33;Helm;Skeleton;Helm;80;2;vella fiona lann hurk karok kai;PLATE
-149;33;Armor;Skeleton;Armor;80;2;vella fiona lann hurk karok kai;PLATE
-150;33;Gloves;Skeleton Witch;Gloves;80;2;evie;PLATE
-151;33;Shoes;Skeleton Witch;Shoes;80;2;evie;PLATE
-152;33;Pants;Skeleton Witch;Pants;80;2;evie;PLATE
-153;33;Helm;Skeleton Witch;Helm;80;2;evie;PLATE
-154;33;Armor;Skeleton Witch;Armor;80;2;evie;PLATE
-155;40;Shoes;Classic Black Pearl;Boots;80;2;evie;HEAVY
-156;40;Gloves;Classic Black Pearl;Gauntlets;80;2;evie;LIGHT
-157;40;Pants;Classic Black Pearl;Greaves;80;2;evie;LIGHT
-158;40;Helm;Classic Black Pearl;Helmet;80;2;evie;LIGHT
-159;40;Armor;Classic Black Pearl;Mail;80;2;evie;LIGHT
-160;40;Shoes;Black Pearl;Boots;80;2;fiona vella;LIGHT
-161;40;Gloves;Black Pearl;Gloves;80;2;fiona vella;HEAVY
-162;40;Pants;Black Pearl;Pants;80;2;fiona vella;LIGHT
-163;40;Helm;Black Pearl;Helmet;80;2;fiona vella;LIGHT
-164;40;Armor;Black Pearl;Armor;80;2;fiona vella;LIGHT
-165;20;Shoes;Heremon;Boots;80;2;vella fiona lann hurk karok kai;HEAVY
-166;20;Armor;Heremon;Armor;80;2;vella fiona lann hurk karok kai;PLATE
-167;20;Gloves;Heremon;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
-168;20;Pants;Heremon;Pants;80;2;vella fiona lann hurk karok kai;HEAVY
-169;20;Helm;Heremon;Helmet;80;2;vella fiona lann hurk karok kai;PLATE
-170;27;Shoes;Noblesse;Boots;80;2;vella fiona lann hurk karok kai;PLATE
-171;27;Gloves;Noblesse;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
-172;27;Pants;Noblesse;Pants;80;2;vella fiona lann hurk karok kai;HEAVY
-173;27;Helm;Noblesse;Helmet;80;2;vella fiona lann hurk karok kai;PLATE
-174;27;Armor;Noblesse;Armor;80;2;vella fiona lann hurk karok kai;HEAVY
-175;20;Shoes;Heremon Soft;Shoes;80;2;evie;LIGHT
-176;20;Armor;Heremon Soft;Armor;80;2;evie;HEAVY
-177;20;Gloves;Heremon Soft;Gloves;80;2;evie;HEAVY
-178;20;Pants;Heremon Soft;Pants;80;2;evie;LIGHT
-179;20;Helm;Heremon Soft;Helm;80;2;evie;LIGHT
-180;40;Shoes;Leather Pirate;Shoes;80;2;lann kai;HEAVY
-181;40;Gloves;Leather Pirate;Gloves;80;2;lann kai;HEAVY
-182;40;Pants;Leather Pirate;Pants;80;2;lann kai;LIGHT
-183;40;Helm;Leather Pirate;Helm;80;2;lann kai;LIGHT
-184;40;Armor;Leather Pirate;Armor;80;2;lann kai;LIGHT
-185;40;Shoes;Pirate;Shoes;80;2;lann hurk karok kai;HEAVY
-186;40;Gloves;Pirate;Gloves;80;2;lann hurk karok kai;HEAVY
-187;40;Pants;Pirate;Pants;80;2;lann hurk karok kai;HEAVY
-188;40;Helm;Pirate;Helm;80;2;lann hurk karok kai;LIGHT
-189;40;Armor;Pirate;Armor;80;2;lann hurk karok kai;LIGHT
-190;27;Shoes;Noblese Witch;Shoes;80;2;evie;PLATE
-191;27;Gloves;Noblese Witch;Gloves;80;2;evie;PLATE
-192;27;Pants;Noblese Witch;Pants;80;2;evie;HEAVY
-193;27;Helm;Noblese Witch;Helm;80;2;evie;PLATE
-194;27;Armor;Noblese Witch;Armor;80;2;evie;HEAVY
+145;9;Gloves;Skeleton;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+146;9;Shoes;Skeleton;Shoes;80;2;vella fiona lann hurk karok kai;PLATE
+147;9;Pants;Skeleton;Pants;80;2;vella fiona lann hurk karok kai;PLATE
+148;9;Helm;Skeleton;Helm;80;2;vella fiona lann hurk karok kai;PLATE
+149;9;Armor;Skeleton;Armor;80;2;vella fiona lann hurk karok kai;PLATE
+150;9;Gloves;Skeleton Witch;Gloves;80;2;evie;PLATE
+151;9;Shoes;Skeleton Witch;Shoes;80;2;evie;PLATE
+152;9;Pants;Skeleton Witch;Pants;80;2;evie;PLATE
+153;9;Helm;Skeleton Witch;Helm;80;2;evie;PLATE
+154;9;Armor;Skeleton Witch;Armor;80;2;evie;PLATE
+155;23;Shoes;Classic Black Pearl;Boots;80;2;evie;HEAVY
+156;23;Gloves;Classic Black Pearl;Gauntlets;80;2;evie;LIGHT
+157;23;Pants;Classic Black Pearl;Greaves;80;2;evie;LIGHT
+158;23;Helm;Classic Black Pearl;Helmet;80;2;evie;LIGHT
+159;23;Armor;Classic Black Pearl;Mail;80;2;evie;LIGHT
+160;23;Shoes;Black Pearl;Boots;80;2;fiona vella;LIGHT
+161;23;Gloves;Black Pearl;Gloves;80;2;fiona vella;HEAVY
+162;23;Pants;Black Pearl;Pants;80;2;fiona vella;LIGHT
+163;23;Helm;Black Pearl;Helmet;80;2;fiona vella;LIGHT
+164;23;Armor;Black Pearl;Armor;80;2;fiona vella;LIGHT
+165;13;Shoes;Heremon;Boots;80;2;vella fiona lann hurk karok kai;HEAVY
+166;13;Armor;Heremon;Armor;80;2;vella fiona lann hurk karok kai;PLATE
+167;13;Gloves;Heremon;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+168;13;Pants;Heremon;Pants;80;2;vella fiona lann hurk karok kai;HEAVY
+169;13;Helm;Heremon;Helmet;80;2;vella fiona lann hurk karok kai;PLATE
+170;18;Shoes;Noblesse;Boots;80;2;vella fiona lann hurk karok kai;PLATE
+171;18;Gloves;Noblesse;Gloves;80;2;vella fiona lann hurk karok kai;PLATE
+172;18;Pants;Noblesse;Pants;80;2;vella fiona lann hurk karok kai;HEAVY
+173;18;Helm;Noblesse;Helmet;80;2;vella fiona lann hurk karok kai;PLATE
+174;18;Armor;Noblesse;Armor;80;2;vella fiona lann hurk karok kai;HEAVY
+175;13;Shoes;Heremon Soft;Shoes;80;2;evie;LIGHT
+176;13;Armor;Heremon Soft;Armor;80;2;evie;HEAVY
+177;13;Gloves;Heremon Soft;Gloves;80;2;evie;HEAVY
+178;13;Pants;Heremon Soft;Pants;80;2;evie;LIGHT
+179;13;Helm;Heremon Soft;Helm;80;2;evie;LIGHT
+180;23;Shoes;Leather Pirate;Shoes;80;2;lann kai;HEAVY
+181;23;Gloves;Leather Pirate;Gloves;80;2;lann kai;HEAVY
+182;23;Pants;Leather Pirate;Pants;80;2;lann kai;LIGHT
+183;23;Helm;Leather Pirate;Helm;80;2;lann kai;LIGHT
+184;23;Armor;Leather Pirate;Armor;80;2;lann kai;LIGHT
+185;23;Shoes;Pirate;Shoes;80;2;lann hurk karok kai;HEAVY
+186;23;Gloves;Pirate;Gloves;80;2;lann hurk karok kai;HEAVY
+187;23;Pants;Pirate;Pants;80;2;lann hurk karok kai;HEAVY
+188;23;Helm;Pirate;Helm;80;2;lann hurk karok kai;LIGHT
+189;23;Armor;Pirate;Armor;80;2;lann hurk karok kai;LIGHT
+190;18;Shoes;Noblese Witch;Shoes;80;2;evie;PLATE
+191;18;Gloves;Noblese Witch;Gloves;80;2;evie;PLATE
+192;18;Pants;Noblese Witch;Pants;80;2;evie;HEAVY
+193;18;Helm;Noblese Witch;Helm;80;2;evie;PLATE
+194;18;Armor;Noblese Witch;Armor;80;2;evie;HEAVY
 195;0,09;Gloves;Warrior Edge;Gloves;54;2;hurk;PLATE
 196;0,05;Shoes;Warrior Edge;Shoes;54;2;hurk;PLATE
 197;0,1;Pants;Warrior Edge;Pants;54;2;hurk;PLATE

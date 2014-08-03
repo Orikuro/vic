@@ -41,7 +41,6 @@ public class StaticImport {
 	private static HashSet<String> sets = new HashSet<>();
 	private static HashSet<ItemSet> isets = new HashSet<>();
 
-	private static String evie = VChar.evie.toString();
 	private static String vella = VChar.vella.toString();
 	private static String fiona = VChar.fiona.toString();
 	private static String lann = VChar.lann.toString();
@@ -49,6 +48,9 @@ public class StaticImport {
 	private static String karok = VChar.karok.toString();
 	private static String kai = VChar.kai.toString();
 	private static String lynn = VChar.lynn.toString();
+	private static String arisha = VChar.arisha.toString();
+
+	private static String magic = VChar.evie.toString() + " " + arisha;
 
 	private static String char_melee = lynn + " " + vella + " " + fiona + " "
 			+ lann + " " + hurk + " " + karok + " " + kai;
@@ -72,7 +74,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(160, 27, 125, 0, 0));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		String name = "Walkers";
 		int def = 267;
@@ -161,7 +163,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(330, 45, 160));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Gloves g = new Gloves(iset, "Armguard", 70, ItemTyp.LIGHT, 403, 9, 114,
 				29, 10);
@@ -198,7 +200,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(360, 0, 180));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Shoes s = new Shoes(iset, "Boots", 80, ItemTyp.HEAVY, 737, 29, 125, 45,
 				12);
@@ -229,7 +231,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(397, 41, 143));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Armor a = new Armor(iset, "Armor", 70, ItemTyp.LIGHT, 601, 23, 143, 37,
 				14);
@@ -504,7 +506,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(380, 0, 175));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Shoes s = new Shoes(iset, "Shoes", 80, ItemTyp.LIGHT, 774, 28, 123, 49,
 				12);
@@ -595,7 +597,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(384, 0, 175));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Shoes s = new Shoes(iset, "Shoes", 80, ItemTyp.PLATE, 875, 31, 128, 54,
 				13);
@@ -625,7 +627,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(387, 0, 133));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Shoes s = new Shoes(iset, "Shoes", 70, ItemTyp.LIGHT, 408, 0, 103, 22,
 				10);
@@ -655,7 +657,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(397, 41, 143));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Shoes s = new Shoes(iset, "Shoes", 70, ItemTyp.LIGHT, 424, 0, 103, 27,
 				8);
@@ -1076,7 +1078,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(330, 45, 160));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Shoes s = new Shoes(iset, "Shoes", 70, ItemTyp.LIGHT, 395, 0, 113, 22,
 				11);
@@ -1134,7 +1136,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(378, 0, 184));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Gloves g = new Gloves(iset, "Gloves", 80, ItemTyp.PLATE, 759, 33, 127,
 				49, 13);
@@ -1204,7 +1206,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(330, 45, 160));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Gloves g = new Gloves(iset, "Gloves", 70, ItemTyp.LIGHT, 343, 8, 109,
 				26, 7);
@@ -1435,7 +1437,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(387, 0, 135));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Gloves g = new Gloves(iset, "Gloves", 70, ItemTyp.LIGHT, 369, 0, 114,
 				19, 7);
@@ -1493,7 +1495,7 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(434, 0, 170));
 
 		ItemSet iset = new ItemSet(setname, boni);
-		iset.setUsefulChars(evie);
+		iset.setUsefulChars(magic);
 
 		Gloves g = new Gloves(iset, "Gloves", 80, ItemTyp.HEAVY, 885, 25, 160,
 				43, 13);

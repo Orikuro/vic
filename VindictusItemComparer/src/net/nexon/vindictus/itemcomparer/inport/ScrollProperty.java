@@ -13,6 +13,7 @@ public class ScrollProperty {
 	private double senti = 3.0;
 	private double tut = 3.0;
 	private double res = 0.4;
+	private double master = 0.5;
 
 	public ScrollProperty() {
 		Properties props = new Properties();
@@ -28,6 +29,7 @@ public class ScrollProperty {
 			res = new Double(props.getProperty("resistant"));
 			armadi = new Double(props.getProperty("armadilo"));
 			tut = new Double(props.getProperty("tutelary"));
+			master = new Double(props.getProperty("master"));
 			
 		} catch (Exception e) {
 			System.err.println("Error reading scrolls.properties, using defaults");
@@ -56,6 +58,11 @@ public class ScrollProperty {
 
 	public double getRes() {
 		return res;
+	}
+
+	public double getMaster() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

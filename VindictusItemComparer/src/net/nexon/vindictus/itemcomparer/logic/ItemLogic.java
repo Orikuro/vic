@@ -33,6 +33,8 @@ public class ItemLogic implements IItemLocal {
 			0, SCRPROP.getRes());
 	private static Scroll_Suf armadil = new Scroll_Suf(5, "Armadillo", 336, 0,
 			0, SCRPROP.getArmadi());
+	private static Scroll_Suf master = new Scroll_Suf("Master", 0, 0,
+			0, SCRPROP.getMaster());
 
 	private List<Shoes> shoes_changed = new ArrayList<>();
 	private List<Pants> pants_changed = new ArrayList<>();
@@ -1012,6 +1014,21 @@ public class ItemLogic implements IItemLocal {
 		Collections.sort(aa, ilcomp);
 		Collections.sort(hh, ilcomp);
 
+	}
+
+	public void overrideMaster(Items items) {
+		
+		HashSet<Armor> as = new HashSet<>();
+		
+		for (Armor x : items.getArmors()) {
+
+			x.setScroll_suf(master);
+		}
+		
+		as.addAll(items.getArmors());
+		
+		List<Armor> newarmors = new ArrayList<>(as);
+		items.setArmors(newarmors);
 	}
 
 }

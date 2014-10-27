@@ -7,11 +7,12 @@ Current Phase: Alpha (2.0)
 ------
 **2DOS:**   
 Documentation   
-New Model   
+GUI Client Starter
 XML GUI Client
 DRY-Refaktoring
 
 **Updates**  
+October 2014 - Arisha added (her sets are still missing though...)
 June 2014 - Lynn added
 
 Howto install (build-info):

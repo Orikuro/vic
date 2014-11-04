@@ -1601,6 +1601,69 @@ public class StaticImport {
 		helms.add(h);
 	}
 
+	static void generateApex() {
+		String setname = "Apex Senior";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(116, 0, 0));
+		boni.add(new ItemSetBonus(128, 0, 0));
+		boni.add(new ItemSetBonus(148, 0, 82));
+		boni.add(new ItemSetBonus(160, 0, 124));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(arisha);
+
+		Gloves g = new Gloves(iset, "Gloves", 60, ItemTyp.CLOTH, 215, 0, 114,
+				37, 9);
+		Shoes s = new Shoes(iset, "Shoes", 60, ItemTyp.CLOTH, 233, 0, 121, 38,
+				11);
+		Pants p = new Pants(iset, "Pants", 60, ItemTyp.CLOTH, 298, 0, 142, 42,
+				11);
+		Helm h = new Helm(iset, "Helm", 60, ItemTyp.CLOTH, 256, 0, 130, 44, 9);
+		Armor a = new Armor(iset, "Armor", 60, ItemTyp.CLOTH, 331, 0, 140, 45,
+				12);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
+	static void generateSilverFox() {
+		String setname = "Silver Fox";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(90, 0, 0));
+		boni.add(new ItemSetBonus(145, 0, 0));
+		boni.add(new ItemSetBonus(180, 0, 84));
+		boni.add(new ItemSetBonus(240, 0, 125));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(arisha);
+
+		Gloves g = new Gloves(iset, "Gloves", 60, ItemTyp.HEAVY, 335, 13, 86,
+				20, 10);
+		Shoes s = new Shoes(iset, "Shoes", 60, ItemTyp.HEAVY, 322, 12, 86, 19,
+				10);
+		Pants p = new Pants(iset, "Pants", 60, ItemTyp.LIGHT, 512, 16, 98, 23,
+				11);
+		Helm h = new Helm(iset, "Helm", 60, ItemTyp.HEAVY, 452, 15, 86, 22, 12);
+		Armor a = new Armor(iset, "Armor", 60, ItemTyp.HEAVY, 577, 15, 94, 21,
+				13);
+		g.setStamina(2);
+		s.setStamina(2);
+		p.setStamina(3);
+		h.setStamina(2);
+		a.setStamina(3);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
 	public static void staticImAndExport() {
 		// 60 sets
 		generateWonderland();
@@ -1656,6 +1719,10 @@ public class StaticImport {
 		generateSoulloop();
 		generateOriental();
 		generateDancing();
+		
+		// arisha
+		generateApex();
+		generateSilverFox();
 	}
 
 	public static void staticExportSets() {

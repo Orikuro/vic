@@ -19,6 +19,8 @@ import org.kohsuke.args4j.Option;
 
 public class Main {
 
+	public static final String VERSION = "ALPHA 2.1 - 05.11.14 - by Nekuro/Orikuro - GUI and Arisha Update";
+	
 	private enum VSort {
 		def, atk, matk, sta, staatk, stamatk, cheapdef, cheapatk, cheapmatk, cheapsta
 	};
@@ -120,8 +122,12 @@ public class Main {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println("ALPHA 2.0 - 03.07.14 - by Nekuro/Orikuro");
+		System.out.println(VERSION);
 
+		if (args == null || args.length <1){
+			GUI.main(args);
+		}
+		
 		if (Arrays.asList(args).contains("-export")) {
 			System.out.println("Exporting static info then closing");
 			StaticImport.main(null);

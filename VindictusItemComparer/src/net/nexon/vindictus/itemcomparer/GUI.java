@@ -1,0 +1,434 @@
+package net.nexon.vindictus.itemcomparer;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractListModel;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.JSlider;
+
+public class GUI extends JFrame {
+
+	private JPanel contentPane;
+
+	private final static String VERSION = "V 0.1";
+	private JTextField minatk_Text;
+	private JTextField ignore_Text;
+	private JTextField result_Text;
+	private JTextField price_Text;
+	private JList char_List;
+	private JList sort_List;
+	private JList dup_List;
+	private JList minlvl_List;
+	private JList maxlvl_List;
+	private JList smin_List;
+	private JList smax_List;
+	private JList cpu_List;
+	private JCheckBox keep_Check;
+	private JCheckBox noinfo_Check;
+	private JSlider plus_Slider;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI frame = new GUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	private void calc() {
+
+		String output = "-c " + char_List.getSelectedValue() + " -s "
+				+ sort_List.getSelectedValue() + " -min "
+				+ minlvl_List.getSelectedValue() + " -max "
+				+ maxlvl_List.getSelectedValue() + " -smin "
+				+ smin_List.getSelectedValue() + " -smax "
+				+ smax_List.getSelectedValue()+ " -plus "+plus_Slider.getValue();
+
+		String cpu = "";
+		String dup = "";
+
+		if (dup_List.getSelectedIndex() > 0) {
+			dup = " -dup " + dup_List.getSelectedValue();
+		}
+
+		if (cpu_List.getSelectedIndex() > 0) {
+			cpu = " -f " + cpu_List.getSelectedValue();
+		}
+		output += dup + cpu;
+
+		if (keep_Check.isSelected()) {
+			output += " -keep";
+		}
+
+		if (noinfo_Check.isSelected()) {
+			output += " -noinfo";
+		}
+
+		if (minatk_Text.getText().length() > 0) {
+			output += " -atk " + minatk_Text.getText();
+		}
+		if (ignore_Text.getText().length() > 0) {
+			output += " -i " + ignore_Text.getText();
+		}
+		if (price_Text.getText().length() > 0) {
+			output += " -price " + price_Text.getText();
+		}
+		if (result_Text.getText().length() > 0) {
+			output += " -r " + result_Text.getText();
+		}
+
+		System.out.println(output);
+
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public GUI() {
+
+		setTitle("VIC Starter GUI");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1280, 720);
+
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+
+		JMenuItem mntmAbout = new JMenuItem("About");
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				JOptionPane.showMessageDialog(new JFrame(), VERSION);
+
+			}
+		});
+		menuBar.add(mntmAbout);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+
+		JSplitPane splitPane = new JSplitPane();
+		contentPane.add(splitPane, BorderLayout.CENTER);
+
+		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setResizeWeight(0.9);
+		splitPane_1.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		splitPane.setRightComponent(splitPane_1);
+
+		JButton btnCalc = new JButton("Calc");
+		btnCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				calc();
+			}
+		});
+		btnCalc.setFont(new Font("Tahoma", Font.BOLD, 24));
+		splitPane_1.setRightComponent(btnCalc);
+
+		JPanel panel = new JPanel();
+		splitPane_1.setLeftComponent(panel);
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "Main", TitledBorder.LEADING,
+				TitledBorder.TOP, null, null));
+		panel.add(panel_1);
+
+		char_List = new JList();
+		panel_1.add(char_List);
+		char_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		char_List.setToolTipText("Character");
+		char_List.setModel(new AbstractListModel() {
+			String[] values = new String[] { "arisha", "evie", "fiona", "hurk",
+					"kai", "karok", "lann", "lynn", "vella" };
+
+			public int getSize() {
+				return values.length;
+			}
+
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		char_List.setSelectedIndex(0);
+
+		sort_List = new JList();
+		panel_1.add(sort_List);
+		sort_List.setToolTipText("Sort");
+		sort_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		sort_List.setModel(new AbstractListModel() {
+			String[] values = new String[] {"atk", "matk", "def", "sta", "staatk", "stamatk", "cheapdef", "cheapatk", "cheapmatk", "cheapsta"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		sort_List.setSelectedIndex(1);
+		
+		JPanel panel_13 = new JPanel();
+		panel_1.add(panel_13);
+		panel_13.setLayout(new BoxLayout(panel_13, BoxLayout.Y_AXIS));
+
+		JPanel panel_8 = new JPanel();
+		panel_13.add(panel_8);
+		panel_8.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Duplicate",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
+
+		dup_List = new JList();
+		panel_8.add(dup_List);
+		dup_List.setToolTipText("Duplicate Sets with these presets.");
+		dup_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		dup_List.setModel(new AbstractListModel() {
+			String[] values = new String[] {"", "force", "enthu", "tutsenti", "tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu", "ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		dup_List.setSelectedIndex(0);
+		
+		JPanel panel_15 = new JPanel();
+		panel_13.add(panel_15);
+
+		keep_Check = new JCheckBox("keep");
+		panel_15.add(keep_Check);
+		keep_Check.setToolTipText("keep overwritten sets");
+		
+		JCheckBox master_Check = new JCheckBox("master");
+		panel_15.add(master_Check);
+		master_Check.setToolTipText("keep overwritten sets");
+		
+		plus_Slider = new JSlider();
+		plus_Slider.setToolTipText("Upgrade level");
+		plus_Slider.setPaintTicks(true);
+		plus_Slider.setOrientation(SwingConstants.VERTICAL);
+		plus_Slider.setSnapToTicks(true);
+		plus_Slider.setValue(0);
+		plus_Slider.setPaintLabels(true);
+		plus_Slider.setMajorTickSpacing(1);
+		plus_Slider.setMaximum(15);
+		panel_1.add(plus_Slider);
+
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new TitledBorder(null, "Restrictions",
+				TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.add(panel_2);
+
+		JPanel panel_7 = new JPanel();
+		panel_7.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Level",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
+		panel_2.add(panel_7);
+
+		minlvl_List = new JList();
+		panel_7.add(minlvl_List);
+
+		minlvl_List.setToolTipText("min Level");
+		minlvl_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		minlvl_List.setModel(new AbstractListModel() {
+			String[] values = new String[] { "50", "60", "70", "80", "90",
+					"100" };
+
+			public int getSize() {
+				return values.length;
+			}
+
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		minlvl_List.setSelectedIndex(0);
+		
+		JLabel label = new JLabel("-");
+		panel_7.add(label);
+
+		maxlvl_List = new JList();
+		panel_7.add(maxlvl_List);
+		maxlvl_List.setToolTipText("max Level");
+		maxlvl_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		maxlvl_List.setModel(new AbstractListModel() {
+			String[] values = new String[] { "50", "60", "70", "80", "90",
+					"100" };
+
+			public int getSize() {
+				return values.length;
+			}
+
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		maxlvl_List.setSelectedIndex(3);
+
+		JPanel panel_5 = new JPanel();
+		panel_5.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Stars",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
+		panel_2.add(panel_5);
+
+		smin_List = new JList();
+		panel_5.add(smin_List);
+		smin_List.setToolTipText("min Stars");
+		smin_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		smin_List.setModel(new AbstractListModel() {
+			String[] values = new String[] { "1", "2", "3", "4", "5" };
+
+			public int getSize() {
+				return values.length;
+			}
+
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		smin_List.setSelectedIndex(1);
+		
+		JLabel lblNewLabel = new JLabel("-");
+		panel_5.add(lblNewLabel);
+
+		smax_List = new JList();
+		panel_5.add(smax_List);
+		smax_List.setToolTipText("max Stars");
+		smax_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		smax_List.setModel(new AbstractListModel() {
+			String[] values = new String[] { "1", "2", "3", "4", "5" };
+
+			public int getSize() {
+				return values.length;
+			}
+
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		smax_List.setSelectedIndex(4);
+		
+		JPanel panel_12 = new JPanel();
+		panel_2.add(panel_12);
+		panel_12.setLayout(new BoxLayout(panel_12, BoxLayout.Y_AXIS));
+
+		JPanel panel_10 = new JPanel();
+		panel_12.add(panel_10);
+		panel_10.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Min (M)Atk",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
+
+		minatk_Text = new JTextField();
+		minatk_Text.setToolTipText("Minimum (M)Atk the sets must have");
+		panel_10.add(minatk_Text);
+		minatk_Text.setColumns(5);
+
+		JPanel panel_11 = new JPanel();
+		panel_12.add(panel_11);
+		panel_11.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Price",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
+
+		price_Text = new JTextField();
+		price_Text.setToolTipText("Maximum price (10 = 10million)");
+		price_Text.setColumns(5);
+		panel_11.add(price_Text);
+
+		JPanel panel_4 = new JPanel();
+		panel_12.add(panel_4);
+		panel_4.setBorder(new TitledBorder(null, "Ignore",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, null));
+
+		ignore_Text = new JTextField();
+		panel_4.add(ignore_Text);
+		ignore_Text.setToolTipText("Sets containing those words will be ignored. Use comma for more words. E.g. arma,raider");
+		ignore_Text.setColumns(5);
+
+		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new TitledBorder(null, "Other", TitledBorder.LEADING,
+				TitledBorder.TOP, null, null));
+		panel.add(panel_3);
+
+		JPanel panel_6 = new JPanel();
+		panel_6.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "CPU", TitledBorder.LEADING,
+				TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
+		panel_3.add(panel_6);
+
+		cpu_List = new JList();
+		panel_6.add(cpu_List);
+		cpu_List.setToolTipText("CPUs to use");
+		cpu_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		cpu_List.setModel(new AbstractListModel() {
+			String[] values = new String[] {"ALL ", "1", "2", "3", "4", "5", "6"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		cpu_List.setSelectedIndex(0);
+		
+		JPanel panel_14 = new JPanel();
+		panel_3.add(panel_14);
+		panel_14.setLayout(new BoxLayout(panel_14, BoxLayout.Y_AXIS));
+
+		JPanel panel_9 = new JPanel();
+		panel_14.add(panel_9);
+		panel_9.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Results",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
+
+		result_Text = new JTextField();
+		panel_9.add(result_Text);
+		result_Text.setToolTipText("Amound of results. (Default = 30)");
+		result_Text.setColumns(10);
+
+		noinfo_Check = new JCheckBox("noinfo");
+		panel_14.add(noinfo_Check);
+		noinfo_Check.setToolTipText("Dont write extra info");
+		noinfo_Check.setSelected(true);
+
+		JLabel lblPic = new JLabel("");
+		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPic.setIcon(new ImageIcon(GUI.class.getResource("/net/nexon/vindictus/itemcomparer/modell/covergirl.jpg")));
+		splitPane.setLeftComponent(lblPic);
+	}
+
+}

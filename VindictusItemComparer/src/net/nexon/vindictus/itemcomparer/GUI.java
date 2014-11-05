@@ -123,10 +123,15 @@ public class GUI extends JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
 	}
-
+	
+	private int getCovergirl() {
+		int bitchcount = 4;
+		int x = (int) (Math.random()*bitchcount+1);
+		return x;
+	}
+	
+	
 	/**
 	 * Create the frame.
 	 */
@@ -448,8 +453,10 @@ public class GUI extends JFrame {
 
 		JLabel lblPic = new JLabel("");
 		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPic.setIcon(new ImageIcon(GUI.class.getResource("/net/nexon/vindictus/itemcomparer/modell/covergirl.jpg")));
+		lblPic.setIcon(new ImageIcon(GUI.class.getResource("/net/nexon/vindictus/itemcomparer/covergirls/covergirl"+getCovergirl()+ ".jpg")));
 		splitPane.setLeftComponent(lblPic);
 	}
+
+
 
 }

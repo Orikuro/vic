@@ -32,7 +32,7 @@ public class GUI extends JFrame {
 
 	private JPanel contentPane;
 
-	private final static String VERSION = "V 0.1";
+	private final static String VERSION = Main.VERSION;
 	private JTextField minatk_Text;
 	private JTextField ignore_Text;
 	private JTextField result_Text;
@@ -46,8 +46,10 @@ public class GUI extends JFrame {
 	private JList smax_List;
 	private JList cpu_List;
 	private JCheckBox keep_Check;
+	private JCheckBox master_Check;
 	private JCheckBox noinfo_Check;
 	private JSlider plus_Slider;
+	private JTextField minmatk_Text;
 
 	/**
 	 * Launch the application.
@@ -89,25 +91,39 @@ public class GUI extends JFrame {
 		if (keep_Check.isSelected()) {
 			output += " -keep";
 		}
-
+		if (master_Check.isSelected()) {
+			output += " -master";
+		}
 		if (noinfo_Check.isSelected()) {
 			output += " -noinfo";
 		}
 
 		if (minatk_Text.getText().length() > 0) {
-			output += " -atk " + minatk_Text.getText();
+			output += " -atk " + minatk_Text.getText().trim();
+		}
+		if (minmatk_Text.getText().length() > 0) {
+			output += " -matk " + minmatk_Text.getText().trim();
 		}
 		if (ignore_Text.getText().length() > 0) {
-			output += " -i " + ignore_Text.getText();
+			output += " -i \"" + ignore_Text.getText().trim().replace(" ", "")+"\"";
 		}
 		if (price_Text.getText().length() > 0) {
-			output += " -price " + price_Text.getText();
+			output += " -price " + price_Text.getText().trim();
 		}
 		if (result_Text.getText().length() > 0) {
-			output += " -r " + result_Text.getText();
+			output += " -r " + result_Text.getText().trim();
 		}
 
 		System.out.println(output);
+		String[] args = output.split(" ");
+		
+		try {
+			Main.main(args);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 
 	}
 
@@ -229,7 +245,7 @@ public class GUI extends JFrame {
 		panel_15.add(keep_Check);
 		keep_Check.setToolTipText("keep overwritten sets");
 		
-		JCheckBox master_Check = new JCheckBox("master");
+		master_Check = new JCheckBox("master");
 		panel_15.add(master_Check);
 		master_Check.setToolTipText("keep overwritten sets");
 		
@@ -346,15 +362,21 @@ public class GUI extends JFrame {
 
 		JPanel panel_10 = new JPanel();
 		panel_12.add(panel_10);
-		panel_10.setBorder(new TitledBorder(UIManager
-				.getBorder("TitledBorder.border"), "Min (M)Atk",
-				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
-						0, 0)));
+		panel_10.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Min atk", TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
 
 		minatk_Text = new JTextField();
-		minatk_Text.setToolTipText("Minimum (M)Atk the sets must have");
+		minatk_Text.setToolTipText("Minimum atk the sets must have");
 		panel_10.add(minatk_Text);
 		minatk_Text.setColumns(5);
+		
+		JPanel panel_16 = new JPanel();
+		panel_16.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Min matk", TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
+		panel_12.add(panel_16);
+		
+		minmatk_Text = new JTextField();
+		minmatk_Text.setToolTipText("Minimum matk the sets must have");
+		minmatk_Text.setColumns(5);
+		panel_16.add(minmatk_Text);
 
 		JPanel panel_11 = new JPanel();
 		panel_12.add(panel_11);
@@ -370,8 +392,7 @@ public class GUI extends JFrame {
 
 		JPanel panel_4 = new JPanel();
 		panel_12.add(panel_4);
-		panel_4.setBorder(new TitledBorder(null, "Ignore",
-				TitledBorder.LEADING, TitledBorder.BOTTOM, null, null));
+		panel_4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Ignore", TitledBorder.LEADING, TitledBorder.BOTTOM, null, Color.BLACK));
 
 		ignore_Text = new JTextField();
 		panel_4.add(ignore_Text);

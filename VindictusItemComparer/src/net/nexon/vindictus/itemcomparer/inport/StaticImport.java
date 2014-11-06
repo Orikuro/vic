@@ -1664,6 +1664,36 @@ public class StaticImport {
 		helms.add(h);
 	}
 
+	static void generateStriker() {
+		String setname = "L Strike";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(150, 0, 12));
+		boni.add(new ItemSetBonus(165, 0, 24));
+		boni.add(new ItemSetBonus(180, 0, 39));
+		boni.add(new ItemSetBonus(210, 0, 52));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(arisha);
+
+		Gloves g = new Gloves(iset, "Gloves", 54, ItemTyp.CLOTH, 256, 0, 98,
+				18, 8);
+		Shoes s = new Shoes(iset, "Shoes", 54, ItemTyp.CLOTH, 267, 0, 99, 17,
+				8);
+		Pants p = new Pants(iset, "Pants", 54, ItemTyp.CLOTH, 300, 0, 97, 19,
+				9);
+		Helm h = new Helm(iset, "Helm",54, ItemTyp.CLOTH, 272, 0, 98, 15, 8);
+		Armor a = new Armor(iset, "Armor", 54, ItemTyp.CLOTH, 326, 0, 99, 17,
+				11);
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+	
+	
 	public static void staticImAndExport() {
 		// 60 sets
 		generateWonderland();
@@ -1723,6 +1753,7 @@ public class StaticImport {
 		// arisha
 		generateApex();
 		generateSilverFox();
+		generateStriker();
 	}
 
 	public static void staticExportSets() {

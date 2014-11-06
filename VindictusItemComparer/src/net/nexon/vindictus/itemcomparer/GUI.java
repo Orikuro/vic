@@ -74,7 +74,8 @@ public class GUI extends JFrame {
 				+ minlvl_List.getSelectedValue() + " -max "
 				+ maxlvl_List.getSelectedValue() + " -smin "
 				+ smin_List.getSelectedValue() + " -smax "
-				+ smax_List.getSelectedValue()+ " -plus "+plus_Slider.getValue();
+				+ smax_List.getSelectedValue() + " -plus "
+				+ plus_Slider.getValue();
 
 		String cpu = "";
 		String dup = "";
@@ -105,7 +106,8 @@ public class GUI extends JFrame {
 			output += " -matk " + minmatk_Text.getText().trim();
 		}
 		if (ignore_Text.getText().length() > 0) {
-			output += " -i \"" + ignore_Text.getText().trim().replace(" ", "")+"\"";
+			output += " -i \"" + ignore_Text.getText().trim().replace(" ", "")
+					+ "\"";
 		}
 		if (price_Text.getText().length() > 0) {
 			output += " -price " + price_Text.getText().trim();
@@ -116,7 +118,7 @@ public class GUI extends JFrame {
 
 		System.out.println(output);
 		String[] args = output.split(" ");
-		
+
 		try {
 			Main.main(args);
 		} catch (Exception e) {
@@ -124,14 +126,13 @@ public class GUI extends JFrame {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private int getCovergirl() {
 		int bitchcount = 4;
-		int x = (int) (Math.random()*bitchcount+1);
+		int x = (int) (Math.random() * bitchcount + 1);
 		return x;
 	}
-	
-	
+
 	/**
 	 * Create the frame.
 	 */
@@ -207,16 +208,20 @@ public class GUI extends JFrame {
 		sort_List.setToolTipText("Sort");
 		sort_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		sort_List.setModel(new AbstractListModel() {
-			String[] values = new String[] {"atk", "matk", "def", "sta", "staatk", "stamatk", "cheapdef", "cheapatk", "cheapmatk", "cheapsta"};
+			String[] values = new String[] { "atk", "matk", "def", "sta",
+					"staatk", "stamatk", "cheapdef", "cheapatk", "cheapmatk",
+					"cheapsta" };
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}
 		});
 		sort_List.setSelectedIndex(1);
-		
+
 		JPanel panel_13 = new JPanel();
 		panel_1.add(panel_13);
 		panel_13.setLayout(new BoxLayout(panel_13, BoxLayout.Y_AXIS));
@@ -233,27 +238,31 @@ public class GUI extends JFrame {
 		dup_List.setToolTipText("Duplicate Sets with these presets.");
 		dup_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		dup_List.setModel(new AbstractListModel() {
-			String[] values = new String[] {"", "force", "enthu", "tutsenti", "tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu", "ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu"};
+			String[] values = new String[] { "", "force", "enthu", "tutsenti",
+					"tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu",
+					"ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu" };
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}
 		});
 		dup_List.setSelectedIndex(0);
-		
+
 		JPanel panel_15 = new JPanel();
 		panel_13.add(panel_15);
 
 		keep_Check = new JCheckBox("keep");
 		panel_15.add(keep_Check);
 		keep_Check.setToolTipText("keep overwritten sets");
-		
+
 		master_Check = new JCheckBox("master");
 		panel_15.add(master_Check);
 		master_Check.setToolTipText("keep overwritten sets");
-		
+
 		plus_Slider = new JSlider();
 		plus_Slider.setToolTipText("Upgrade level");
 		plus_Slider.setPaintTicks(true);
@@ -295,7 +304,7 @@ public class GUI extends JFrame {
 			}
 		});
 		minlvl_List.setSelectedIndex(0);
-		
+
 		JLabel label = new JLabel("-");
 		panel_7.add(label);
 
@@ -340,7 +349,7 @@ public class GUI extends JFrame {
 			}
 		});
 		smin_List.setSelectedIndex(1);
-		
+
 		JLabel lblNewLabel = new JLabel("-");
 		panel_5.add(lblNewLabel);
 
@@ -360,24 +369,30 @@ public class GUI extends JFrame {
 			}
 		});
 		smax_List.setSelectedIndex(4);
-		
+
 		JPanel panel_12 = new JPanel();
 		panel_2.add(panel_12);
 		panel_12.setLayout(new BoxLayout(panel_12, BoxLayout.Y_AXIS));
 
 		JPanel panel_10 = new JPanel();
 		panel_12.add(panel_10);
-		panel_10.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Min atk", TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
+		panel_10.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Min atk",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
 
 		minatk_Text = new JTextField();
 		minatk_Text.setToolTipText("Minimum atk the sets must have");
 		panel_10.add(minatk_Text);
 		minatk_Text.setColumns(5);
-		
+
 		JPanel panel_16 = new JPanel();
-		panel_16.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Min matk", TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
+		panel_16.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Min matk",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
 		panel_12.add(panel_16);
-		
+
 		minmatk_Text = new JTextField();
 		minmatk_Text.setToolTipText("Minimum matk the sets must have");
 		minmatk_Text.setColumns(5);
@@ -397,11 +412,14 @@ public class GUI extends JFrame {
 
 		JPanel panel_4 = new JPanel();
 		panel_12.add(panel_4);
-		panel_4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Ignore", TitledBorder.LEADING, TitledBorder.BOTTOM, null, Color.BLACK));
+		panel_4.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Ignore",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, Color.BLACK));
 
 		ignore_Text = new JTextField();
 		panel_4.add(ignore_Text);
-		ignore_Text.setToolTipText("Sets containing those words will be ignored. Use comma for more words. E.g. arma,raider");
+		ignore_Text
+				.setToolTipText("Sets containing those words will be ignored. Use comma for more words. E.g. arma,raider");
 		ignore_Text.setColumns(5);
 
 		JPanel panel_3 = new JPanel();
@@ -420,16 +438,19 @@ public class GUI extends JFrame {
 		cpu_List.setToolTipText("CPUs to use");
 		cpu_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		cpu_List.setModel(new AbstractListModel() {
-			String[] values = new String[] {"ALL ", "1", "2", "3", "4", "5", "6"};
+			String[] values = new String[] { "ALL ", "1", "2", "3", "4", "5",
+					"6" };
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}
 		});
 		cpu_List.setSelectedIndex(0);
-		
+
 		JPanel panel_14 = new JPanel();
 		panel_3.add(panel_14);
 		panel_14.setLayout(new BoxLayout(panel_14, BoxLayout.Y_AXIS));
@@ -453,10 +474,10 @@ public class GUI extends JFrame {
 
 		JLabel lblPic = new JLabel("");
 		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPic.setIcon(new ImageIcon(GUI.class.getResource("/net/nexon/vindictus/itemcomparer/covergirls/covergirl"+getCovergirl()+ ".jpg")));
+		lblPic.setIcon(new ImageIcon(
+				GUI.class
+						.getResource("/net/nexon/vindictus/itemcomparer/covergirls/covergirl"
+								+ getCovergirl() + ".jpg")));
 		splitPane.setLeftComponent(lblPic);
 	}
-
-
-
 }

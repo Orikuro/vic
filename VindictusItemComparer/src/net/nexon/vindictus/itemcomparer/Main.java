@@ -237,7 +237,8 @@ public class Main {
 
 		
 		new ThreadStarter(args, CPUS, results, price,ATK,MATK, COMBOSORT, items, NOINFO);
-
+		System.out.println("See _out Folder for csv list with all results");
+		System.console().readLine();
 	}
 
 }

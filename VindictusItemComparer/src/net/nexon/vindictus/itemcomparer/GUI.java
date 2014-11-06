@@ -121,12 +121,13 @@ public class GUI extends JFrame {
 		String[] args = output.split(" ");
 
 		try {
-			String x = "java -jar \"" + System.getProperty("user.dir") + File.separator+ "VindictusItemComparer.jar\" "
+			String x = "cmd.exe /c start java -jar VindictusItemComparer.jar "
 					+ output;
 			System.out.println(x);
-			Process p = Runtime.getRuntime().exec(x);
+			Process p = Runtime.getRuntime().exec(x, null,
+					new File(System.getProperty("user.dir")));
 			p.waitFor();
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

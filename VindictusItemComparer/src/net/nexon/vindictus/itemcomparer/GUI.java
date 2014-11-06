@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.AbstractListModel;
 import javax.swing.BoxLayout;
@@ -120,7 +121,12 @@ public class GUI extends JFrame {
 		String[] args = output.split(" ");
 
 		try {
-			Main.main(args);
+			String x = "java -jar \"" + System.getProperty("user.dir") + File.separator+ "VindictusItemComparer.jar\" "
+					+ output;
+			System.out.println(x);
+			Process p = Runtime.getRuntime().exec(x);
+			p.waitFor();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

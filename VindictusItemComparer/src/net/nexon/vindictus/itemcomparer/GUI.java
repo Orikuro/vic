@@ -127,11 +127,16 @@ public class GUI extends JFrame {
 		try {
 			String x = "cmd.exe /c start java -jar VindictusItemComparer.jar "
 					+ output;
-			System.out.println(x);
-			Process p = Runtime.getRuntime().exec(x, null,
-					new File(System.getProperty("user.dir")));
-			p.waitFor();
-
+			if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+				System.out.println(x);
+				Process p = Runtime.getRuntime().exec(x, null,
+						new File(System.getProperty("user.dir")));
+				p.waitFor();
+			} else {
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Error. Other OS other than Windows not supported yet.\nUse \n"
+								+ x + "\nto run the programm via console.");
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -483,7 +488,7 @@ public class GUI extends JFrame {
 		panel_14.add(noinfo_Check);
 		noinfo_Check.setToolTipText("Dont write extra info");
 		noinfo_Check.setSelected(true);
-		
+
 		nocsv_Check = new JCheckBox("nocsv");
 		nocsv_Check.setToolTipText("Dont write extra info");
 		nocsv_Check.setSelected(true);

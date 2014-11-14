@@ -19,8 +19,8 @@ import org.kohsuke.args4j.Option;
 
 public class Main {
 
-	public static final String VERSION = "ALPHA 2.1 - 06.11.14 - by Nekuro/Orikuro - GUI and Arisha Update";
-	
+	public static final String VERSION = "ALPHA 2.1a - 14.11.14 - by Nekuro/Orikuro - GUI and Arisha Update (2)";
+
 	private enum VSort {
 		def, atk, matk, sta, staatk, stamatk, cheapdef, cheapatk, cheapmatk, cheapsta
 	};
@@ -74,10 +74,10 @@ public class Main {
 
 	@Option(name = "-atk", usage = "minimum atk the combo must have, default: None")
 	private int ATK = Integer.MIN_VALUE;
-	
+
 	@Option(name = "-matk", usage = "minimum matk the combo must have, default: None")
 	private int MATK = Integer.MIN_VALUE;
-		
+
 	@Option(name = "-min", usage = "minimum level of items to include, default: 50")
 	private int min = 50;
 
@@ -107,7 +107,7 @@ public class Main {
 
 	@Option(name = "-noinfo", aliases = { "-no" }, usage = "if set, disables writing of .txt info files, default: false")
 	private boolean NOINFO = false;
-	
+
 	@Option(name = "-export", usage = "export static.xml")
 	private boolean export = false;
 
@@ -117,6 +117,9 @@ public class Main {
 	@Option(name = "-master", usage = "override armor-enchant with master")
 	private boolean master = false;
 
+	@Option(name = "-nocsv", usage = "dont write .csv files (usefull for gui comparing with open consoles)")
+	private boolean nocsv = false;
+
 	/**
 	 * @param args
 	 * @throws InterruptedException
@@ -124,10 +127,10 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		System.out.println(VERSION);
 
-		if (args == null || args.length <1){
+		if (args == null || args.length < 1) {
 			GUI.main(args);
 		}
-		
+
 		if (Arrays.asList(args).contains("-export")) {
 			System.out.println("Exporting static info then closing");
 			StaticImport.main(null);
@@ -153,7 +156,7 @@ public class Main {
 			cmdLineParser.printUsage(System.err);
 			return;
 		}
-	
+
 		Items items = new Items();
 		try {
 			items = XMLImport.importItems("data" + File.separatorChar
@@ -162,17 +165,17 @@ public class Main {
 			System.err.println("Import of items.xml failed");
 			System.err
 					.println("Use -export and rename static.xml to items.xml");
-		e.printStackTrace();
+			e.printStackTrace();
 			System.exit(1);
 		}
 
 		ItemLogic il = new ItemLogic();
 		// filtering
-		il.filterSetNames(items,ignore);
-		il.filterStars(items,smin, smax);
-		il.filterLevel(items,min, max);
-		il.filterChar(items,vchar);
-		il.filterPrice(items,price);
+		il.filterSetNames(items, ignore);
+		il.filterStars(items, smin, smax);
+		il.filterLevel(items, min, max);
+		il.filterChar(items, vchar);
+		il.filterPrice(items, price);
 
 		// exit when not enough left
 		if (il.isNotEnough(items)) {
@@ -184,60 +187,61 @@ public class Main {
 		if (vscroll != null) {
 			switch (vscroll) {
 			case enthu:
-				il.duplicateEnthu(items,KEEP);
+				il.duplicateEnthu(items, KEEP);
 				break;
 			case force:
-				il.duplicateForce(items,KEEP);
+				il.duplicateForce(items, KEEP);
 				break;
 			case f_enthu:
-				il.duplicateF_Enthu(items,KEEP);
+				il.duplicateF_Enthu(items, KEEP);
 				break;
 			case ts_enthu:
-				il.duplicateTS_Enthu(items,KEEP);
+				il.duplicateTS_Enthu(items, KEEP);
 				break;
 			case ta_enthu:
-				il.duplicateTA_Enthu(items,KEEP);
+				il.duplicateTA_Enthu(items, KEEP);
 				break;
 			case tutresis:
-				il.duplicateTutResistant(items,KEEP);
+				il.duplicateTutResistant(items, KEEP);
 				break;
 			case tutsenti:
-				il.duplicateTutSentinel(items,KEEP);
+				il.duplicateTutSentinel(items, KEEP);
 				break;
 			case tutarma:
-				il.duplicateTutArmadilo(items,KEEP);
+				il.duplicateTutArmadilo(items, KEEP);
 				break;
 			case ts_tr_ta:
-				il.duplicateTs_Tr_Ta(items,KEEP);
+				il.duplicateTs_Tr_Ta(items, KEEP);
 				break;
 			case ts_ta:
-				il.duplicateTs_Ta(items,KEEP);
+				il.duplicateTs_Ta(items, KEEP);
 				break;
 			case ts_tr:
-				il.duplicateTs_Tr(items,KEEP);
+				il.duplicateTs_Tr(items, KEEP);
 				break;
 			case ts_ta_enthu:
-				il.duplicateTs_Ta_Enthu(items,KEEP);
+				il.duplicateTs_Ta_Enthu(items, KEEP);
 				break;
 			default:
 				break;
 			}
 		}
 		// override master on armors if needed
-		if (master){
+		if (master) {
 			il.overrideMaster(items);
 		}
-		
-		//sort stuff, highest level first, good speedup for all except evie
+
+		// sort stuff, highest level first, good speedup for all except evie
 		il.sortItems(items);
-		
+
 		// overwrite enhance level
 		il.forcePlus(items, plus);
-		
 
-		
-		new ThreadStarter(args, CPUS, results, price,ATK,MATK, COMBOSORT, items, NOINFO);
-		System.out.println("See _out Folder for csv list with all results");
+		new ThreadStarter(args, CPUS, results, price, ATK, MATK, COMBOSORT,
+				items, NOINFO, nocsv);
+		if (!nocsv) {
+			System.out.println("See _out Folder for csv list with all results");
+		}
 		System.console().readLine();
 	}
 

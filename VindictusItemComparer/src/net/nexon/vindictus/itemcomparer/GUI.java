@@ -49,6 +49,7 @@ public class GUI extends JFrame {
 	private JCheckBox keep_Check;
 	private JCheckBox master_Check;
 	private JCheckBox noinfo_Check;
+	private JCheckBox nocsv_Check;
 	private JSlider plus_Slider;
 	private JTextField minmatk_Text;
 
@@ -98,6 +99,9 @@ public class GUI extends JFrame {
 		}
 		if (noinfo_Check.isSelected()) {
 			output += " -noinfo";
+		}
+		if (nocsv_Check.isSelected()) {
+			output += " -nocsv";
 		}
 
 		if (minatk_Text.getText().length() > 0) {
@@ -480,7 +484,7 @@ public class GUI extends JFrame {
 		noinfo_Check.setToolTipText("Dont write extra info");
 		noinfo_Check.setSelected(true);
 		
-		JCheckBox nocsv_Check = new JCheckBox("nocsv");
+		nocsv_Check = new JCheckBox("nocsv");
 		nocsv_Check.setToolTipText("Dont write extra info");
 		nocsv_Check.setSelected(true);
 		panel_14.add(nocsv_Check);

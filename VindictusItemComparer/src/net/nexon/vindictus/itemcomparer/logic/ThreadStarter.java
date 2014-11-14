@@ -34,26 +34,29 @@ import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 public class ThreadStarter {
 	private String PARAMETER = "";
 
-	public ThreadStarter(String[] args, int cpus, int results, double price,int atk, int matk,
-			Comparator<Combo> defc, Items items, boolean noinfo) {
+	public ThreadStarter(String[] args, int cpus, int results, double price,
+			int atk, int matk, Comparator<Combo> defc, Items items,
+			boolean noinfo, boolean nocsv) {
 		PARAMETER = Arrays.toString(args).replace(",", "").replace("[", "")
 				.replace("]", "");
 
-		start(cpus, results, price,atk,matk, defc, items, noinfo);	}
+		start(cpus, results, price, atk, matk, defc, items, noinfo, nocsv);
+	}
 
 	private void start(int cpus, int results, double price, int atk, int matk,
-			Comparator<Combo> defc, Items items, boolean noinfo) {
-		start(cpus, results, price,atk,matk, defc, items.getShoes(), items.getPants(),
-				items.getGloves(), items.getArmors(), items.getHelms(), noinfo);
+			Comparator<Combo> defc, Items items, boolean noinfo, boolean nocsv) {
+		start(cpus, results, price, atk, matk, defc, items.getShoes(),
+				items.getPants(), items.getGloves(), items.getArmors(),
+				items.getHelms(), noinfo, nocsv);
 	}
 
 	private StringBuffer sb = new StringBuffer();
 	private DecimalFormat df = new DecimalFormat(",###");
-	
-	private void start(int cpus, int results, double price,int atk, int matk,
+
+	private void start(int cpus, int results, double price, int atk, int matk,
 			Comparator<Combo> defc, List<Shoes> shoes, List<Pants> pants,
 			List<Gloves> glov, List<Armor> armors, List<Helm> helms,
-			boolean noinfo) {
+			boolean noinfo, boolean nocsv) {
 
 		long total = 1l * shoes.size() * pants.size() * glov.size()
 				* armors.size() * helms.size();
@@ -121,10 +124,10 @@ public class ThreadStarter {
 		String i_res = "Results: " + results + "\t"
 				+ defc.getClass().getSimpleName().replace("Comparator", "")
 				+ "\tPrice " + price + "\n";
-		String i_atk = "Atk: "+atk+"\tMatk: "+matk+"\n";
+		String i_atk = "Atk: " + atk + "\tMatk: " + matk + "\n";
 		String i_comp = df.format(total) + " Comparisons." + "\tCPUs: " + cpus
 				+ "\tTasks:" + shoes.size() + "\n";
-		System.out.println(i_anzahl + i_res+i_atk + i_comp);
+		System.out.println(i_anzahl + i_res + i_atk + i_comp);
 		System.out
 				.println("Each dot is 1m checks. x means 1 Task finished. 1 Task has "
 						+ df.format(total / shoes.size()) + " comparisons.");
@@ -134,9 +137,9 @@ public class ThreadStarter {
 			// 1/4 Loadbalancing - Forking
 			List<Callable<List<Combo>>> tasks = new ArrayList<>();
 			for (int i = 0; i < shoes.size(); i++) {
-				Callable<List<Combo>> c = new ComboCall(price,atk,matk, maxis,
-						shoes.subList(i, i + 1), pants, glov, armors, helms,
-						results, defc);
+				Callable<List<Combo>> c = new ComboCall(price, atk, matk,
+						maxis, shoes.subList(i, i + 1), pants, glov, armors,
+						helms, results, defc);
 				tasks.add(c);
 			}
 
@@ -180,27 +183,28 @@ public class ThreadStarter {
 		sb.insert(0, i_end2);
 		sb.insert(0, i_end1);
 		sb.insert(0, i_comp);
-		sb.insert(0,i_atk);
+		sb.insert(0, i_atk);
 		sb.insert(0, i_res);
 		sb.insert(0, i_anzahl);
 		sb.insert(0, PARAMETER + "\n");
 
 		if (combs.size() == 0) {
 			System.out.println("Nothing found, price was too low.");
-			System.exit(0);
+			return;
 		}
 
 		System.out.println(Combo.OUTPUT_HEAD);
 		for (int i = 0; i < combs.size(); i++) {
 			System.out.println(i + ";" + combs.get(i));
-			if (i >= 2) {
+			if (i >= 4) {
 				System.out.println("[...]");
 				break;
 			}
 		}
 
-		writeResults(combs, sb.toString(), noinfo);
-
+		if (!nocsv) {
+			writeResults(combs, sb.toString(), noinfo);
+		}
 	}
 
 	private int[] calcBestSets(HashSet<ItemSet> sets) {
@@ -266,7 +270,7 @@ public class ThreadStarter {
 		System.out.println("Def:  " + i_s.get(maxdef));
 		System.out.println("Atk:  " + i_s.get(maxatk));
 		System.out.println("Matk: " + i_s.get(maxmatk));
-		// System.exit(0);
+
 		return maximums;
 
 	}

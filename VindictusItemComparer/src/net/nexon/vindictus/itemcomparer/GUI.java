@@ -267,6 +267,7 @@ public class GUI extends JFrame {
 		keep_Check.setToolTipText("keep overwritten sets");
 
 		master_Check = new JCheckBox("master");
+		master_Check.setSelected(true);
 		panel_15.add(master_Check);
 		master_Check.setToolTipText("keep overwritten sets");
 
@@ -310,7 +311,7 @@ public class GUI extends JFrame {
 				return values[index];
 			}
 		});
-		minlvl_List.setSelectedIndex(0);
+		minlvl_List.setSelectedIndex(2);
 
 		JLabel label = new JLabel("-");
 		panel_7.add(label);
@@ -478,6 +479,11 @@ public class GUI extends JFrame {
 		panel_14.add(noinfo_Check);
 		noinfo_Check.setToolTipText("Dont write extra info");
 		noinfo_Check.setSelected(true);
+		
+		JCheckBox nocsv_Check = new JCheckBox("nocsv");
+		nocsv_Check.setToolTipText("Dont write extra info");
+		nocsv_Check.setSelected(true);
+		panel_14.add(nocsv_Check);
 
 		JLabel lblPic = new JLabel("");
 		lblPic.setHorizontalAlignment(SwingConstants.CENTER);

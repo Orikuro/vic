@@ -254,14 +254,10 @@ public class GUI extends JFrame {
 		dup_List.setToolTipText("Duplicate Sets with these presets.");
 		dup_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		dup_List.setModel(new AbstractListModel() {
-			String[] values = new String[] { "", "force", "enthu", "tutsenti",
-					"tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu",
-					"ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu" };
-
+			String[] values = new String[] {"", "force", "enthu", "tutsenti", "tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu", "ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu", "ts_tr_ta_enthu", "ts_tr_ta_force", "ts_tr_ta_f_e"};
 			public int getSize() {
 				return values.length;
 			}
-
 			public Object getElementAt(int index) {
 				return values[index];
 			}

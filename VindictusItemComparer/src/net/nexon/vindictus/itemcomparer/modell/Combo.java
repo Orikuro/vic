@@ -30,6 +30,7 @@ public class Combo {
 	private int matk;
 	private double atk;
 	private int sta;
+	private int bal;
 	private int c_res;
 	private double price;
 

@@ -222,6 +222,15 @@ public class Main {
 			case ts_ta_enthu:
 				il.duplicateTs_Ta_Enthu(items, KEEP);
 				break;
+			case ts_tr_ta_enthu:
+				il.duplicateTs_Tr_Ta_Enthu(items, KEEP);
+				break;
+			case ts_tr_ta_force:
+				il.duplicateTs_Tr_Ta_Force(items, KEEP);
+				break;
+			case ts_tr_ta_f_e:
+				il.duplicateTs_Tr_Ta_F_E(items, KEEP);
+				break;
 			default:
 				break;
 			}

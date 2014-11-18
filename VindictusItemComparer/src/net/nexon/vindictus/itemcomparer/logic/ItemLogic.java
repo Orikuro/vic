@@ -385,8 +385,7 @@ public class ItemLogic implements IItemLocal {
 
 		List<Shoes> new_s3 = addScrollsToShoes(items, allowed_enth, wb, enthu);
 		List<Pants> new_p3 = addScrollsToPants(items, allowed_enth, wb, enthu);
-		List<Gloves> new_g3 = addScrollsToGloves(items, allowed_enth, null,
-				enthu);
+		List<Gloves> new_g3 = addScrollsToGloves(items, allowed_enth, wb, enthu);
 		List<Armor> new_a3 = addScrollsToArmor(items, allowed_enth, wb, enthu);
 		List<Helm> new_h3 = addScrollsToHelm(items, allowed_enth, wb, enthu);
 
@@ -1021,7 +1020,7 @@ public class ItemLogic implements IItemLocal {
 	public void overrideMaster(Items items) {
 
 		System.out.println(items.getArmors());
-		
+
 		HashSet<Armor> as = new HashSet<>();
 
 		for (Armor x : items.getArmors()) {
@@ -1030,15 +1029,13 @@ public class ItemLogic implements IItemLocal {
 			as.add(x);
 		}
 
-		
-
 		System.out.println(items.getArmors());
-		
+
 		List<Armor> newarmors = new ArrayList<>(as);
 		items.setArmors(newarmors);
-		
+
 		System.out.println(items.getArmors());
-		
+
 	}
 
 	public void duplicateTs_Tr_Ta_Enthu(Items items, boolean kEEP) {

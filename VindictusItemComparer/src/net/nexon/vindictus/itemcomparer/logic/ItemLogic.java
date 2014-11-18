@@ -1156,8 +1156,8 @@ public class ItemLogic implements IItemLocal {
 		List<Helm> new_h2r = addScrollsToHelm(items, allowed_tut, tut, resist);
 
 		HashSet<ItemTyp> allowedf = new HashSet<>();
-		allowed.add(ItemTyp.CLOTH);
-		allowed.add(ItemTyp.LIGHT);
+		allowedf.add(ItemTyp.CLOTH);
+		allowedf.add(ItemTyp.LIGHT);
 
 		List<Shoes> new_sf = addScrollsToShoes(items, allowedf, wb, force);
 		List<Pants> new_pf = addScrollsToPants(items, allowedf, wb, force);
@@ -1243,8 +1243,8 @@ public class ItemLogic implements IItemLocal {
 		List<Helm> new_h2r = addScrollsToHelm(items, allowed_tut, tut, resist);
 
 		HashSet<ItemTyp> allowedf = new HashSet<>();
-		allowed.add(ItemTyp.CLOTH);
-		allowed.add(ItemTyp.LIGHT);
+		allowedf.add(ItemTyp.CLOTH);
+		allowedf.add(ItemTyp.LIGHT);
 
 		List<Shoes> new_sf = addScrollsToShoes(items, allowedf, wb, force);
 		List<Pants> new_pf = addScrollsToPants(items, allowedf, wb, force);

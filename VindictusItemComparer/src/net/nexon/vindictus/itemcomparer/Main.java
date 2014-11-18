@@ -19,7 +19,7 @@ import org.kohsuke.args4j.Option;
 
 public class Main {
 
-	public static final String VERSION = "ALPHA 2.1a - 14.11.14 - by Nekuro/Orikuro - GUI and Arisha Update (2)";
+	public static final String VERSION = "ALPHA 2.2 - 18.11.14 - by Nekuro/Orikuro - Gui, Arisha, Options, Masterfix";
 
 	private enum VSort {
 		def, atk, matk, sta, staatk, stamatk, cheapdef, cheapatk, cheapmatk, cheapsta

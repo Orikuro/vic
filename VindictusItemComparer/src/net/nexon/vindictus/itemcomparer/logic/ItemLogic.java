@@ -27,6 +27,8 @@ public class ItemLogic implements IItemLocal {
 			SCRPROP.getForce());
 	private static Scroll_Pre tut = new Scroll_Pre("Tutelary", 112, 0, 0,
 			SCRPROP.getTut());
+	private static Scroll_Pre wb = new Scroll_Pre("Well-balanced", 0, 0, 0,
+			SCRPROP.getWb());
 	private static Scroll_Suf sent = new Scroll_Suf("Sentinel", 224, -15, 0,
 			SCRPROP.getSenti());
 	private static Scroll_Suf resist = new Scroll_Suf("Resistant", 340, -160,
@@ -57,11 +59,11 @@ public class ItemLogic implements IItemLocal {
 		allowed.add(ItemTyp.CLOTH);
 		allowed.add(ItemTyp.LIGHT);
 
-		List<Shoes> new_s = addScrollsToShoes(items, allowed, null, enthu);
-		List<Pants> new_p = addScrollsToPants(items, allowed, null, enthu);
-		List<Gloves> new_g = addScrollsToGloves(items, allowed, null, enthu);
-		List<Armor> new_a = addScrollsToArmor(items, allowed, null, enthu);
-		List<Helm> new_h = addScrollsToHelm(items, allowed, null, enthu);
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
 		if (!keepChanged) {
 			deleteChanged(items);
 		}
@@ -107,11 +109,11 @@ public class ItemLogic implements IItemLocal {
 		allowed.add(ItemTyp.CLOTH);
 		allowed.add(ItemTyp.LIGHT);
 
-		List<Shoes> new_s = addScrollsToShoes(items, allowed, null, force);
-		List<Pants> new_p = addScrollsToPants(items, allowed, null, force);
-		List<Gloves> new_g = addScrollsToGloves(items, allowed, null, force);
-		List<Armor> new_a = addScrollsToArmor(items, allowed, null, force);
-		List<Helm> new_h = addScrollsToHelm(items, allowed, null, force);
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, force);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, force);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, force);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, force);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, force);
 		if (!keepChanged) {
 			deleteChanged(items);
 		}
@@ -132,17 +134,17 @@ public class ItemLogic implements IItemLocal {
 		allowed.add(ItemTyp.CLOTH);
 		allowed.add(ItemTyp.LIGHT);
 
-		List<Shoes> new_s = addScrollsToShoes(items, allowed, null, enthu);
-		List<Pants> new_p = addScrollsToPants(items, allowed, null, enthu);
-		List<Gloves> new_g = addScrollsToGloves(items, allowed, null, enthu);
-		List<Armor> new_a = addScrollsToArmor(items, allowed, null, enthu);
-		List<Helm> new_h = addScrollsToHelm(items, allowed, null, enthu);
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
 
-		List<Shoes> new_s2 = addScrollsToShoes(items, allowed, null, force);
-		List<Pants> new_p2 = addScrollsToPants(items, allowed, null, force);
-		List<Gloves> new_g2 = addScrollsToGloves(items, allowed, null, force);
-		List<Armor> new_a2 = addScrollsToArmor(items, allowed, null, force);
-		List<Helm> new_h2 = addScrollsToHelm(items, allowed, null, force);
+		List<Shoes> new_s2 = addScrollsToShoes(items, allowed, wb, force);
+		List<Pants> new_p2 = addScrollsToPants(items, allowed, wb, force);
+		List<Gloves> new_g2 = addScrollsToGloves(items, allowed, wb, force);
+		List<Armor> new_a2 = addScrollsToArmor(items, allowed, wb, force);
+		List<Helm> new_h2 = addScrollsToHelm(items, allowed, wb, force);
 
 		if (!keepChanged) {
 			deleteChanged(items);
@@ -177,11 +179,11 @@ public class ItemLogic implements IItemLocal {
 		allowed_tut.add(ItemTyp.HEAVY);
 		allowed_tut.add(ItemTyp.PLATE);
 
-		List<Shoes> new_s = addScrollsToShoes(items, allowed, null, enthu);
-		List<Pants> new_p = addScrollsToPants(items, allowed, null, enthu);
-		List<Gloves> new_g = addScrollsToGloves(items, allowed, null, enthu);
-		List<Armor> new_a = addScrollsToArmor(items, allowed, null, enthu);
-		List<Helm> new_h = addScrollsToHelm(items, allowed, null, enthu);
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
 
 		List<Shoes> new_s2 = addScrollsToShoes(items, allowed_tut, tut, sent);
 		List<Pants> new_p2 = addScrollsToPants(items, allowed_tut, tut, sent);
@@ -219,11 +221,11 @@ public class ItemLogic implements IItemLocal {
 		HashSet<ItemTyp> allowed_tut = new HashSet<>();
 		allowed_tut.add(ItemTyp.HEAVY);
 
-		List<Shoes> new_s = addScrollsToShoes(items, allowed, null, enthu);
-		List<Pants> new_p = addScrollsToPants(items, allowed, null, enthu);
-		List<Gloves> new_g = addScrollsToGloves(items, allowed, null, enthu);
-		List<Armor> new_a = addScrollsToArmor(items, allowed, null, enthu);
-		List<Helm> new_h = addScrollsToHelm(items, allowed, null, enthu);
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
 
 		List<Shoes> new_s2 = addScrollsToShoes(items, allowed_tut, tut, armadil);
 		List<Pants> new_p2 = addScrollsToPants(items, allowed_tut, tut, armadil);
@@ -381,12 +383,12 @@ public class ItemLogic implements IItemLocal {
 		List<Armor> new_a = addScrollsToArmor(items, allowed, tut, sent);
 		List<Helm> new_h = addScrollsToHelm(items, allowed, tut, sent);
 
-		List<Shoes> new_s3 = addScrollsToShoes(items, allowed_enth, null, enthu);
-		List<Pants> new_p3 = addScrollsToPants(items, allowed_enth, null, enthu);
+		List<Shoes> new_s3 = addScrollsToShoes(items, allowed_enth, wb, enthu);
+		List<Pants> new_p3 = addScrollsToPants(items, allowed_enth, wb, enthu);
 		List<Gloves> new_g3 = addScrollsToGloves(items, allowed_enth, null,
 				enthu);
-		List<Armor> new_a3 = addScrollsToArmor(items, allowed_enth, null, enthu);
-		List<Helm> new_h3 = addScrollsToHelm(items, allowed_enth, null, enthu);
+		List<Armor> new_a3 = addScrollsToArmor(items, allowed_enth, wb, enthu);
+		List<Helm> new_h3 = addScrollsToHelm(items, allowed_enth, wb, enthu);
 
 		List<Shoes> new_s2 = addScrollsToShoes(items, allowed_arm, tut, armadil);
 		List<Pants> new_p2 = addScrollsToPants(items, allowed_arm, tut, armadil);
@@ -1067,12 +1069,12 @@ public class ItemLogic implements IItemLocal {
 		List<Armor> new_a = addScrollsToArmor(items, allowed, tut, sent);
 		List<Helm> new_h = addScrollsToHelm(items, allowed, tut, sent);
 
-		List<Shoes> new_s3 = addScrollsToShoes(items, allowed_enth, null, enthu);
-		List<Pants> new_p3 = addScrollsToPants(items, allowed_enth, null, enthu);
+		List<Shoes> new_s3 = addScrollsToShoes(items, allowed_enth, wb, enthu);
+		List<Pants> new_p3 = addScrollsToPants(items, allowed_enth, wb, enthu);
 		List<Gloves> new_g3 = addScrollsToGloves(items, allowed_enth, null,
 				enthu);
-		List<Armor> new_a3 = addScrollsToArmor(items, allowed_enth, null, enthu);
-		List<Helm> new_h3 = addScrollsToHelm(items, allowed_enth, null, enthu);
+		List<Armor> new_a3 = addScrollsToArmor(items, allowed_enth, wb, enthu);
+		List<Helm> new_h3 = addScrollsToHelm(items, allowed_enth, wb, enthu);
 
 		List<Shoes> new_s2 = addScrollsToShoes(items, allowed_arm, tut, armadil);
 		List<Pants> new_p2 = addScrollsToPants(items, allowed_arm, tut, armadil);
@@ -1096,11 +1098,11 @@ public class ItemLogic implements IItemLocal {
 		allowed.add(ItemTyp.CLOTH);
 		allowed.add(ItemTyp.LIGHT);
 
-		List<Shoes> new_sf = addScrollsToShoes(items, allowedf, null, force);
-		List<Pants> new_pf = addScrollsToPants(items, allowedf, null, force);
-		List<Gloves> new_gf = addScrollsToGloves(items, allowedf, null, force);
-		List<Armor> new_af = addScrollsToArmor(items, allowedf, null, force);
-		List<Helm> new_hf = addScrollsToHelm(items, allowedf, null, force);
+		List<Shoes> new_sf = addScrollsToShoes(items, allowedf, wb, force);
+		List<Pants> new_pf = addScrollsToPants(items, allowedf, wb, force);
+		List<Gloves> new_gf = addScrollsToGloves(items, allowedf, wb, force);
+		List<Armor> new_af = addScrollsToArmor(items, allowedf, wb, force);
+		List<Helm> new_hf = addScrollsToHelm(items, allowedf, wb, force);
 
 		if (!kEEP) {
 			deleteChanged(items);

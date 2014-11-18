@@ -13,37 +13,63 @@ import net.nexon.vindictus.itemcomparer.modell.ext.Scroll_Suf;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Item {
-	
+
 	private void calcTotaldef() {
 
 		int agibonus = (int) (0.5f * agi * starbonus[stars - 1]);
-		int agibon = (int) (0.5f*agi);
+		int agibon = (int) (0.5f * agi);
 		int defbonus = (int) (def * starbonus_def[stars - 1]);
 		int sbonus = scroll_pre.getDef() + scroll_suf.getDef();
 
-		totalDef = agibonus +agibon+ def + defbonus + sbonus + getPlusDef();
+		totalDef = agibonus + agibon + def + defbonus + sbonus + getPlusDef();
+	}
+
+	public int getTotalbal() {
+		int bal = 0;
+
+		if (scroll_pre.getName() != null) {
+			if ((scroll_pre.getName().toLowerCase()).contains("well-balanced")) {
+				bal += 1;
+			}
+		}
+
+		if (scroll_suf.getName() != null) {
+			if (scroll_suf.getName().toLowerCase().contains("force")) {
+				bal += 2;
+			}
+			if (scroll_suf.getName().toLowerCase().contains("enthu")) {
+				bal += 5;
+			}
+			if (scroll_suf.getName().toLowerCase().contains("master")) {
+				bal += -1;
+			}
+		}
+
+		return bal;
 	}
 
 	public int getTotaldef() {
 		return totalDef;
 	}
+
 	public int getTotalatk() {
 		return totalAtk;
 	}
+
 	public int getTotalmatk() {
 		return totalMatk;
 	}
+
 	public int getTotalsta() {
 		return totalSta;
 	}
-	
-	
+
 	@XmlTransient
 	private int totalAtk;
 	@XmlTransient
 	private int totalMatk;
 
-	//TODO: use totalatk / matk instead
+	// TODO: use totalatk / matk instead
 	public void calcBonus() {
 		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 		plusdef = calcPlusDef();
@@ -59,10 +85,11 @@ public class Item {
 
 		scrollmatk = scroll_pre.getMatk() + scroll_suf.getMatk() + 2
 				* (scroll_pre.getVint() + scroll_suf.getVint());
-		totalAtk = (int) (2.7*str+atk+staratk+scrollatk);
-		totalMatk = matk + 2*vint + starmatk+scrollmatk;
-		totalSta = scrollsta+stamina;
+		totalAtk = (int) (2.7 * str + atk + staratk + scrollatk);
+		totalMatk = matk + 2 * vint + starmatk + scrollmatk;
+		totalSta = scrollsta + stamina;
 	}
+
 	@XmlTransient
 	private int totalSta;
 	@XmlTransient
@@ -107,13 +134,13 @@ public class Item {
 			return plus_plate[plus];
 		}
 		if (typ.equals(ItemTyp.HEAVY)) {
-			return  plus_heavy[plus];
+			return plus_heavy[plus];
 		}
 		if (typ.equals(ItemTyp.LIGHT)) {
-			return  plus_light[plus];
+			return plus_light[plus];
 		}
 
-		return  plus_cloth[plus];
+		return plus_cloth[plus];
 	}
 
 	public int getPlusDef() {
@@ -513,6 +540,5 @@ public class Item {
 			return false;
 		return true;
 	}
-
 
 }

@@ -13,7 +13,7 @@ import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 
 public class Combo {
 
-	public static final String OUTPUT_HEAD = "id;def;matk;atk;sta;c_res;price;shoes;pants;gloves;armor;helm;";
+	public static final String OUTPUT_HEAD = "id;def;matk;atk;sta;c_res;bal;price;shoes;pants;gloves;armor;helm;";
 
 	private static DecimalFormat df = new DecimalFormat(",###.00");
 
@@ -21,9 +21,18 @@ public class Combo {
 	public String toString() {
 		String price_norm = df.format(price);
 		int atk_norm = (int) atk;
-		return String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;", def, matk,
-				atk_norm, sta, c_res, price_norm, shoes, pants, gloves, armor,
-				helm);
+		return String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;", def, matk,
+				atk_norm, sta, c_res, calcbal(), price_norm, shoes, pants,
+				gloves, armor, helm);
+	}
+
+	private int calcbal() {
+		int bal = 0;
+
+		bal = shoes.getTotalbal() + pants.getTotalbal() + gloves.getTotalbal()
+				+ armor.getTotalbal() + helm.getTotalbal();
+
+		return bal;
 	}
 
 	private int def;

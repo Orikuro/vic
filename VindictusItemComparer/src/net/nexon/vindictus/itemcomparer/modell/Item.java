@@ -1,5 +1,7 @@
 package net.nexon.vindictus.itemcomparer.modell;
 
+import java.util.Arrays;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlIDREF;
@@ -379,5 +381,138 @@ public class Item {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + agi;
+		result = prime * result + atk;
+		result = prime * result + crit_res;
+		result = prime * result + def;
+		result = prime * result + ((itemset == null) ? 0 : itemset.hashCode());
+		result = prime * result + level;
+		result = prime * result + matk;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + plus;
+		result = prime * result + plusdef;
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result
+				+ ((scroll_pre == null) ? 0 : scroll_pre.hashCode());
+		result = prime * result
+				+ ((scroll_suf == null) ? 0 : scroll_suf.hashCode());
+		temp = Double.doubleToLongBits(scrollatk);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + scrolldef;
+		result = prime * result + scrollmatk;
+		result = prime * result + scrollsta;
+		result = prime * result + stamina;
+		temp = Double.doubleToLongBits(staratk);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + stardef;
+		result = prime * result + starmatk;
+		result = prime * result + stars;
+		result = prime * result + str;
+		result = prime * result + totalAtk;
+		result = prime * result + totalDef;
+		result = prime * result + totalMatk;
+		result = prime * result + totalSta;
+		temp = Double.doubleToLongBits(totalprice);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((typ == null) ? 0 : typ.hashCode());
+		result = prime * result + vint;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Item other = (Item) obj;
+		if (agi != other.agi)
+			return false;
+		if (atk != other.atk)
+			return false;
+		if (crit_res != other.crit_res)
+			return false;
+		if (def != other.def)
+			return false;
+		if (itemset == null) {
+			if (other.itemset != null)
+				return false;
+		} else if (!itemset.equals(other.itemset))
+			return false;
+		if (level != other.level)
+			return false;
+		if (matk != other.matk)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (plus != other.plus)
+			return false;
+		if (plusdef != other.plusdef)
+			return false;
+		if (Double.doubleToLongBits(price) != Double
+				.doubleToLongBits(other.price))
+			return false;
+		if (scroll_pre == null) {
+			if (other.scroll_pre != null)
+				return false;
+		} else if (!scroll_pre.equals(other.scroll_pre))
+			return false;
+		if (scroll_suf == null) {
+			if (other.scroll_suf != null)
+				return false;
+		} else if (!scroll_suf.equals(other.scroll_suf))
+			return false;
+		if (Double.doubleToLongBits(scrollatk) != Double
+				.doubleToLongBits(other.scrollatk))
+			return false;
+		if (scrolldef != other.scrolldef)
+			return false;
+		if (scrollmatk != other.scrollmatk)
+			return false;
+		if (scrollsta != other.scrollsta)
+			return false;
+		if (stamina != other.stamina)
+			return false;
+		if (Double.doubleToLongBits(staratk) != Double
+				.doubleToLongBits(other.staratk))
+			return false;
+		if (stardef != other.stardef)
+			return false;
+		if (starmatk != other.starmatk)
+			return false;
+		if (stars != other.stars)
+			return false;
+		if (str != other.str)
+			return false;
+		if (totalAtk != other.totalAtk)
+			return false;
+		if (totalDef != other.totalDef)
+			return false;
+		if (totalMatk != other.totalMatk)
+			return false;
+		if (totalSta != other.totalSta)
+			return false;
+		if (Double.doubleToLongBits(totalprice) != Double
+				.doubleToLongBits(other.totalprice))
+			return false;
+		if (typ != other.typ)
+			return false;
+		if (vint != other.vint)
+			return false;
+		return true;
+	}
+
 
 }

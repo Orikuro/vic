@@ -1018,17 +1018,25 @@ public class ItemLogic implements IItemLocal {
 
 	public void overrideMaster(Items items) {
 
+		System.out.println(items.getArmors());
+		
 		HashSet<Armor> as = new HashSet<>();
 
 		for (Armor x : items.getArmors()) {
 
 			x.setScroll_suf(master);
+			as.add(x);
 		}
 
-		as.addAll(items.getArmors());
+		
 
+		System.out.println(items.getArmors());
+		
 		List<Armor> newarmors = new ArrayList<>(as);
 		items.setArmors(newarmors);
+		
+		System.out.println(items.getArmors());
+		
 	}
 
 	public void duplicateTs_Tr_Ta_Enthu(Items items, boolean kEEP) {

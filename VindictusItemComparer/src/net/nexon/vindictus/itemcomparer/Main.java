@@ -222,6 +222,9 @@ public class Main {
 			case ts_ta_enthu:
 				il.duplicateTs_Ta_Enthu(items, KEEP);
 				break;
+			case tr_enthu:
+				il.duplicateTr_Enthu(items, KEEP);
+				break;
 			case ts_tr_ta_enthu:
 				il.duplicateTs_Tr_Ta_Enthu(items, KEEP);
 				break;

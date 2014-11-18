@@ -1293,4 +1293,47 @@ public class ItemLogic implements IItemLocal {
 
 	}
 
+	public void duplicateTr_Enthu(Items items, boolean kEEP) {
+		HashSet<ItemTyp> allowed = new HashSet<>();
+		allowed.add(ItemTyp.CLOTH);
+		allowed.add(ItemTyp.LIGHT);
+
+		HashSet<ItemTyp> allowed_tut = new HashSet<>();
+		allowed_tut.add(ItemTyp.HEAVY);
+		allowed_tut.add(ItemTyp.PLATE);
+
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
+
+		List<Shoes> new_s2 = addScrollsToShoes(items, allowed_tut, tut, resist);
+		List<Pants> new_p2 = addScrollsToPants(items, allowed_tut, tut, resist);
+		List<Gloves> new_g2 = addScrollsToGloves(items, allowed_tut, tut, resist);
+		List<Armor> new_a2 = addScrollsToArmor(items, allowed_tut, tut, resist);
+		List<Helm> new_h2 = addScrollsToHelm(items, allowed_tut, tut, resist);
+
+		if (!kEEP) {
+			deleteChanged(items);
+		}
+		items.getShoes().addAll(new_s);
+		items.getPants().addAll(new_p);
+		items.getGloves().addAll(new_g);
+		items.getArmors().addAll(new_a);
+		items.getHelms().addAll(new_h);
+
+		items.getShoes().addAll(new_s2);
+		items.getPants().addAll(new_p2);
+		items.getGloves().addAll(new_g2);
+		items.getArmors().addAll(new_a2);
+		items.getHelms().addAll(new_h2);
+
+		System.out.println(new_s.size() + new_p.size() + new_g.size()
+				+ new_a.size() + new_h.size() + new_s2.size() + new_p2.size()
+				+ new_g2.size() + new_a2.size() + new_h2.size()
+				+ " new Items added");
+
+	}
+
 }

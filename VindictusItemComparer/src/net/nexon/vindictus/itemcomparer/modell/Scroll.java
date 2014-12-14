@@ -1,11 +1,15 @@
 package net.nexon.vindictus.itemcomparer.modell;
 
+import java.util.ArrayList;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
+import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Scroll {
-	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -14,7 +18,7 @@ public class Scroll {
 		}
 		return builder.toString();
 	}
-	
+
 	private String name;
 	private int def;
 	private int atk;
@@ -23,62 +27,77 @@ public class Scroll {
 	private int vint;
 	private int stamina;
 	private double price;
-	
-	public Scroll(){}
-	
-	public Scroll(String namee, int deff, int atkk, int matkk) {
-		name = namee;
-		def=deff;
-		atk=atkk;
-		matk=matkk;
+	private ScrollRestriction restriction;
+
+	public Scroll() {
 	}
+
+	public Scroll(String namee, int deff, int atkk, int matkk) {
+		this(namee, deff, atkk, matkk, 0.0);
+	}
+
 	public Scroll(String namee, int deff, int atkk, int matkk, double cost) {
 		name = namee;
-		def=deff;
-		atk=atkk;
-		matk=matkk;
+		def = deff;
+		atk = atkk;
+		matk = matkk;
 		price = cost;
+		restriction = new ScrollRestriction(new ArrayList<ItemTyp>(),
+				new ArrayList<String>());
 	}
 
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getDef() {
 		return def;
 	}
+
 	public void setDef(int def) {
 		this.def = def;
 	}
+
 	public int getAtk() {
 		return atk;
 	}
+
 	public void setAtk(int atk) {
 		this.atk = atk;
 	}
+
 	public int getMatk() {
 		return matk;
 	}
+
 	public void setMatk(int matk) {
 		this.matk = matk;
 	}
+
 	public int getStr() {
 		return str;
 	}
+
 	public void setStr(int str) {
 		this.str = str;
 	}
+
 	public int getVint() {
 		return vint;
 	}
+
 	public void setVint(int vint) {
 		this.vint = vint;
 	}
+
 	public int getStamina() {
 		return stamina;
 	}
+
 	public void setStamina(int stamina) {
 		this.stamina = stamina;
 	}
@@ -139,7 +158,5 @@ public class Scroll {
 			return false;
 		return true;
 	}
-	
-	
 
 }

@@ -1678,11 +1678,9 @@ public class StaticImport {
 
 		Gloves g = new Gloves(iset, "Gloves", 54, ItemTyp.CLOTH, 256, 0, 98,
 				18, 8);
-		Shoes s = new Shoes(iset, "Shoes", 54, ItemTyp.CLOTH, 267, 0, 99, 17,
-				8);
-		Pants p = new Pants(iset, "Pants", 54, ItemTyp.CLOTH, 300, 0, 97, 19,
-				9);
-		Helm h = new Helm(iset, "Helm",54, ItemTyp.CLOTH, 272, 0, 98, 15, 8);
+		Shoes s = new Shoes(iset, "Shoes", 54, ItemTyp.CLOTH, 267, 0, 99, 17, 8);
+		Pants p = new Pants(iset, "Pants", 54, ItemTyp.CLOTH, 300, 0, 97, 19, 9);
+		Helm h = new Helm(iset, "Helm", 54, ItemTyp.CLOTH, 272, 0, 98, 15, 8);
 		Armor a = new Armor(iset, "Armor", 54, ItemTyp.CLOTH, 326, 0, 99, 17,
 				11);
 
@@ -1692,8 +1690,39 @@ public class StaticImport {
 		armors.add(a);
 		helms.add(h);
 	}
-	
-	
+
+	static void generateRegina_3_min() {
+		String setname = "Regina (Orange minimum)";
+		sets.add(setname);
+		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
+		boni.add(new ItemSetBonus(110, 40, 54));
+		boni.add(new ItemSetBonus(165, 60, 81));
+		boni.add(new ItemSetBonus(220, 80, 108));
+		boni.add(new ItemSetBonus(275, 100, 135));
+
+		ItemSet iset = new ItemSet(setname, boni);
+		iset.setUsefulChars(char_melee + " " + magic);
+
+		Gloves g = new Gloves(iset, "Gloves", 90, ItemTyp.PLATE, 1255, 144,
+				194, 72, 13);
+		Shoes s = new Shoes(iset, "Shoes", 90, ItemTyp.PLATE, 1255, 144,
+				194, 72, 13);
+		Helm h = new Helm(iset, "Helm", 90, ItemTyp.PLATE, 1255, 144,
+				194, 72, 13);
+		
+		Pants p = new Pants(iset, "Pants", 90, ItemTyp.PLATE, 1355, 144,
+				194, 72, 18);
+		Armor a = new Armor(iset, "Armor", 90, ItemTyp.PLATE, 1422, 144,
+				194, 72, 16);
+		
+
+		shoes.add(s);
+		gloves.add(g);
+		pants.add(p);
+		armors.add(a);
+		helms.add(h);
+	}
+
 	public static void staticImAndExport() {
 		// 60 sets
 		generateWonderland();
@@ -1749,11 +1778,14 @@ public class StaticImport {
 		generateSoulloop();
 		generateOriental();
 		generateDancing();
-		
+
 		// arisha
 		generateApex();
 		generateSilverFox();
 		generateStriker();
+		
+		// chapter1 90 gear
+		generateRegina_3_min();
 	}
 
 	public static void staticExportSets() {

@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.xml.ws.handler.MessageContext.Scope;
+
 import net.nexon.vindictus.itemcomparer.inport.ScrollProperty;
 import net.nexon.vindictus.itemcomparer.logic.comparators.ItemLevelComparator;
 import net.nexon.vindictus.itemcomparer.modell.Items;
@@ -52,6 +54,48 @@ public class ItemLogic implements IItemLocal {
 		items.getHelms().removeAll(helms_changed);
 
 	}
+	
+	public void duplicateItems(Items items, boolean keepChanged, List<Scroll_Pre> pres, List<Scroll_Suf> sufs) {
+		HashSet<ItemTyp> allowed = new HashSet<>();
+		allowed.add(ItemTyp.CLOTH);
+		allowed.add(ItemTyp.LIGHT);
+
+		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
+		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
+		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
+		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
+		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
+
+		List<Shoes> new_s2 = addScrollsToShoes(items, allowed, wb, force);
+		List<Pants> new_p2 = addScrollsToPants(items, allowed, wb, force);
+		List<Gloves> new_g2 = addScrollsToGloves(items, allowed, wb, force);
+		List<Armor> new_a2 = addScrollsToArmor(items, allowed, wb, force);
+		List<Helm> new_h2 = addScrollsToHelm(items, allowed, wb, force);
+
+		if (!keepChanged) {
+			deleteChanged(items);
+		}
+
+		items.getShoes().addAll(new_s);
+		items.getPants().addAll(new_p);
+		items.getGloves().addAll(new_g);
+		items.getArmors().addAll(new_a);
+		items.getHelms().addAll(new_h);
+
+		items.getShoes().addAll(new_s2);
+		items.getPants().addAll(new_p2);
+		items.getGloves().addAll(new_g2);
+		items.getArmors().addAll(new_a2);
+		items.getHelms().addAll(new_h2);
+
+		System.out.println(new_s.size() + new_p.size() + new_g.size()
+				+ new_a.size() + new_h.size() + new_s2.size() + new_p2.size()
+				+ new_g2.size() + new_a2.size() + new_h2.size()
+				+ " new Items added");
+
+	}
+
+	
 
 	@Override
 	public void duplicateEnthu(Items items, boolean keepChanged) {

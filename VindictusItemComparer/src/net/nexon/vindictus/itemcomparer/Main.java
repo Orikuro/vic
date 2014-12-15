@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import net.nexon.vindictus.itemcomparer.inport.StaticImport;
+import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
 import net.nexon.vindictus.itemcomparer.inport.XMLImport;
 import net.nexon.vindictus.itemcomparer.logic.ItemLogic;
 import net.nexon.vindictus.itemcomparer.logic.ThreadStarter;
@@ -234,6 +235,8 @@ public class Main {
 			case ts_tr_ta_f_e:
 				il.duplicateTs_Tr_Ta_F_E(items, KEEP);
 				break;
+			case all:
+				il.duplicateItems(items, KEEP, StaticScrolls.pres, StaticScrolls.sufs);
 			default:
 				break;
 			}

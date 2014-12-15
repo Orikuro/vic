@@ -84,13 +84,54 @@ public class StaticScrolls {
 			282, SCRPROP.getEnthu(), CLOTH_LIGHT_ALL);
 	private static Scroll_Suf force = new Scroll_Suf("Force", -28, 140, 132,
 			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	
+	private static Scroll_Suf enli = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf silent = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf journey = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf annouc = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf remember = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf repe = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf expedition = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf echo = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	
+	private static Scroll_Suf time = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	private static Scroll_Suf stigma = new Scroll_Suf("Force", -28, 140, 132,
+			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+	
+	
 
-	public static List<Scroll_Pre> pres;
+	public static List<Scroll_Pre> pres = new ArrayList<>();
 
-	public static List<Scroll_Suf> sufs;
+	public static List<Scroll_Suf> sufs = new ArrayList<>();
 
 	static {
 		pres.add(wb);
+		pres.add(tut);
+		
 		sufs.add(force);
+		sufs.add(enthu);
+		sufs.add(sent);
+		sufs.add(armadil);
+		sufs.add(resist);
+		
 	}
 }

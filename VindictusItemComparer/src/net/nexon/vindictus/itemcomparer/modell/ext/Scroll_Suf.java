@@ -41,7 +41,7 @@ public class Scroll_Suf extends Scroll {
 			int stamina, double price, ScrollRestriction restriction, int crit,
 			int bal, int critres, int aspd, int bonus, ItemTyp bonus_type)
 	{
-		
+		super(name, def, atk, matk, str, vint,stamina,price,restriction, crit, bal, critres, aspd, bonus, bonus_type);
 	}
 	
 }

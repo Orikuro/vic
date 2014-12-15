@@ -117,7 +117,7 @@ public class StaticScrolls {
 	private static Scroll_Pre time = new Scroll_Pre("Time", 160, 0,
 			0, 0, 0, 0, 0.0, ONLY_ARMOR, 4, -3, 6, 0, 0,
 			ItemTyp.CLOTH);
-	private static Scroll_Suf stigma = new Scroll_Suf("Echo", 70, 0,
+	private static Scroll_Suf stigma = new Scroll_Suf("Stigma", 70, 0,
 			0, 0, 0, 0, 0.0, ONLY_ARMOR, 5, -1, 7, 0, 0,
 			ItemTyp.CLOTH);
 

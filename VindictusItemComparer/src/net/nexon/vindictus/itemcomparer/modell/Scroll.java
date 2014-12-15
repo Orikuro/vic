@@ -159,4 +159,12 @@ public class Scroll {
 		return true;
 	}
 
+	public ScrollRestriction getRestriction() {
+		return restriction;
+	}
+
+	public void setRestriction(ScrollRestriction restriction) {
+		this.restriction = restriction;
+	}
+
 }

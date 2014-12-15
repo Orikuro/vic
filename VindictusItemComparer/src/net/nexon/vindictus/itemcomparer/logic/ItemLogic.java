@@ -10,6 +10,7 @@ import javax.xml.ws.handler.MessageContext.Scope;
 import net.nexon.vindictus.itemcomparer.inport.ScrollProperty;
 import net.nexon.vindictus.itemcomparer.logic.comparators.ItemLevelComparator;
 import net.nexon.vindictus.itemcomparer.modell.Items;
+import net.nexon.vindictus.itemcomparer.modell.ScrollRestriction;
 import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
 import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
 import net.nexon.vindictus.itemcomparer.modell.ext.Armor;
@@ -54,8 +55,9 @@ public class ItemLogic implements IItemLocal {
 		items.getHelms().removeAll(helms_changed);
 
 	}
-	
-	public void duplicateItems(Items items, boolean keepChanged, List<Scroll_Pre> pres, List<Scroll_Suf> sufs) {
+
+	public void duplicateItems(Items items, boolean keepChanged,
+			List<Scroll_Pre> pres, List<Scroll_Suf> sufs) {
 		HashSet<ItemTyp> allowed = new HashSet<>();
 		allowed.add(ItemTyp.CLOTH);
 		allowed.add(ItemTyp.LIGHT);
@@ -95,7 +97,29 @@ public class ItemLogic implements IItemLocal {
 
 	}
 
-	
+	private List<Items> addScrollsToItems(Items items, Scroll_Pre newpre,
+			Scroll_Suf newsuf) {
+		List<Shoes> newitems = new ArrayList<>();
+
+		for (Shoes x : items.getShoes()) {
+
+			ItemTyp typ = x.getTyp();
+			ScrollRestriction pre_r = newpre.getRestriction();
+			ScrollRestriction suf_r = newsuf.getRestriction();
+			
+			pre_r.getItemslots();
+			pre_r.getItemtype();
+
+			if (allowedTypes.contains(typ)) {
+				Scroll_Pre pre = x.getScroll_pre();
+				Scroll_Suf suf = x.getScroll_suf();
+				Shoes newitem = new Shoes(x);
+				newitems.add(newitem);
+
+			}
+		}
+		return newitems;
+	}
 
 	@Override
 	public void duplicateEnthu(Items items, boolean keepChanged) {
@@ -1354,7 +1378,8 @@ public class ItemLogic implements IItemLocal {
 
 		List<Shoes> new_s2 = addScrollsToShoes(items, allowed_tut, tut, resist);
 		List<Pants> new_p2 = addScrollsToPants(items, allowed_tut, tut, resist);
-		List<Gloves> new_g2 = addScrollsToGloves(items, allowed_tut, tut, resist);
+		List<Gloves> new_g2 = addScrollsToGloves(items, allowed_tut, tut,
+				resist);
 		List<Armor> new_a2 = addScrollsToArmor(items, allowed_tut, tut, resist);
 		List<Helm> new_h2 = addScrollsToHelm(items, allowed_tut, tut, resist);
 

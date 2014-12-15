@@ -1,5 +1,6 @@
 package net.nexon.vindictus.itemcomparer.modell;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
@@ -14,6 +15,17 @@ public class ScrollRestriction {
 		super();
 		this.itemtype = itemtype;
 		this.itemslots = itemslots;
+	}
+	
+	public ScrollRestriction(List<ItemTyp> itemtype) {
+		super();
+		this.itemtype = itemtype;
+		itemslots = new ArrayList<>();
+		itemslots.add("Armor");
+		itemslots.add("Helm");
+		itemslots.add("Pants");
+		itemslots.add("Gloves");
+		itemslots.add("Shoes");
 	}
 	
 	public List<ItemTyp> getItemtype() {

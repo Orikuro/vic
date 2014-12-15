@@ -355,6 +355,40 @@ public class Item {
 		return scroll_pre;
 	}
 
+	public boolean brynn(Scroll_Pre pre, Scroll_Suf suf) {
+		return brynn(pre) && brynn(suf);
+	}
+
+	public boolean brynn(Scroll_Pre pre) {
+		ScrollRestriction res = pre.getRestriction();
+
+		if (!res.getItemtype().contains(typ)) {
+			return false;
+		}
+		if (!res.getItemslots().contains(this.getClass().getSimpleName())) {
+			return false;
+		}
+
+		setScroll_pre(pre);
+
+		return true;
+	}
+
+	public boolean brynn(Scroll_Suf suf) {
+		ScrollRestriction res = suf.getRestriction();
+
+		if (!res.getItemtype().contains(typ)) {
+			return false;
+		}
+		if (!res.getItemslots().contains(this.getClass().getSimpleName())) {
+			return false;
+		}
+
+		setScroll_suf(suf);
+
+		return true;
+	}
+
 	public void setScroll_pre(Scroll_Pre scroll_pre) {
 		totalprice = price + scroll_pre.getPrice() + scroll_suf.getPrice();
 		this.scroll_pre = scroll_pre;

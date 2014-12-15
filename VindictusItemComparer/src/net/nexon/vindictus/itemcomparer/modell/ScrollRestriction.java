@@ -6,17 +6,16 @@ import java.util.List;
 import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
 
 public class ScrollRestriction {
-	
-	
+
 	private List<ItemTyp> itemtype;
 	private List<String> itemslots;
-	
+
 	public ScrollRestriction(List<ItemTyp> itemtype, List<String> itemslots) {
 		super();
 		this.itemtype = itemtype;
 		this.itemslots = itemslots;
 	}
-	
+
 	public ScrollRestriction(List<ItemTyp> itemtype) {
 		super();
 		this.itemtype = itemtype;
@@ -27,19 +26,23 @@ public class ScrollRestriction {
 		itemslots.add("Gloves");
 		itemslots.add("Shoes");
 	}
-	
+
 	public List<ItemTyp> getItemtype() {
 		return itemtype;
 	}
+
 	public void setItemtype(List<ItemTyp> itemtype) {
 		this.itemtype = itemtype;
 	}
+
 	public List<String> getItemslots() {
 		return itemslots;
 	}
+
 	public void setItemslots(List<String> itemslots) {
 		this.itemslots = itemslots;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -50,6 +53,7 @@ public class ScrollRestriction {
 				+ ((itemtype == null) ? 0 : itemtype.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,6 +75,5 @@ public class ScrollRestriction {
 			return false;
 		return true;
 	}
-	
 
 }

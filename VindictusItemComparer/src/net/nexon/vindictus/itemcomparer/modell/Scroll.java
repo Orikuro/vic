@@ -1,6 +1,7 @@
 package net.nexon.vindictus.itemcomparer.modell;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -42,10 +43,23 @@ public class Scroll {
 		atk = atkk;
 		matk = matkk;
 		price = cost;
-		restriction = new ScrollRestriction(new ArrayList<ItemTyp>(),
-				new ArrayList<String>());
+		List<ItemTyp> res = new ArrayList<ItemTyp>();
+		res.add(ItemTyp.CLOTH);
+		res.add(ItemTyp.LIGHT);
+		res.add(ItemTyp.HEAVY);
+		res.add(ItemTyp.PLATE);
+		restriction = new ScrollRestriction(res);
 	}
 
+	public Scroll(String namee, int deff, int atkk, int matkk, double cost, ScrollRestriction res) {
+		name = namee;
+		def = deff;
+		atk = atkk;
+		matk = matkk;
+		price = cost;
+		restriction = res;
+	}
+	
 	public String getName() {
 		return name;
 	}

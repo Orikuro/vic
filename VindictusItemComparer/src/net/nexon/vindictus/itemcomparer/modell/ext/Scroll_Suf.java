@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 
 import net.nexon.vindictus.itemcomparer.modell.Scroll;
 import net.nexon.vindictus.itemcomparer.modell.ScrollRestriction;
+import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Scroll_Suf extends Scroll {
@@ -35,4 +36,12 @@ public class Scroll_Suf extends Scroll {
 		super(namee, deff, atkk, matkk, cost, res);
 		this.setStamina(stam);
 	}
+	
+	public Scroll_Suf(String name, int def, int atk, int matk, int str, int vint,
+			int stamina, double price, ScrollRestriction restriction, int crit,
+			int bal, int critres, int aspd, int bonus, ItemTyp bonus_type)
+	{
+		
+	}
+	
 }

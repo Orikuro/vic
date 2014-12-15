@@ -40,7 +40,7 @@ public class StaticScrolls {
 		PANTS_HELM.add("Helm");
 		SHOES_GLOVES.add("Shoes");
 		SHOES_GLOVES.add("Gloves");
-		
+
 	}
 
 	private final static ScrollRestriction CLOTH_LIGHT_ALL = new ScrollRestriction(
@@ -75,7 +75,7 @@ public class StaticScrolls {
 	private static Scroll_Suf sent = new Scroll_Suf("Sentinel", 224, -15, 0,
 			SCRPROP.getSenti(), HEAVY_PLATE_ALL);
 	private static Scroll_Suf resist = new Scroll_Suf("Resistant", 340, -160,
-			0, SCRPROP.getRes(),HEAVY_PLATE_ALL);
+			0, SCRPROP.getRes(), HEAVY_PLATE_ALL);
 	private static Scroll_Suf armadil = new Scroll_Suf(5, "Armadillo", 336, 0,
 			0, SCRPROP.getArmadi(), HEAVY_ALL);
 	private static Scroll_Suf master = new Scroll_Suf("Master", 0, 0, 0,
@@ -84,41 +84,44 @@ public class StaticScrolls {
 			282, SCRPROP.getEnthu(), CLOTH_LIGHT_ALL);
 	private static Scroll_Suf force = new Scroll_Suf("Force", -28, 140, 132,
 			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
+
 	
-	
-	private static Scroll_Suf enli = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf silent = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf journey = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf annouc = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf remember = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf repe = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf expedition = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf echo = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	
-	private static Scroll_Suf time = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
-	private static Scroll_Suf stigma = new Scroll_Suf("Force", -28, 140, 132,
-			SCRPROP.getForce(), CLOTH_LIGHT_ALL);
-	
+	private static Scroll_Pre enli = new Scroll_Pre("Enlightenment", 0, 210,
+			210, 0, 0, 0, 0.0, CLOTH_LIGHT_PANTS_HELM, 2, 1, 1, 2, 35,
+			ItemTyp.CLOTH);
+	private static Scroll_Pre silent = new Scroll_Pre("Silent", 150, 110,
+			110, 0, 0, 0, 0.0, CLOTH_LIGHT_SHOES_GLOVES, 1, 2, -2, 2, 35,
+			ItemTyp.CLOTH);
+	private static Scroll_Suf journey = new Scroll_Suf("Journey", 150, 250,
+			250, 0, 0, 0, 0.0, CLOTH_LIGHT_PANTS_HELM, 1, 0, 3, 0, 35,
+			ItemTyp.CLOTH);
+	private static Scroll_Suf announc = new Scroll_Suf("Announcement", -330, 330,
+			330, 0, 0, 0, 0.0, CLOTH_LIGHT_SHOES_GLOVES, 0, 4, 1, 1, 35,
+			ItemTyp.CLOTH);
 	
 
+	private static Scroll_Pre remember = new Scroll_Pre("Remember", 100, 0,
+			0, 0, 0, 0, 0.0, HEAVY_PLATE_PANTS_HELM, 2, 1, 2, 2, 35,
+			ItemTyp.HEAVY);
+	private static Scroll_Pre repe = new Scroll_Pre("Repeatsay", 150, 0,
+			0, 0, 0, 0, 0.0, HEAVY_PLATE_SHOES_GLOVES, 1, 2, -1, 2, 35,
+			ItemTyp.HEAVY);
+	private static Scroll_Suf exped = new Scroll_Suf("Expedition", 280, 170,
+			170, 0, 0, 0, 0.0, HEAVY_PLATE_PANTS_HELM, 0, 0, 4, 0, 35,
+			ItemTyp.HEAVY);
+	private static Scroll_Suf echo = new Scroll_Suf("Echo", -260, 190,
+			190, 0, 0, 0, 0.0, HEAVY_PLATE_SHOES_GLOVES, 0, 4, 2, 1, 35,
+			ItemTyp.HEAVY);
+
+	
+	private static Scroll_Pre time = new Scroll_Pre("Time", 160, 0,
+			0, 0, 0, 0, 0.0, ONLY_ARMOR, 4, -3, 6, 0, 0,
+			ItemTyp.CLOTH);
+	private static Scroll_Suf stigma = new Scroll_Suf("Echo", 70, 0,
+			0, 0, 0, 0, 0.0, ONLY_ARMOR, 5, -1, 7, 0, 0,
+			ItemTyp.CLOTH);
+
+	
 	public static List<Scroll_Pre> pres = new ArrayList<>();
 
 	public static List<Scroll_Suf> sufs = new ArrayList<>();
@@ -126,12 +129,22 @@ public class StaticScrolls {
 	static {
 		pres.add(wb);
 		pres.add(tut);
+		pres.add(enli);
+		pres.add(silent);
+		pres.add(remember);
+		pres.add(repe);
+		pres.add(time);
 		
 		sufs.add(force);
 		sufs.add(enthu);
 		sufs.add(sent);
 		sufs.add(armadil);
 		sufs.add(resist);
-		
+		sufs.add(journey);
+		sufs.add(announc);
+		sufs.add(exped);
+		sufs.add(echo);
+		sufs.add(stigma);
+
 	}
 }

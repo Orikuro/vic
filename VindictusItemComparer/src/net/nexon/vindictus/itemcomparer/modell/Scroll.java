@@ -29,6 +29,12 @@ public class Scroll {
 	private int stamina;
 	private double price;
 	private ScrollRestriction restriction;
+	private int crit = 0;
+	private int bal = 0;
+	private int critres = 0;
+	private int aspd = 0;
+	private int bonus = 0;
+	private ItemTyp bonus_type = ItemTyp.CLOTH;
 
 	public Scroll() {
 	}
@@ -51,7 +57,8 @@ public class Scroll {
 		restriction = new ScrollRestriction(res);
 	}
 
-	public Scroll(String namee, int deff, int atkk, int matkk, double cost, ScrollRestriction res) {
+	public Scroll(String namee, int deff, int atkk, int matkk, double cost,
+			ScrollRestriction res) {
 		name = namee;
 		def = deff;
 		atk = atkk;
@@ -59,7 +66,28 @@ public class Scroll {
 		price = cost;
 		restriction = res;
 	}
-	
+
+	public Scroll(String name, int def, int atk, int matk, int str, int vint,
+			int stamina, double price, ScrollRestriction restriction, int crit,
+			int bal, int critres, int aspd, int bonus, ItemTyp bonus_type) {
+		super();
+		this.name = name;
+		this.def = def;
+		this.atk = atk;
+		this.matk = matk;
+		this.str = str;
+		this.vint = vint;
+		this.stamina = stamina;
+		this.price = price;
+		this.restriction = restriction;
+		this.crit = crit;
+		this.bal = bal;
+		this.critres = critres;
+		this.aspd = aspd;
+		this.bonus = bonus;
+		this.bonus_type = bonus_type;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -124,17 +152,82 @@ public class Scroll {
 		this.price = price;
 	}
 
+	public ScrollRestriction getRestriction() {
+		return restriction;
+	}
+
+	public void setRestriction(ScrollRestriction restriction) {
+		this.restriction = restriction;
+	}
+
+	public int getCrit() {
+		return crit;
+	}
+
+	public void setCrit(int crit) {
+		this.crit = crit;
+	}
+
+	public int getBal() {
+		return bal;
+	}
+
+	public void setBal(int bal) {
+		this.bal = bal;
+	}
+
+	public int getCritres() {
+		return critres;
+	}
+
+	public void setCritres(int critres) {
+		this.critres = critres;
+	}
+
+	public int getAspd() {
+		return aspd;
+	}
+
+	public void setAspd(int aspd) {
+		this.aspd = aspd;
+	}
+
+	public int getBonus() {
+		return bonus;
+	}
+
+	public void setBonus(int bonus) {
+		this.bonus = bonus;
+	}
+
+	public ItemTyp getBonus_type() {
+		return bonus_type;
+	}
+
+	public void setBonus_type(ItemTyp bonus_type) {
+		this.bonus_type = bonus_type;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + aspd;
 		result = prime * result + atk;
+		result = prime * result + bal;
+		result = prime * result + bonus;
+		result = prime * result
+				+ ((bonus_type == null) ? 0 : bonus_type.hashCode());
+		result = prime * result + crit;
+		result = prime * result + critres;
 		result = prime * result + def;
 		result = prime * result + matk;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(price);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result
+				+ ((restriction == null) ? 0 : restriction.hashCode());
 		result = prime * result + stamina;
 		result = prime * result + str;
 		result = prime * result + vint;
@@ -150,7 +243,19 @@ public class Scroll {
 		if (getClass() != obj.getClass())
 			return false;
 		Scroll other = (Scroll) obj;
+		if (aspd != other.aspd)
+			return false;
 		if (atk != other.atk)
+			return false;
+		if (bal != other.bal)
+			return false;
+		if (bonus != other.bonus)
+			return false;
+		if (bonus_type != other.bonus_type)
+			return false;
+		if (crit != other.crit)
+			return false;
+		if (critres != other.critres)
 			return false;
 		if (def != other.def)
 			return false;
@@ -164,6 +269,11 @@ public class Scroll {
 		if (Double.doubleToLongBits(price) != Double
 				.doubleToLongBits(other.price))
 			return false;
+		if (restriction == null) {
+			if (other.restriction != null)
+				return false;
+		} else if (!restriction.equals(other.restriction))
+			return false;
 		if (stamina != other.stamina)
 			return false;
 		if (str != other.str)
@@ -171,14 +281,6 @@ public class Scroll {
 		if (vint != other.vint)
 			return false;
 		return true;
-	}
-
-	public ScrollRestriction getRestriction() {
-		return restriction;
-	}
-
-	public void setRestriction(ScrollRestriction restriction) {
-		this.restriction = restriction;
 	}
 
 }

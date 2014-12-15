@@ -9,6 +9,7 @@ import javax.xml.ws.handler.MessageContext.Scope;
 
 import net.nexon.vindictus.itemcomparer.inport.ScrollProperty;
 import net.nexon.vindictus.itemcomparer.logic.comparators.ItemLevelComparator;
+import net.nexon.vindictus.itemcomparer.modell.Item;
 import net.nexon.vindictus.itemcomparer.modell.Items;
 import net.nexon.vindictus.itemcomparer.modell.ScrollRestriction;
 import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
@@ -41,11 +42,11 @@ public class ItemLogic implements IItemLocal {
 	private static Scroll_Suf master = new Scroll_Suf("Master", 0, 0, 0,
 			SCRPROP.getMaster());
 
-	private List<Shoes> shoes_changed = new ArrayList<>();
-	private List<Pants> pants_changed = new ArrayList<>();
-	private List<Gloves> gloves_changed = new ArrayList<>();
-	private List<Armor> armors_changed = new ArrayList<>();
-	private List<Helm> helms_changed = new ArrayList<>();
+	private HashSet<Shoes> shoes_changed = new HashSet<>();
+	private HashSet<Pants> pants_changed = new HashSet<>();
+	private HashSet<Gloves> gloves_changed = new HashSet<>();
+	private HashSet<Armor> armors_changed = new HashSet<>();
+	private HashSet<Helm> helms_changed = new HashSet<>();
 
 	private void deleteChanged(Items items) {
 		items.getShoes().removeAll(shoes_changed);
@@ -58,66 +59,86 @@ public class ItemLogic implements IItemLocal {
 
 	public void duplicateItems(Items items, boolean keepChanged,
 			List<Scroll_Pre> pres, List<Scroll_Suf> sufs) {
-		HashSet<ItemTyp> allowed = new HashSet<>();
-		allowed.add(ItemTyp.CLOTH);
-		allowed.add(ItemTyp.LIGHT);
 
-		List<Shoes> new_s = addScrollsToShoes(items, allowed, wb, enthu);
-		List<Pants> new_p = addScrollsToPants(items, allowed, wb, enthu);
-		List<Gloves> new_g = addScrollsToGloves(items, allowed, wb, enthu);
-		List<Armor> new_a = addScrollsToArmor(items, allowed, wb, enthu);
-		List<Helm> new_h = addScrollsToHelm(items, allowed, wb, enthu);
+		List<Item> newitems = new ArrayList<>();
 
-		List<Shoes> new_s2 = addScrollsToShoes(items, allowed, wb, force);
-		List<Pants> new_p2 = addScrollsToPants(items, allowed, wb, force);
-		List<Gloves> new_g2 = addScrollsToGloves(items, allowed, wb, force);
-		List<Armor> new_a2 = addScrollsToArmor(items, allowed, wb, force);
-		List<Helm> new_h2 = addScrollsToHelm(items, allowed, wb, force);
+		for (Scroll_Pre pre : pres) {
+			for (Scroll_Suf suf : sufs) {
+				newitems.addAll(addScrollsToItems(items, pre, suf));
+			}
+		}
 
 		if (!keepChanged) {
 			deleteChanged(items);
 		}
 
-		items.getShoes().addAll(new_s);
-		items.getPants().addAll(new_p);
-		items.getGloves().addAll(new_g);
-		items.getArmors().addAll(new_a);
-		items.getHelms().addAll(new_h);
-
-		items.getShoes().addAll(new_s2);
-		items.getPants().addAll(new_p2);
-		items.getGloves().addAll(new_g2);
-		items.getArmors().addAll(new_a2);
-		items.getHelms().addAll(new_h2);
-
-		System.out.println(new_s.size() + new_p.size() + new_g.size()
-				+ new_a.size() + new_h.size() + new_s2.size() + new_p2.size()
-				+ new_g2.size() + new_a2.size() + new_h2.size()
-				+ " new Items added");
+		for (Item x : newitems) {
+			if (x instanceof Shoes){
+				items.getShoes().add((Shoes)x);
+			}
+			if (x instanceof Pants){
+				items.getPants().add((Pants) x);
+			}
+			if (x instanceof Armor){
+				items.getArmors().add((Armor) x);
+			}
+			if (x instanceof Gloves){
+				items.getGloves().add((Gloves)x);
+			}
+			if (x instanceof Helm){
+				items.getHelms().add((Helm)x);
+			}
+			
+			
+		}
 
 	}
 
-	private List<Items> addScrollsToItems(Items items, Scroll_Pre newpre,
+	private List<Item> addScrollsToItems(Items items, Scroll_Pre newpre,
 			Scroll_Suf newsuf) {
-		List<Shoes> newitems = new ArrayList<>();
+		List<Item> newitems = new ArrayList<>();
 
 		for (Shoes x : items.getShoes()) {
-
-			ItemTyp typ = x.getTyp();
-			ScrollRestriction pre_r = newpre.getRestriction();
-			ScrollRestriction suf_r = newsuf.getRestriction();
-			
-			pre_r.getItemslots();
-			pre_r.getItemtype();
-
-			if (allowedTypes.contains(typ)) {
-				Scroll_Pre pre = x.getScroll_pre();
-				Scroll_Suf suf = x.getScroll_suf();
-				Shoes newitem = new Shoes(x);
-				newitems.add(newitem);
-
+			Shoes changed = new Shoes(x);
+			boolean success = changed.brynn(newpre, newsuf);
+			if (success) {
+				newitems.add(changed);
+				shoes_changed.add(x);
 			}
 		}
+		for (Pants x : items.getPants()) {
+			Pants changed = new Pants(x);
+			boolean success = changed.brynn(newpre, newsuf);
+			if (success) {
+				newitems.add(changed);
+				pants_changed.add(x);
+			}
+		}
+		for (Gloves x : items.getGloves()) {
+			Gloves changed = new Gloves(x);
+			boolean success = changed.brynn(newpre, newsuf);
+			if (success) {
+				newitems.add(changed);
+				gloves_changed.add(x);
+			}
+		}
+		for (Armor x : items.getArmors()) {
+			Armor changed = new Armor(x);
+			boolean success = changed.brynn(newpre, newsuf);
+			if (success) {
+				newitems.add(changed);
+				armors_changed.add(x);
+			}
+		}
+		for (Helm x : items.getHelms()) {
+			Helm changed = new Helm(x);
+			boolean success = changed.brynn(newpre, newsuf);
+			if (success) {
+				newitems.add(changed);
+				helms_changed.add(x);
+			}
+		}
+
 		return newitems;
 	}
 

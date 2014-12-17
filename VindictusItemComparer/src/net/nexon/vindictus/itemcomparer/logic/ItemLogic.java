@@ -77,7 +77,7 @@ public class ItemLogic implements IItemLocal {
 		String[] prefixes = prefix.split(",");
 		for (String x : prefixes) {
 			try {
-				pres.add(StaticScrolls.searchPre(x));
+				pres.add(StaticScrolls.searchPre(x.trim()));
 			} catch (Exception e) {
 			}
 		}
@@ -85,7 +85,7 @@ public class ItemLogic implements IItemLocal {
 		String[] suffixes = suffix.split(",");
 		for (String x : suffixes) {
 			try {
-				sufs.add(StaticScrolls.searchSuf(x));
+				sufs.add(StaticScrolls.searchSuf(x.trim()));
 			} catch (Exception e) {
 			}
 		}

@@ -43,6 +43,7 @@ public class GUI extends JFrame {
 	private JList char_List;
 	private JList sort_List;
 	private JList pre_List;
+	private JList suf_List;
 	private JList minlvl_List;
 	private JList maxlvl_List;
 	private JList smin_List;
@@ -81,17 +82,28 @@ public class GUI extends JFrame {
 				+ plus_Slider.getValue();
 
 		String cpu = "";
-		String dup = "";
+		String pre = "";
+		String suf = "";
 
 		if (pre_List.getSelectedIndex() > 0) {
-			dup = " -dup " + pre_List.getSelectedValue();
+			String temp = pre_List.getSelectedValuesList().toString();
+			temp = temp.replace("[", "");
+			temp = temp.replace("]", "");
+			
+			pre = " -pre \"" + temp+"\"";
+		}
+
+		if (suf_List.getSelectedIndex() > 0) {
+			String temp = suf_List.getSelectedValuesList().toString();
+			temp = temp.replace("[", "");
+			temp = temp.replace("]", "");
+			suf = " -suf \"" + temp+"\"";
 		}
 
 		if (cpu_List.getSelectedIndex() > 0) {
 			cpu = " -f " + cpu_List.getSelectedValue();
 		}
-		output += dup + cpu;
-
+		output += pre + suf + cpu;
 
 		if (master_Check.isSelected()) {
 			output += " -master";
@@ -243,28 +255,50 @@ public class GUI extends JFrame {
 
 		JPanel panel_8 = new JPanel();
 		panel_13.add(panel_8);
-		panel_8.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Scroll Overwrite", TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
+		panel_8.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Scroll Overwrite",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
+						0, 0)));
 
 		pre_List = new JList();
 		panel_8.add(pre_List);
 		pre_List.setToolTipText("Duplicate Sets with these scroll prefixes.");
 		pre_List.setModel(new AbstractListModel() {
-			String[] values = StaticScrolls.prefix_Names(); //new String[] {"", "all", "force", "enthu", "tutsenti", "tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu", "tr_enthu", "ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu", "ts_tr_ta_enthu", "ts_tr_ta_force", "ts_tr_ta_f_e"};
+			String[] values = StaticScrolls.prefix_Names(); // new String[] {"",
+															// "all", "force",
+															// "enthu",
+															// "tutsenti",
+															// "tutresis",
+															// "tutarma",
+															// "f_enthu",
+															// "ts_enthu",
+															// "ta_enthu",
+															// "tr_enthu",
+															// "ts_ta", "ts_tr",
+															// "ts_tr_ta",
+															// "ts_ta_enthu",
+															// "ts_tr_ta_enthu",
+															// "ts_tr_ta_force",
+															// "ts_tr_ta_f_e"};
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}
 		});
-		
-		JList suf_List = new JList();
+
+		suf_List = new JList();
 		suf_List.setToolTipText("Duplicate Sets with these scroll suffixes.");
 		suf_List.setModel(new AbstractListModel() {
 			String[] values = StaticScrolls.suffix_Names();
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}
@@ -453,10 +487,12 @@ public class GUI extends JFrame {
 		cpu_List.setToolTipText("CPUs to use");
 		cpu_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		cpu_List.setModel(new AbstractListModel() {
-			String[] values = new String[] {"ALL ", "1", "2", "3", "4"};
+			String[] values = new String[] { "ALL ", "1", "2", "3", "4" };
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}

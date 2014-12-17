@@ -8,6 +8,7 @@ import java.util.List;
 import javax.xml.ws.handler.MessageContext.Scope;
 
 import net.nexon.vindictus.itemcomparer.inport.ScrollProperty;
+import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
 import net.nexon.vindictus.itemcomparer.logic.comparators.ItemLevelComparator;
 import net.nexon.vindictus.itemcomparer.modell.Item;
 import net.nexon.vindictus.itemcomparer.modell.Items;
@@ -57,7 +58,43 @@ public class ItemLogic implements IItemLocal {
 
 	}
 
-	public void duplicateItems(Items items, boolean keepChanged,
+	public void duplicateItems(Items items, String prefix, String suffix) {
+
+		if (prefix == null && suffix == null) {
+			return;
+		}
+
+		prefix = prefix.trim();
+		suffix = suffix.trim();
+
+		if (prefix.length() < 1 && suffix.length() < 1) {
+			return;
+		}
+
+		List<Scroll_Pre> pres = new ArrayList<>();
+		List<Scroll_Suf> sufs = new ArrayList<>();
+
+		String[] prefixes = prefix.split(",");
+		for (String x : prefixes) {
+			try {
+				pres.add(StaticScrolls.searchPre(x));
+			} catch (Exception e) {
+			}
+		}
+
+		String[] suffixes = suffix.split(",");
+		for (String x : suffixes) {
+			try {
+				sufs.add(StaticScrolls.searchSuf(x));
+			} catch (Exception e) {
+			}
+		}
+
+		
+		duplicateItems(items, false, pres, sufs);
+	}
+
+	private void duplicateItems(Items items, boolean keepChanged,
 			List<Scroll_Pre> pres, List<Scroll_Suf> sufs) {
 
 		List<Item> newitems = new ArrayList<>();
@@ -73,23 +110,22 @@ public class ItemLogic implements IItemLocal {
 		}
 
 		for (Item x : newitems) {
-			if (x instanceof Shoes){
-				items.getShoes().add((Shoes)x);
+			if (x instanceof Shoes) {
+				items.getShoes().add((Shoes) x);
 			}
-			if (x instanceof Pants){
+			if (x instanceof Pants) {
 				items.getPants().add((Pants) x);
 			}
-			if (x instanceof Armor){
+			if (x instanceof Armor) {
 				items.getArmors().add((Armor) x);
 			}
-			if (x instanceof Gloves){
-				items.getGloves().add((Gloves)x);
+			if (x instanceof Gloves) {
+				items.getGloves().add((Gloves) x);
 			}
-			if (x instanceof Helm){
-				items.getHelms().add((Helm)x);
+			if (x instanceof Helm) {
+				items.getHelms().add((Helm) x);
 			}
-			
-			
+
 		}
 
 	}

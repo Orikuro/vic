@@ -174,5 +174,23 @@ public class StaticScrolls {
 		return values;
 	}
 	
+	public static Scroll_Pre searchPre(String name) throws Exception{
+		for (Scroll_Pre x:pres){
+			if (name.equals(x.getName())){
+				return x;
+			}
+		}
+		
+		throw new Exception("Scroll not found");
+	}
 	
+	public static Scroll_Suf searchSuf(String name) throws Exception{
+		for (Scroll_Suf x:sufs){
+			if (name.equals(x.getName())){
+				return x;
+			}
+		}
+		
+		throw new Exception("Scroll not found");
+	}
 }

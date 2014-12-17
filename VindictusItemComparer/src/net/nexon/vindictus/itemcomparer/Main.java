@@ -120,6 +120,12 @@ public class Main {
 
 	@Option(name = "-nocsv", usage = "dont write .csv files (usefull for gui comparing with open consoles)")
 	private boolean nocsv = false;
+	
+	@Option(name = "-prefix", aliases = { "-pre" }, usage = "prefixes used to duplicate sets, separated with comma")
+	private String prefix = "";
+	
+	@Option(name = "-suffix", aliases = { "-suf" }, usage = "suffixes used to duplicate sets, separated with comma")
+	private String suffix = "";
 
 	/**
 	 * @param args
@@ -236,7 +242,7 @@ public class Main {
 				il.duplicateTs_Tr_Ta_F_E(items, KEEP);
 				break;
 			case all:
-				il.duplicateItems(items, KEEP, StaticScrolls.pres, StaticScrolls.sufs);
+				il.duplicateItems(items, prefix, suffix);
 			default:
 				break;
 			}

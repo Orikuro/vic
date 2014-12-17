@@ -283,7 +283,7 @@ public class GUI extends JFrame {
 		plus_Slider.setPaintTicks(true);
 		plus_Slider.setOrientation(SwingConstants.VERTICAL);
 		plus_Slider.setSnapToTicks(true);
-		plus_Slider.setValue(0);
+		plus_Slider.setValue(6);
 		plus_Slider.setPaintLabels(true);
 		plus_Slider.setMajorTickSpacing(1);
 		plus_Slider.setMaximum(15);
@@ -318,7 +318,7 @@ public class GUI extends JFrame {
 				return values[index];
 			}
 		});
-		minlvl_List.setSelectedIndex(2);
+		minlvl_List.setSelectedIndex(3);
 
 		JLabel label = new JLabel("-");
 		panel_7.add(label);
@@ -339,7 +339,7 @@ public class GUI extends JFrame {
 				return values[index];
 			}
 		});
-		maxlvl_List.setSelectedIndex(3);
+		maxlvl_List.setSelectedIndex(4);
 
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(new TitledBorder(UIManager
@@ -453,13 +453,10 @@ public class GUI extends JFrame {
 		cpu_List.setToolTipText("CPUs to use");
 		cpu_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		cpu_List.setModel(new AbstractListModel() {
-			String[] values = new String[] { "ALL ", "1", "2", "3", "4", "5",
-					"6" };
-
+			String[] values = new String[] {"ALL ", "1", "2", "3", "4"};
 			public int getSize() {
 				return values.length;
 			}
-
 			public Object getElementAt(int index) {
 				return values[index];
 			}

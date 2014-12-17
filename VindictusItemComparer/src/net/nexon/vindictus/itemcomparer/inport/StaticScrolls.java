@@ -1,6 +1,8 @@
 package net.nexon.vindictus.itemcomparer.inport;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -145,6 +147,32 @@ public class StaticScrolls {
 		sufs.add(exped);
 		sufs.add(echo);
 		sufs.add(stigma);
+		sufs.add(master);
+		
 
 	}
+	
+	public static String[] prefix_Names(){
+	
+		String[] values = new String[pres.size()];
+		
+		for (int i=0;i<pres.size();i++){
+			values[i] = pres.get(i).getName();
+		}
+		Arrays.sort(values);
+		
+		return values;
+	}
+	
+	public static String[] suffix_Names(){
+		String[] values = new String[sufs.size()] ;
+		for (int i=0;i<sufs.size();i++){
+			values[i] = sufs.get(i).getName();
+		}
+		Arrays.sort(values);
+		
+		return values;
+	}
+	
+	
 }

@@ -29,6 +29,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.JSlider;
 
+import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
+
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
@@ -40,13 +42,12 @@ public class GUI extends JFrame {
 	private JTextField price_Text;
 	private JList char_List;
 	private JList sort_List;
-	private JList dup_List;
+	private JList pre_List;
 	private JList minlvl_List;
 	private JList maxlvl_List;
 	private JList smin_List;
 	private JList smax_List;
 	private JList cpu_List;
-	private JCheckBox keep_Check;
 	private JCheckBox master_Check;
 	private JCheckBox noinfo_Check;
 	private JCheckBox nocsv_Check;
@@ -82,8 +83,8 @@ public class GUI extends JFrame {
 		String cpu = "";
 		String dup = "";
 
-		if (dup_List.getSelectedIndex() > 0) {
-			dup = " -dup " + dup_List.getSelectedValue();
+		if (pre_List.getSelectedIndex() > 0) {
+			dup = " -dup " + pre_List.getSelectedValue();
 		}
 
 		if (cpu_List.getSelectedIndex() > 0) {
@@ -91,9 +92,7 @@ public class GUI extends JFrame {
 		}
 		output += dup + cpu;
 
-		if (keep_Check.isSelected()) {
-			output += " -keep";
-		}
+
 		if (master_Check.isSelected()) {
 			output += " -master";
 		}
@@ -244,17 +243,13 @@ public class GUI extends JFrame {
 
 		JPanel panel_8 = new JPanel();
 		panel_13.add(panel_8);
-		panel_8.setBorder(new TitledBorder(UIManager
-				.getBorder("TitledBorder.border"), "Duplicate",
-				TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0,
-						0, 0)));
+		panel_8.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Scroll Overwrite", TitledBorder.LEADING, TitledBorder.BOTTOM, null, new Color(0, 0, 0)));
 
-		dup_List = new JList();
-		panel_8.add(dup_List);
-		dup_List.setToolTipText("Duplicate Sets with these presets.");
-		dup_List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		dup_List.setModel(new AbstractListModel() {
-			String[] values = new String[] {"", "all", "force", "enthu", "tutsenti", "tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu", "tr_enthu", "ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu", "ts_tr_ta_enthu", "ts_tr_ta_force", "ts_tr_ta_f_e"};
+		pre_List = new JList();
+		panel_8.add(pre_List);
+		pre_List.setToolTipText("Duplicate Sets with these scroll prefixes.");
+		pre_List.setModel(new AbstractListModel() {
+			String[] values = StaticScrolls.prefix_Names(); //new String[] {"", "all", "force", "enthu", "tutsenti", "tutresis", "tutarma", "f_enthu", "ts_enthu", "ta_enthu", "tr_enthu", "ts_ta", "ts_tr", "ts_tr_ta", "ts_ta_enthu", "ts_tr_ta_enthu", "ts_tr_ta_force", "ts_tr_ta_f_e"};
 			public int getSize() {
 				return values.length;
 			}
@@ -262,17 +257,24 @@ public class GUI extends JFrame {
 				return values[index];
 			}
 		});
-		dup_List.setSelectedIndex(0);
+		
+		JList suf_List = new JList();
+		suf_List.setToolTipText("Duplicate Sets with these scroll suffixes.");
+		suf_List.setModel(new AbstractListModel() {
+			String[] values = StaticScrolls.suffix_Names();
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		panel_8.add(suf_List);
 
 		JPanel panel_15 = new JPanel();
 		panel_13.add(panel_15);
 
-		keep_Check = new JCheckBox("keep");
-		panel_15.add(keep_Check);
-		keep_Check.setToolTipText("keep overwritten sets");
-
 		master_Check = new JCheckBox("master");
-		master_Check.setSelected(true);
 		panel_15.add(master_Check);
 		master_Check.setToolTipText("keep overwritten sets");
 

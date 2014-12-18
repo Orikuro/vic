@@ -356,6 +356,14 @@ public class Item {
 	}
 
 	public boolean brynn(Scroll_Pre pre, Scroll_Suf suf) {
+		
+		if (pre == null){
+			return brynn(suf);
+		}
+		if (suf == null){
+			return brynn(pre);
+		}
+		
 		return brynn(pre) && brynn(suf);
 	}
 

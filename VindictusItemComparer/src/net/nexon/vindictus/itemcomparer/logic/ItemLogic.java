@@ -90,7 +90,6 @@ public class ItemLogic implements IItemLocal {
 			}
 		}
 
-		
 		duplicateItems(items, false, pres, sufs);
 	}
 
@@ -98,11 +97,26 @@ public class ItemLogic implements IItemLocal {
 			List<Scroll_Pre> pres, List<Scroll_Suf> sufs) {
 
 		List<Item> newitems = new ArrayList<>();
+		System.out.println(pres.size()+" "+sufs);
 
-		for (Scroll_Pre pre : pres) {
-			for (Scroll_Suf suf : sufs) {
-				newitems.addAll(addScrollsToItems(items, pre, suf));
+		if (pres.size() > 1 && sufs.size() > 1) {
+			for (Scroll_Pre pre : pres) {
+				for (Scroll_Suf suf : sufs) {
+					newitems.addAll(addScrollsToItems(items, pre, suf));
+				}
 			}
+		}
+		if (pres.size() > 1 && sufs.size() < 1) {
+			for (Scroll_Pre pre : pres) {
+					newitems.addAll(addScrollsToItems(items, pre, null));
+				
+			}
+		}
+		if (pres.size() < 1 && sufs.size() > 1) {
+				for (Scroll_Suf suf : sufs) {
+					newitems.addAll(addScrollsToItems(items, null, suf));
+				}
+			
 		}
 
 		if (!keepChanged) {

@@ -120,10 +120,10 @@ public class Main {
 
 	@Option(name = "-nocsv", usage = "dont write .csv files (usefull for gui comparing with open consoles)")
 	private boolean nocsv = false;
-	
+
 	@Option(name = "-prefix", aliases = { "-pre" }, usage = "prefixes used to duplicate sets, separated with comma")
 	private String prefix = "";
-	
+
 	@Option(name = "-suffix", aliases = { "-suf" }, usage = "suffixes used to duplicate sets, separated with comma")
 	private String suffix = "";
 
@@ -191,6 +191,16 @@ public class Main {
 		}
 
 		// scroll duplicating
+		if (prefix.length() > 1 && suffix.length() > 1) {
+			il.duplicateItems(items, prefix, suffix);
+		}
+		else if (prefix.length() > 1 && suffix.length() < 1) {
+			il.duplicateItems(items, prefix, "");
+		}
+		else if (prefix.length() < 1 && suffix.length() > 1) {
+			il.duplicateItems(items, "", suffix);
+		}
+		
 		if (vscroll != null) {
 			switch (vscroll) {
 			case enthu:
@@ -241,8 +251,6 @@ public class Main {
 			case ts_tr_ta_f_e:
 				il.duplicateTs_Tr_Ta_F_E(items, KEEP);
 				break;
-			case all:
-				il.duplicateItems(items, prefix, suffix);
 			default:
 				break;
 			}

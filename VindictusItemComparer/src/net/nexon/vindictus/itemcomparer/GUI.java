@@ -85,7 +85,7 @@ public class GUI extends JFrame {
 		String pre = "";
 		String suf = "";
 
-		if (pre_List.getSelectedIndex() > 0) {
+		if (pre_List.getSelectedValuesList().size() > 0) {
 			String temp = pre_List.getSelectedValuesList().toString();
 			temp = temp.replace("[", "");
 			temp = temp.replace("]", "");
@@ -93,7 +93,7 @@ public class GUI extends JFrame {
 			pre = " -pre \"" + temp+"\"";
 		}
 
-		if (suf_List.getSelectedIndex() > 0) {
+		if (suf_List.getSelectedValuesList().size() > 0) {
 			String temp = suf_List.getSelectedValuesList().toString();
 			temp = temp.replace("[", "");
 			temp = temp.replace("]", "");

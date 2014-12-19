@@ -43,6 +43,8 @@ public class Combo {
 	private int c_res;
 	private double price;
 
+	public static ItemSet reginaweapon = null;
+
 	public int getDef() {
 		return def;
 	}
@@ -173,8 +175,12 @@ public class Combo {
 		setlist.add(c);
 		setlist.add(d);
 		setlist.add(e);
-
+		if (reginaweapon != null) {
+			setlist.add(reginaweapon);
+		}
+		
 		sho_f = Collections.frequency(setlist, shoes.getItemset());
+		System.out.println("shoef = "+sho_f);
 		glo_f = Collections.frequency(setlist, gloves.getItemset());
 		pan_f = Collections.frequency(setlist, pants.getItemset());
 		arm_f = Collections.frequency(setlist, armor.getItemset());
@@ -208,6 +214,14 @@ public class Combo {
 
 	public double getPrice() {
 		return price;
+	}
+
+	public static ItemSet getReginaweapon() {
+		return reginaweapon;
+	}
+
+	public static void setReginaweapon(ItemSet reginaweapon) {
+		Combo.reginaweapon = reginaweapon;
 	}
 
 }

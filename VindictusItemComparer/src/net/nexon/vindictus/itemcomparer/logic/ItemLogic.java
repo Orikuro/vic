@@ -11,6 +11,7 @@ import net.nexon.vindictus.itemcomparer.inport.ScrollProperty;
 import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
 import net.nexon.vindictus.itemcomparer.logic.comparators.ItemLevelComparator;
 import net.nexon.vindictus.itemcomparer.modell.Item;
+import net.nexon.vindictus.itemcomparer.modell.ItemSet;
 import net.nexon.vindictus.itemcomparer.modell.Items;
 import net.nexon.vindictus.itemcomparer.modell.ScrollRestriction;
 import net.nexon.vindictus.itemcomparer.modell.enu.ItemTyp;
@@ -1475,6 +1476,17 @@ public class ItemLogic implements IItemLocal {
 				+ new_g2.size() + new_a2.size() + new_h2.size()
 				+ " new Items added");
 
+	}
+
+	public ItemSet searchSet(Items items, String string) {
+		
+		for (Shoes s : items.getShoes()){
+			if (s.getItemset().getName().contains(string)){
+				return s.getItemset();
+			}
+		}
+		
+		return null;
 	}
 
 }

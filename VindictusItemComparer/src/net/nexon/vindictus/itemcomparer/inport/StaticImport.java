@@ -1699,6 +1699,9 @@ public class StaticImport {
 		boni.add(new ItemSetBonus(165, 60, 81));
 		boni.add(new ItemSetBonus(220, 80, 108));
 		boni.add(new ItemSetBonus(275, 100, 135));
+		ItemSetBonus sonderbonus = new ItemSetBonus(330, 120, 162);
+		sonderbonus.setSta(10);
+		boni.add(sonderbonus);
 
 		ItemSet iset = new ItemSet(setname, boni);
 		iset.setUsefulChars(char_melee + " " + magic);

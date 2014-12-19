@@ -52,6 +52,7 @@ public class GUI extends JFrame {
 	private JCheckBox master_Check;
 	private JCheckBox noinfo_Check;
 	private JCheckBox nocsv_Check;
+	private JCheckBox regina_Check;
 	private JSlider plus_Slider;
 	private JTextField minmatk_Text;
 
@@ -89,15 +90,15 @@ public class GUI extends JFrame {
 			String temp = pre_List.getSelectedValuesList().toString();
 			temp = temp.replace("[", "");
 			temp = temp.replace("]", "");
-			
-			pre = " -pre \"" + temp+"\"";
+
+			pre = " -pre \"" + temp + "\"";
 		}
 
 		if (suf_List.getSelectedValuesList().size() > 0) {
 			String temp = suf_List.getSelectedValuesList().toString();
 			temp = temp.replace("[", "");
 			temp = temp.replace("]", "");
-			suf = " -suf \"" + temp+"\"";
+			suf = " -suf \"" + temp + "\"";
 		}
 
 		if (cpu_List.getSelectedIndex() > 0) {
@@ -110,6 +111,9 @@ public class GUI extends JFrame {
 		}
 		if (noinfo_Check.isSelected()) {
 			output += " -noinfo";
+		}
+		if (regina_Check.isSelected()) {
+			output += " -regina";
 		}
 		if (nocsv_Check.isSelected()) {
 			output += " -nocsv";
@@ -307,6 +311,11 @@ public class GUI extends JFrame {
 
 		JPanel panel_15 = new JPanel();
 		panel_13.add(panel_15);
+
+		regina_Check = new JCheckBox("regina weapon");
+		regina_Check.setSelected(true);
+		regina_Check.setToolTipText("keep overwritten sets");
+		panel_15.add(regina_Check);
 
 		master_Check = new JCheckBox("master");
 		panel_15.add(master_Check);

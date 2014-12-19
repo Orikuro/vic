@@ -11,6 +11,7 @@ public class ItemSetBonus {
 	private int vint;
 	private int agi;
 	private int atk;
+	private int sta;
 	
 	public ItemSetBonus(){
 		
@@ -68,6 +69,14 @@ public class ItemSetBonus {
 	}
 	public void setAtk(int atk) {
 		this.atk = atk;
+	}
+
+	public int getSta() {
+		return sta;
+	}
+
+	public void setSta(int sta) {
+		this.sta = sta;
 	}
 	
 	

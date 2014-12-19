@@ -201,60 +201,7 @@ public class Main {
 			il.duplicateItems(items, "", suffix);
 		}
 		
-		if (vscroll != null) {
-			switch (vscroll) {
-			case enthu:
-				il.duplicateEnthu(items, KEEP);
-				break;
-			case force:
-				il.duplicateForce(items, KEEP);
-				break;
-			case f_enthu:
-				il.duplicateF_Enthu(items, KEEP);
-				break;
-			case ts_enthu:
-				il.duplicateTS_Enthu(items, KEEP);
-				break;
-			case ta_enthu:
-				il.duplicateTA_Enthu(items, KEEP);
-				break;
-			case tutresis:
-				il.duplicateTutResistant(items, KEEP);
-				break;
-			case tutsenti:
-				il.duplicateTutSentinel(items, KEEP);
-				break;
-			case tutarma:
-				il.duplicateTutArmadilo(items, KEEP);
-				break;
-			case ts_tr_ta:
-				il.duplicateTs_Tr_Ta(items, KEEP);
-				break;
-			case ts_ta:
-				il.duplicateTs_Ta(items, KEEP);
-				break;
-			case ts_tr:
-				il.duplicateTs_Tr(items, KEEP);
-				break;
-			case ts_ta_enthu:
-				il.duplicateTs_Ta_Enthu(items, KEEP);
-				break;
-			case tr_enthu:
-				il.duplicateTr_Enthu(items, KEEP);
-				break;
-			case ts_tr_ta_enthu:
-				il.duplicateTs_Tr_Ta_Enthu(items, KEEP);
-				break;
-			case ts_tr_ta_force:
-				il.duplicateTs_Tr_Ta_Force(items, KEEP);
-				break;
-			case ts_tr_ta_f_e:
-				il.duplicateTs_Tr_Ta_F_E(items, KEEP);
-				break;
-			default:
-				break;
-			}
-		}
+		
 		// override master on armors if needed
 		if (master) {
 			il.overrideMaster(items);

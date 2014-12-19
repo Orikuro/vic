@@ -11,13 +11,13 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ItemSet {
 
-	public void calcBonus(){
+	public void calcBonus() {
 		setDefBonus();
 		setIntBonus();
 		setAtkBonus();
 		setMatkBonus();
 	}
-	
+
 	private static int counter = 0;
 
 	@XmlAttribute
@@ -25,13 +25,13 @@ public class ItemSet {
 	private String id;
 
 	@XmlTransient
-	private int[] totaldefBonus = new int[6];
+	private int[] totaldefBonus = new int[7];
 	@XmlTransient
-	private int[] totalIntBonus = new int[6];
+	private int[] totalIntBonus = new int[7];
 	@XmlTransient
-	private double[] totalAtkBonus = new double[6];
+	private double[] totalAtkBonus = new double[7];
 	@XmlTransient
-	private int[] totalMatkBonus = new int[6];
+	private int[] totalMatkBonus = new int[7];
 
 	public int getDefBonus(int count) {
 
@@ -40,39 +40,29 @@ public class ItemSet {
 	}
 
 	private void setDefBonus() {
-		totaldefBonus[2] = boni.get(0).getDef()
-				+ (int) (boni.get(0).getAgi() * 0.5f);
-		totaldefBonus[3] = boni.get(1).getDef()
-				+ (int) (boni.get(1).getAgi() * 0.5f);
-		totaldefBonus[4] = boni.get(2).getDef()
-				+ (int) (boni.get(2).getAgi() * 0.5f);
-		totaldefBonus[5] = boni.get(3).getDef()
-				+ (int) (boni.get(3).getAgi() * 0.5f);
-
+		for (int i = 0; i < boni.size(); i++) {
+			totaldefBonus[i + 2] = boni.get(i).getDef()
+					+ (int) (boni.get(i).getAgi() * 0.5f);
+		}
 	}
 
 	private void setIntBonus() {
-		totalIntBonus[2] = boni.get(0).getVint();
-		totalIntBonus[3] = boni.get(1).getVint();
-		totalIntBonus[4] = boni.get(2).getVint();
-		totalIntBonus[5] = boni.get(3).getVint();
-
+		for (int i = 0; i < boni.size(); i++) {
+			totalIntBonus[i + 2] = boni.get(i).getVint();
+		}
 	}
 
 	private void setAtkBonus() {
-		totalAtkBonus[2] = (2.7 * boni.get(0).getStr()) + boni.get(0).getAtk();
-		totalAtkBonus[3] = (2.7 * boni.get(1).getStr()) + boni.get(1).getAtk();
-		totalAtkBonus[4] = (2.7 * boni.get(2).getStr()) + boni.get(2).getAtk();
-		totalAtkBonus[5] = (2.7 * boni.get(3).getStr()) + boni.get(3).getAtk();
-
+		for (int i = 0; i < boni.size(); i++) {
+			totalAtkBonus[i + 2] = (2.7 * boni.get(i).getStr())
+					+ boni.get(i).getAtk();
+		}
 	}
 
 	private void setMatkBonus() {
-		totalMatkBonus[2] = boni.get(0).getVint() * 2;
-		totalMatkBonus[3] = boni.get(1).getVint() * 2;
-		totalMatkBonus[4] = boni.get(2).getVint() * 2;
-		totalMatkBonus[5] = boni.get(3).getVint() * 2;
-
+		for (int i = 0; i < boni.size(); i++) {
+			totalMatkBonus[i+2] = boni.get(i).getVint() * 2;
+		}
 	}
 
 	public int getIntBonus(int count) {
@@ -129,12 +119,11 @@ public class ItemSet {
 
 	public void setBoni(List<ItemSetBonus> boni) {
 		this.boni = boni;
-		if (boni.size() == 4) {
-			setDefBonus();
-			setIntBonus();
-			setAtkBonus();
-			setMatkBonus();
-		}
+		setDefBonus();
+		setIntBonus();
+		setAtkBonus();
+		setMatkBonus();
+
 	}
 
 	@Override

@@ -77,7 +77,9 @@ public class Combo {
 				/ (hel_f * 1.0)
 
 		);
-
+		if (reginaweapon != null) {
+			deftotal += reginaweapon.getDefBonus(wep_f) / (wep_f * 1.0);
+		}
 		return deftotal;
 	}
 
@@ -90,7 +92,9 @@ public class Combo {
 				/ (hel_f * 1.0)
 
 		);
-
+		if (reginaweapon != null) {
+			deftotal += reginaweapon.getAtkBonus(wep_f) / (wep_f * 1.0);
+		}
 		return deftotal;
 	}
 
@@ -103,7 +107,9 @@ public class Combo {
 				/ (hel_f * 1.0)
 
 		);
-
+		if (reginaweapon != null) {
+			deftotal += reginaweapon.getMatkBonus(wep_f) / (wep_f * 1.0);
+		}
 		return deftotal;
 	}
 
@@ -162,6 +168,7 @@ public class Combo {
 	private int pan_f;
 	private int arm_f;
 	private int hel_f;
+	private int wep_f;
 
 	private void getSets() {
 		ItemSet a = shoes.getItemset();
@@ -178,13 +185,15 @@ public class Combo {
 		if (reginaweapon != null) {
 			setlist.add(reginaweapon);
 		}
-		
+
 		sho_f = Collections.frequency(setlist, shoes.getItemset());
 		glo_f = Collections.frequency(setlist, gloves.getItemset());
 		pan_f = Collections.frequency(setlist, pants.getItemset());
 		arm_f = Collections.frequency(setlist, armor.getItemset());
 		hel_f = Collections.frequency(setlist, helm.getItemset());
-
+		if (reginaweapon != null) {
+			wep_f = Collections.frequency(setlist, reginaweapon);
+		}
 	}
 
 	public Shoes getShoes() {

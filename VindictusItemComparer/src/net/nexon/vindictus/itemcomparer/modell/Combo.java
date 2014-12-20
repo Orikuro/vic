@@ -180,7 +180,6 @@ public class Combo {
 		}
 		
 		sho_f = Collections.frequency(setlist, shoes.getItemset());
-		System.out.println("shoef = "+sho_f);
 		glo_f = Collections.frequency(setlist, gloves.getItemset());
 		pan_f = Collections.frequency(setlist, pants.getItemset());
 		arm_f = Collections.frequency(setlist, armor.getItemset());

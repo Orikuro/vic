@@ -11,6 +11,8 @@ import net.nexon.vindictus.itemcomparer.logic.ItemLogic;
 import net.nexon.vindictus.itemcomparer.logic.ThreadStarter;
 import net.nexon.vindictus.itemcomparer.logic.comparators.*;
 import net.nexon.vindictus.itemcomparer.modell.Combo;
+import net.nexon.vindictus.itemcomparer.modell.ItemSet;
+import net.nexon.vindictus.itemcomparer.modell.ItemSetBonus;
 import net.nexon.vindictus.itemcomparer.modell.Items;
 import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
 import net.nexon.vindictus.itemcomparer.modell.enu.VScroll;
@@ -217,8 +219,11 @@ public class Main {
 		il.forcePlus(items, plus);
 		
 		if (regina){
-			Combo.setReginaweapon(il.searchSet(items, "Regina"));
-			System.out.println(il.searchSet(items, "Regina"));
+			ItemSet set = il.searchSet(items, "Regina");
+			Combo.setReginaweapon(set);
+			for (ItemSetBonus bonus : set.getBoni()){
+				System.out.println(bonus.getStr());
+			}
 		}
 
 		new ThreadStarter(args, CPUS, results, price, ATK, MATK, COMBOSORT,

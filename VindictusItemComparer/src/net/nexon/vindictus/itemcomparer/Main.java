@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import net.nexon.vindictus.itemcomparer.inport.StaticImport;
-import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
 import net.nexon.vindictus.itemcomparer.inport.XMLImport;
 import net.nexon.vindictus.itemcomparer.logic.ItemLogic;
 import net.nexon.vindictus.itemcomparer.logic.ThreadStarter;
@@ -15,7 +14,6 @@ import net.nexon.vindictus.itemcomparer.modell.ItemSet;
 import net.nexon.vindictus.itemcomparer.modell.ItemSetBonus;
 import net.nexon.vindictus.itemcomparer.modell.Items;
 import net.nexon.vindictus.itemcomparer.modell.enu.VChar;
-import net.nexon.vindictus.itemcomparer.modell.enu.VScroll;
 
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
@@ -98,9 +96,6 @@ public class Main {
 
 	@Option(name = "-price", usage = "set maxium price to filter items with in milions, e.g. 10.44 = 10,44 mil, default: MAXIMUM = disabled")
 	private double price = Double.MAX_VALUE;
-
-	@Option(name = "-dup", aliases = { "-d" }, usage = "duplicate items with scroll preset, (can have huge impact on performance!)")
-	private VScroll vscroll;
 
 	@Option(name = "-force", aliases = { "-f", "-cpus" }, usage = "force number of cpus, default: Systems Maximum")
 	private int CPUS = Runtime.getRuntime().availableProcessors();

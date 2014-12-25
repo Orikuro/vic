@@ -36,6 +36,8 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 
 	private final static String VERSION = Main.VERSION;
+	private final int bitchcount = 6;
+	
 	private JTextField minatk_Text;
 	private JTextField ignore_Text;
 	private JTextField result_Text;
@@ -159,7 +161,6 @@ public class GUI extends JFrame {
 	}
 
 	private int getCovergirl() {
-		int bitchcount = 4;
 		int x = (int) (Math.random() * bitchcount + 1);
 		return x;
 	}

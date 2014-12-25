@@ -25,27 +25,7 @@ public class Item {
 	}
 
 	public int getTotalbal() {
-		int bal = 0;
-
-		if (scroll_pre.getName() != null) {
-			if ((scroll_pre.getName().toLowerCase()).contains("well-balanced")) {
-				bal += 1;
-			}
-		}
-
-		if (scroll_suf.getName() != null) {
-			if (scroll_suf.getName().toLowerCase().contains("force")) {
-				bal += 2;
-			}
-			if (scroll_suf.getName().toLowerCase().contains("enthu")) {
-				bal += 5;
-			}
-			if (scroll_suf.getName().toLowerCase().contains("master")) {
-				bal += -1;
-			}
-		}
-
-		return bal;
+		return scroll_pre.getBal()+scroll_suf.getBal();
 	}
 
 	public int getTotaldef() {
@@ -184,9 +164,9 @@ public class Item {
 		this.setStr(str);
 		this.setVint(vint);
 		this.setAgi(agi);
-		this.setCrit_res(crit_res);
 		scroll_pre = new Scroll_Pre();
 		scroll_suf = new Scroll_Suf();
+		this.setCrit_res(crit_res);
 		stars = 2;
 		plus = 0;
 		id = counter++;
@@ -299,7 +279,7 @@ public class Item {
 	}
 
 	public int getCrit_res() {
-		return crit_res;
+		return crit_res+scroll_pre.getCritres()+scroll_suf.getCritres();
 	}
 
 	public void setCrit_res(int crit_res) {

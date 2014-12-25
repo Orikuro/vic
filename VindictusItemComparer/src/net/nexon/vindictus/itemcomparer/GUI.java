@@ -314,7 +314,7 @@ public class GUI extends JFrame {
 
 		regina_Check = new JCheckBox("regina weapon");
 		regina_Check.setSelected(true);
-		regina_Check.setToolTipText("keep overwritten sets");
+		regina_Check.setToolTipText("assume regina weapon for different set bonus");
 		panel_15.add(regina_Check);
 
 		master_Check = new JCheckBox("master");

@@ -552,7 +552,7 @@ public class ItemLogic {
 
 	}
 
-	public ItemSet searchSet(Items items, String string) {
+	public ItemSet searchSet(Items items, String string) throws Exception {
 
 		for (Shoes s : items.getShoes()) {
 			if (s.getItemset().getName().contains(string)) {
@@ -560,7 +560,7 @@ public class ItemLogic {
 			}
 		}
 
-		return null;
+		throw new Exception("Set not found");
 	}
 
 }

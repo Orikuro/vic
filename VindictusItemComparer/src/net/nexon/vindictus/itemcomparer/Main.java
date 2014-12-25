@@ -193,15 +193,12 @@ public class Main {
 		// scroll duplicating
 		if (prefix.length() > 1 && suffix.length() > 1) {
 			il.duplicateItems(items, prefix, suffix);
-		}
-		else if (prefix.length() > 1 && suffix.length() < 1) {
+		} else if (prefix.length() > 1 && suffix.length() < 1) {
 			il.duplicateItems(items, prefix, "");
-		}
-		else if (prefix.length() < 1 && suffix.length() > 1) {
+		} else if (prefix.length() < 1 && suffix.length() > 1) {
 			il.duplicateItems(items, "", suffix);
 		}
-		
-		
+
 		// override master on armors if needed
 		if (master) {
 			il.overrideMaster(items);
@@ -212,12 +209,15 @@ public class Main {
 
 		// overwrite enhance level
 		il.forcePlus(items, plus);
-		
-		if (regina){
-			ItemSet set = il.searchSet(items, "Regina");
-			Combo.setReginaweapon(set);
-			for (ItemSetBonus bonus : set.getBoni()){
-				System.out.println(bonus.getStr());
+
+		if (regina) {
+			try {
+				ItemSet set = il.searchSet(items, "Regina");
+				Combo.setReginaweapon(set);
+				for (ItemSetBonus bonus : set.getBoni()) {
+					System.out.println(bonus.getStr());
+				}
+			} catch (Exception e) {
 			}
 		}
 
@@ -228,5 +228,4 @@ public class Main {
 		}
 		System.console().readLine();
 	}
-
 }

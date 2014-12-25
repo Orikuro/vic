@@ -13,7 +13,7 @@ import net.nexon.vindictus.itemcomparer.modell.ext.Shoes;
 
 public class Combo {
 
-	public static final String OUTPUT_HEAD = "id;def;matk;atk;sta;c_res;bal;price;shoes;pants;gloves;armor;helm;";
+	public static final String OUTPUT_HEAD = "id;def;matk;atk;sta;c_res;bal;crit;aspd;price;shoes;pants;gloves;armor;helm;";
 
 	private static DecimalFormat df = new DecimalFormat(",###.00");
 
@@ -21,9 +21,29 @@ public class Combo {
 	public String toString() {
 		String price_norm = df.format(price);
 		int atk_norm = (int) atk;
-		return String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;", def, matk,
-				atk_norm, sta, c_res, calcbal(), price_norm, shoes, pants,
-				gloves, armor, helm);
+		return String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;", def,
+				matk, atk_norm, sta, c_res, calcbal(), calccrit(), calcaspd(),
+				price_norm, shoes, pants, gloves, armor, helm);
+	}
+
+	private int calccrit() {
+		int bal = 0;
+
+		bal = shoes.getTotalcrit() + pants.getTotalcrit()
+				+ gloves.getTotalcrit() + armor.getTotalcrit()
+				+ helm.getTotalcrit();
+
+		return bal;
+	}
+
+	private int calcaspd() {
+		int bal = 0;
+
+		bal = shoes.getTotalaspd() + pants.getTotalaspd()
+				+ gloves.getTotalaspd() + armor.getTotalaspd()
+				+ helm.getTotalaspd();
+
+		return bal;
 	}
 
 	private int calcbal() {
@@ -159,6 +179,12 @@ public class Combo {
 				+ gloves.getTotalsta() + armor.getTotalsta()
 				+ helm.getTotalsta();
 		sta = staeq;
+
+		// TODO correct object 6 setbonus, instead of this hack...
+		if (wep_f > 5) {
+			sta += 10;
+		}
+
 	}
 
 	private List<ItemSet> setlist = new ArrayList<>();

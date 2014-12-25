@@ -27,6 +27,14 @@ public class Item {
 	public int getTotalbal() {
 		return scroll_pre.getBal()+scroll_suf.getBal();
 	}
+	
+	public int getTotalcrit() {
+		return scroll_pre.getCrit()+scroll_suf.getCrit();
+	}
+	
+	public int getTotalaspd() {
+		return scroll_pre.getAspd()+scroll_suf.getAspd();
+	}
 
 	public int getTotaldef() {
 		return totalDef;

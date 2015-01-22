@@ -20,7 +20,7 @@ import org.kohsuke.args4j.Option;
 
 public class Main {
 
-	public static final String VERSION = "ALPHA 2.3 - 25.12.14 - by Nekuro/Orikuro - Regina Gear, new scrollsystem, better output";
+	public static final String VERSION = "ALPHA 2.3a - 22.01.15 - by Nekuro/Orikuro - Fix for master,enthu,force";
 
 	private enum VSort {
 		def, atk, matk, sta, staatk, stamatk, cheapdef, cheapatk, cheapmatk, cheapsta

@@ -43,5 +43,17 @@ public class Scroll_Suf extends Scroll {
 	{
 		super(name, def, atk, matk, str, vint,stamina,price,restriction, crit, bal, critres, aspd, bonus, bonus_type);
 	}
+
+	public Scroll_Suf(String namee, int deff, int atkk, int matkk, double cost,int bal, ScrollRestriction res) {
+		super(namee, deff, atkk, matkk, cost, res);
+		this.setBal(bal);
+	}
+
+	public Scroll_Suf(String namee, int deff, int atkk, int matkk, double cost,int bal,int crit, int critres, ScrollRestriction res) {
+		super(namee, deff, atkk, matkk, cost, res);
+		this.setBal(bal);
+		this.setCrit(crit);
+		this.setCritres(critres);
+	}
 	
 }

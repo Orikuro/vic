@@ -1695,29 +1695,37 @@ public class StaticImport {
 		String setname = "Regina (Orange minimum)";
 		sets.add(setname);
 		List<ItemSetBonus> boni = new ArrayList<ItemSetBonus>();
-		boni.add(new ItemSetBonus(110, 40, 54));
-		boni.add(new ItemSetBonus(165, 60, 81));
-		boni.add(new ItemSetBonus(220, 80, 108));
-		boni.add(new ItemSetBonus(275, 100, 135));
-		ItemSetBonus sonderbonus = new ItemSetBonus(330, 120, 162);
-		sonderbonus.setSta(10);
-		boni.add(sonderbonus);
+		boni.add(new ItemSetBonus(0, 0, 0));
+		ItemSetBonus sonderbonus1 = new ItemSetBonus(165, 60, 81);
+		sonderbonus1.setSta(5);
+		boni.add(sonderbonus1);
+
+		ItemSetBonus sonderbonus2 = new ItemSetBonus(220, 80, 108);
+		sonderbonus2.setSta(6);
+		boni.add(sonderbonus2);
+		
+		ItemSetBonus sonderbonus3 = new ItemSetBonus(275, 100,135);
+		sonderbonus3.setSta(7);
+		boni.add(sonderbonus3);
+		
+		ItemSetBonus sonderbonus4 = new ItemSetBonus(330, 120, 162);
+		sonderbonus4.setSta(10);
+		boni.add(sonderbonus4);
 
 		ItemSet iset = new ItemSet(setname, boni);
 		iset.setUsefulChars(char_melee + " " + magic);
 
 		Gloves g = new Gloves(iset, "Gloves", 90, ItemTyp.PLATE, 1255, 144,
 				194, 72, 13);
-		Shoes s = new Shoes(iset, "Shoes", 90, ItemTyp.PLATE, 1255, 144,
-				194, 72, 13);
-		Helm h = new Helm(iset, "Helm", 90, ItemTyp.PLATE, 1255, 144,
-				194, 72, 13);
-		
-		Pants p = new Pants(iset, "Pants", 90, ItemTyp.PLATE, 1355, 144,
-				194, 72, 18);
-		Armor a = new Armor(iset, "Armor", 90, ItemTyp.PLATE, 1422, 144,
-				194, 72, 16);
-		
+		Shoes s = new Shoes(iset, "Shoes", 90, ItemTyp.PLATE, 1255, 144, 194,
+				72, 13);
+		Helm h = new Helm(iset, "Helm", 90, ItemTyp.PLATE, 1255, 144, 194, 72,
+				13);
+
+		Pants p = new Pants(iset, "Pants", 90, ItemTyp.PLATE, 1355, 144, 194,
+				72, 18);
+		Armor a = new Armor(iset, "Armor", 90, ItemTyp.PLATE, 1422, 144, 194,
+				72, 16);
 
 		shoes.add(s);
 		gloves.add(g);
@@ -1786,7 +1794,7 @@ public class StaticImport {
 		generateApex();
 		generateSilverFox();
 		generateStriker();
-		
+
 		// chapter1 90 gear
 		generateRegina_3_min();
 	}

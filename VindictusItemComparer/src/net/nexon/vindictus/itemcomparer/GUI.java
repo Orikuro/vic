@@ -30,6 +30,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.JSlider;
 
 import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class GUI extends JFrame {
 
@@ -51,7 +53,6 @@ public class GUI extends JFrame {
 	private JList smin_List;
 	private JList smax_List;
 	private JList cpu_List;
-	private JCheckBox master_Check;
 	private JCheckBox noinfo_Check;
 	private JCheckBox nocsv_Check;
 	private JCheckBox regina_Check;
@@ -108,9 +109,6 @@ public class GUI extends JFrame {
 		}
 		output += pre + suf + cpu;
 
-		if (master_Check.isSelected()) {
-			output += " -master";
-		}
 		if (noinfo_Check.isSelected()) {
 			output += " -noinfo";
 		}
@@ -269,27 +267,10 @@ public class GUI extends JFrame {
 		panel_8.add(pre_List);
 		pre_List.setToolTipText("Duplicate Sets with these scroll prefixes.");
 		pre_List.setModel(new AbstractListModel() {
-			String[] values = StaticScrolls.prefix_Names(); // new String[] {"",
-															// "all", "force",
-															// "enthu",
-															// "tutsenti",
-															// "tutresis",
-															// "tutarma",
-															// "f_enthu",
-															// "ts_enthu",
-															// "ta_enthu",
-															// "tr_enthu",
-															// "ts_ta", "ts_tr",
-															// "ts_tr_ta",
-															// "ts_ta_enthu",
-															// "ts_tr_ta_enthu",
-															// "ts_tr_ta_force",
-															// "ts_tr_ta_f_e"};
-
+			String[] values = new String[] {"Enlightenment", "Remember", "Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced"};
 			public int getSize() {
 				return values.length;
 			}
-
 			public Object getElementAt(int index) {
 				return values[index];
 			}
@@ -312,15 +293,30 @@ public class GUI extends JFrame {
 
 		JPanel panel_15 = new JPanel();
 		panel_13.add(panel_15);
+		
+		JPanel panel_19 = new JPanel();
+		panel_15.add(panel_19);
+		panel_19.setLayout(new BoxLayout(panel_19, BoxLayout.Y_AXIS));
+		
+		JPanel panel_17 = new JPanel();
+		panel_19.add(panel_17);
 
 		regina_Check = new JCheckBox("regina weapon");
+		panel_17.add(regina_Check);
 		regina_Check.setSelected(true);
 		regina_Check.setToolTipText("assume regina weapon for different set bonus");
-		panel_15.add(regina_Check);
-
-		master_Check = new JCheckBox("master");
-		panel_15.add(master_Check);
-		master_Check.setToolTipText("keep overwritten sets");
+		
+		JPanel panel_18 = new JPanel();
+		panel_18.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Armor Scroll Overwrite", TitledBorder.LEADING, TitledBorder.BOTTOM, null, null));
+		panel_19.add(panel_18);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Enlightenment", "Remember", "Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced"}));
+		panel_18.add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Announcement", "Armadillo", "Echo", "Enthu", "Expedition", "Force", "Journey", "Master", "Resistant", "Sentinel", "Stigma"}));
+		panel_18.add(comboBox_1);
 
 		plus_Slider = new JSlider();
 		plus_Slider.setToolTipText("Upgrade level");
@@ -521,6 +517,7 @@ public class GUI extends JFrame {
 						0, 0)));
 
 		result_Text = new JTextField();
+		result_Text.setText("30");
 		panel_9.add(result_Text);
 		result_Text.setToolTipText("Amound of results. (Default = 30)");
 		result_Text.setColumns(10);

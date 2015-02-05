@@ -112,9 +112,12 @@ public class Main {
 	@Option(name = "-ignore", aliases = { "-i" }, usage = "ignore sets that contain those words, use  commas to separate names eg \"raider, champion\", default: disabled")
 	private String ignore = "";
 
-	@Option(name = "-master", usage = "override armor-enchant with master")
-	private boolean master = false;
+	@Option(name = "-armorprefix", aliases = { "-apre" }, usage = "prefix used to overwrite armor scrolls")
+	private String armorprefix = "";
 
+	@Option(name = "-armorsuffix", aliases = { "-asuf" }, usage = "suffix used to overwrite armor scrolls")
+	private String armorsuffix = "";
+	
 	@Option(name = "-nocsv", usage = "dont write .csv files (usefull for gui comparing with open consoles)")
 	private boolean nocsv = false;
 
@@ -200,10 +203,16 @@ public class Main {
 		}
 
 		// override master on armors if needed
-		if (master) {
-			il.overrideMaster(items);
+		if (armorprefix.length() > 0 && armorsuffix.length() >0) {
+			il.overrideMaster(armorprefix,armorsuffix);
 		}
-
+		else if (armorprefix.length() > 0) {
+			il.overrideMaster(armorprefix);
+		}
+		else if (armorsuffix.length() > 0){
+			il.overrideMaster(armorsuffix);
+		}
+		
 		// sort stuff, highest level first, good speedup for all except evie
 		il.sortItems(items);
 

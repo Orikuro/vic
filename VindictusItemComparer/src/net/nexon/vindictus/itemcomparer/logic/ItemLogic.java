@@ -527,7 +527,6 @@ public class ItemLogic {
 	public void overrideMaster(Items items) {
 
 		System.out.println(items.getArmors());
-		
 
 		Scroll_Suf master;
 		try {
@@ -561,6 +560,63 @@ public class ItemLogic {
 		}
 
 		throw new Exception("Set not found");
+	}
+
+	public void overrideMaster(Items items, String armorprefix,
+			String armorsuffix) {
+
+		Scroll_Pre pre;
+		Scroll_Suf suf;
+		try {
+			suf = StaticScrolls.searchSuf(armorprefix);
+			pre = StaticScrolls.searchPre(armorsuffix);
+		} catch (Exception e) {
+			return;
+		}
+		HashSet<Armor> as = new HashSet<>();
+
+		for (Armor x : items.getArmors()) {
+
+			x.brynn(pre, suf);
+			as.add(x);
+		}
+
+		List<Armor> newarmors = new ArrayList<>(as);
+		items.setArmors(newarmors);
+
+		System.out.println(items.getArmors());
+
+	}
+
+	public void overrideMaster(Items items, String scroll, boolean isprefix) {
+
+		Scroll_Pre pre = null;
+		Scroll_Suf suf = null;
+		try {
+			if (isprefix) {
+				pre = StaticScrolls.searchPre(scroll);
+			} else {
+				suf = StaticScrolls.searchSuf(scroll);
+			}
+		} catch (Exception e) {
+			return;
+		}
+		HashSet<Armor> as = new HashSet<>();
+
+		for (Armor x : items.getArmors()) {
+			if (isprefix) {
+				x.brynn(pre);
+			} else {
+				x.brynn(suf);
+			}
+			as.add(x);
+		}
+
+		List<Armor> newarmors = new ArrayList<>(as);
+		items.setArmors(newarmors);
+
+		System.out.println(items.getArmors());
+
 	}
 
 }

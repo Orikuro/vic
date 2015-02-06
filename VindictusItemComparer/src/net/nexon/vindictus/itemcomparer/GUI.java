@@ -310,13 +310,13 @@ public class GUI extends JFrame {
 		panel_18.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Armor Scroll Overwrite", TitledBorder.LEADING, TitledBorder.BOTTOM, null, null));
 		panel_19.add(panel_18);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Enlightenment", "Remember", "Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced"}));
-		panel_18.add(comboBox);
+		JComboBox apreBox = new JComboBox();
+		apreBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Enlightenment", "Remember", "Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced"}));
+		panel_18.add(apreBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Announcement", "Armadillo", "Echo", "Enthu", "Expedition", "Force", "Journey", "Master", "Resistant", "Sentinel", "Stigma"}));
-		panel_18.add(comboBox_1);
+		JComboBox asufBox = new JComboBox();
+		asufBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Announcement", "Armadillo", "Echo", "Enthu", "Expedition", "Force", "Journey", "Master", "Resistant", "Sentinel", "Stigma"}));
+		panel_18.add(asufBox);
 
 		plus_Slider = new JSlider();
 		plus_Slider.setToolTipText("Upgrade level");

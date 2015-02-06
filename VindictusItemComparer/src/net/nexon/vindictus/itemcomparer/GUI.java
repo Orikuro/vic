@@ -341,10 +341,7 @@ public class GUI extends JFrame {
 				"Tutelary", "Well-balanced" }));
 		panel_18.add(apreBox);
 
-		asufBox.setModel(new DefaultComboBoxModel(
-				new String[] { "ALL", "Announcement", "Armadillo", "Echo",
-						"Enthu", "Expedition", "Force", "Journey", "Master",
-						"Resistant", "Sentinel", "Stigma" }));
+		asufBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Master", "Stigma", "Announcement", "Armadillo", "Echo", "Enthu", "Expedition", "Force", "Journey", "Resistant", "Sentinel"}));
 		panel_18.add(asufBox);
 
 		plus_Slider = new JSlider();

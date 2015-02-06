@@ -568,8 +568,8 @@ public class ItemLogic {
 		Scroll_Pre pre;
 		Scroll_Suf suf;
 		try {
-			suf = StaticScrolls.searchSuf(armorprefix);
-			pre = StaticScrolls.searchPre(armorsuffix);
+			suf = StaticScrolls.searchSuf(armorsuffix);
+			pre = StaticScrolls.searchPre(armorprefix);
 		} catch (Exception e) {
 			return;
 		}

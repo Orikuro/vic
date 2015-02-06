@@ -39,7 +39,7 @@ public class GUI extends JFrame {
 
 	private final static String VERSION = Main.VERSION;
 	private final int bitchcount = 6;
-	
+
 	private JTextField minatk_Text;
 	private JTextField ignore_Text;
 	private JTextField result_Text;
@@ -58,6 +58,8 @@ public class GUI extends JFrame {
 	private JCheckBox regina_Check;
 	private JSlider plus_Slider;
 	private JTextField minmatk_Text;
+	private JComboBox apreBox = new JComboBox();
+	private JComboBox asufBox = new JComboBox();
 
 	/**
 	 * Launch the application.
@@ -119,6 +121,12 @@ public class GUI extends JFrame {
 			output += " -nocsv";
 		}
 
+		if (!apreBox.getSelectedItem().equals("ALL")){
+			output += " -apre \""+apreBox.getSelectedItem()+"\"";
+		}
+		if (!asufBox.getSelectedItem().equals("ALL")){
+			output += " -asuf \""+asufBox.getSelectedItem()+"\"";
+		}
 		if (minatk_Text.getText().length() > 0) {
 			output += " -atk " + minatk_Text.getText().trim();
 		}
@@ -267,10 +275,13 @@ public class GUI extends JFrame {
 		panel_8.add(pre_List);
 		pre_List.setToolTipText("Duplicate Sets with these scroll prefixes.");
 		pre_List.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Enlightenment", "Remember", "Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced"};
+			String[] values = new String[] { "Enlightenment", "Remember",
+					"Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced" };
+
 			public int getSize() {
 				return values.length;
 			}
+
 			public Object getElementAt(int index) {
 				return values[index];
 			}
@@ -293,29 +304,35 @@ public class GUI extends JFrame {
 
 		JPanel panel_15 = new JPanel();
 		panel_13.add(panel_15);
-		
+
 		JPanel panel_19 = new JPanel();
 		panel_15.add(panel_19);
 		panel_19.setLayout(new BoxLayout(panel_19, BoxLayout.Y_AXIS));
-		
+
 		JPanel panel_17 = new JPanel();
 		panel_19.add(panel_17);
 
 		regina_Check = new JCheckBox("regina weapon");
 		panel_17.add(regina_Check);
 		regina_Check.setSelected(true);
-		regina_Check.setToolTipText("assume regina weapon for different set bonus");
-		
+		regina_Check
+				.setToolTipText("assume regina weapon for different set bonus");
+
 		JPanel panel_18 = new JPanel();
-		panel_18.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Armor Scroll Overwrite", TitledBorder.LEADING, TitledBorder.BOTTOM, null, null));
+		panel_18.setBorder(new TitledBorder(UIManager
+				.getBorder("TitledBorder.border"), "Armor Scroll Overwrite",
+				TitledBorder.LEADING, TitledBorder.BOTTOM, null, null));
 		panel_19.add(panel_18);
-		
-		JComboBox apreBox = new JComboBox();
-		apreBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Enlightenment", "Remember", "Repeatsay", "Silent", "Time", "Tutelary", "Well-balanced"}));
+
+		apreBox.setModel(new DefaultComboBoxModel(new String[] { "ALL",
+				"Enlightenment", "Remember", "Repeatsay", "Silent", "Time",
+				"Tutelary", "Well-balanced" }));
 		panel_18.add(apreBox);
-		
-		JComboBox asufBox = new JComboBox();
-		asufBox.setModel(new DefaultComboBoxModel(new String[] {"ALL", "Announcement", "Armadillo", "Echo", "Enthu", "Expedition", "Force", "Journey", "Master", "Resistant", "Sentinel", "Stigma"}));
+
+		asufBox.setModel(new DefaultComboBoxModel(
+				new String[] { "ALL", "Announcement", "Armadillo", "Echo",
+						"Enthu", "Expedition", "Force", "Journey", "Master",
+						"Resistant", "Sentinel", "Stigma" }));
 		panel_18.add(asufBox);
 
 		plus_Slider = new JSlider();

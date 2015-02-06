@@ -184,6 +184,15 @@ public class Combo {
 		if (wep_f > 5) {
 			sta += 10;
 		}
+		if (wep_f == 5) {
+			sta += 7;
+		}
+		if (wep_f == 4) {
+			sta += 6;
+		}
+		if (wep_f == 3) {
+			sta += 5;
+		}
 
 	}
 

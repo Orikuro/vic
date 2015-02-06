@@ -263,7 +263,7 @@ public class ComboCall implements Callable<List<Combo>> {
 
 							if (total_p <= PRICE
 									&& (total_def + MAXIS[2]) >= min) {
-								
+
 								Combo c = new Combo(s, p, g, a, h);
 								if (c.getMatk() >= MATK) {
 									combos.add(c);
@@ -321,7 +321,10 @@ public class ComboCall implements Callable<List<Combo>> {
 							total_def = s_def + p_def + h_def + a_def + g_def
 									+ h_def;
 							if (total_p <= PRICE && (total_def) >= min) {
-								combos.add(new Combo(s, p, g, a, h));
+								Combo c = new Combo(s, p, g, a, h);
+								if (c.getAtk() >= ATK && c.getMatk() >= MATK) {
+									combos.add(c);
+								}
 							}
 							i++;
 							if (i % 1000000 == 0) {

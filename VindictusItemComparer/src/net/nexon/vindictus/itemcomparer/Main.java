@@ -127,8 +127,9 @@ public class Main {
 	@Option(name = "-suffix", aliases = { "-suf" }, usage = "suffixes used to duplicate sets, separated with comma")
 	private String suffix = "";
 
-	@Option(name = "-regina", usage = "use a regina weapon for better set boni")
-	private boolean regina = false;
+	@Option(name = "-weapon", usage = "use a lvl 90 weapon for better set boni")
+	private String regina = "";
+	
 
 	/**
 	 * @param args
@@ -217,9 +218,9 @@ public class Main {
 		// overwrite enhance level
 		il.forcePlus(items, plus);
 
-		if (regina) {
+		if (regina.length()>0) {
 			try {
-				ItemSet set = il.searchSet(items, "Regina");
+				ItemSet set = il.searchSet(items, regina);
 				Combo.setReginaweapon(set);
 				for (ItemSetBonus bonus : set.getBoni()) {
 					System.out.println(bonus.getStr());

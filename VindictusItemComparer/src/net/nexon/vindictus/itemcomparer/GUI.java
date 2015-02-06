@@ -32,6 +32,7 @@ import javax.swing.JSlider;
 import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ButtonGroup;
 
 public class GUI extends JFrame {
 
@@ -60,6 +61,8 @@ public class GUI extends JFrame {
 	private JTextField minmatk_Text;
 	private JComboBox apreBox = new JComboBox();
 	private JComboBox asufBox = new JComboBox();
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JCheckBox barha_Check = new JCheckBox("barha weapon");
 
 	/**
 	 * Launch the application.
@@ -115,17 +118,20 @@ public class GUI extends JFrame {
 			output += " -noinfo";
 		}
 		if (regina_Check.isSelected()) {
-			output += " -regina";
+			output += " -weapon Regina";
+		}
+		if (barha_Check.isSelected()) {
+			output += " -weapon Barha";
 		}
 		if (nocsv_Check.isSelected()) {
 			output += " -nocsv";
 		}
 
-		if (!apreBox.getSelectedItem().equals("ALL")){
-			output += " -apre \""+apreBox.getSelectedItem()+"\"";
+		if (!apreBox.getSelectedItem().equals("ALL")) {
+			output += " -apre \"" + apreBox.getSelectedItem() + "\"";
 		}
-		if (!asufBox.getSelectedItem().equals("ALL")){
-			output += " -asuf \""+asufBox.getSelectedItem()+"\"";
+		if (!asufBox.getSelectedItem().equals("ALL")) {
+			output += " -asuf \"" + asufBox.getSelectedItem() + "\"";
 		}
 		if (minatk_Text.getText().length() > 0) {
 			output += " -atk " + minatk_Text.getText().trim();
@@ -313,10 +319,16 @@ public class GUI extends JFrame {
 		panel_19.add(panel_17);
 
 		regina_Check = new JCheckBox("regina weapon");
+		buttonGroup.add(regina_Check);
 		panel_17.add(regina_Check);
-		regina_Check.setSelected(true);
 		regina_Check
 				.setToolTipText("assume regina weapon for different set bonus");
+
+		buttonGroup.add(barha_Check);
+		barha_Check
+				.setToolTipText("assume regina weapon for different set bonus");
+		barha_Check.setSelected(true);
+		panel_17.add(barha_Check);
 
 		JPanel panel_18 = new JPanel();
 		panel_18.setBorder(new TitledBorder(UIManager
@@ -537,7 +549,7 @@ public class GUI extends JFrame {
 		result_Text.setText("30");
 		panel_9.add(result_Text);
 		result_Text.setToolTipText("Amound of results. (Default = 30)");
-		result_Text.setColumns(10);
+		result_Text.setColumns(5);
 
 		noinfo_Check = new JCheckBox("noinfo");
 		panel_14.add(noinfo_Check);

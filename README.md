@@ -3,14 +3,15 @@ vic
 
 VindictusItemComparer, a brute-force Java-client, that compares every possible item-combination of itemsets from the ARPG Vindictus.  
 Multi-threaded, uses args4j and jaxb.
-Current Phase: Alpha (2.3a)
+Current Phase: Alpha (2.4)
 ------
 **2DOS:**   
 Documentation   
 XML GUI Client   
 DRY-Refaktoring
 
-**Updates**  
+**Updates** 
+06.02.2015 - dynamic armor scrolls, 90 heavy set, updated 90 bonus   
 22.01.2015 - 90sets, new scroll mechanics, better outputs (crit,aspd)   
 14.11.2014 - GUI improvements, nocsv option, 5 console outputs instead of 3   
 05.11.2014 - Arisha added, 3 new sets, GUI Starter   

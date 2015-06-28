@@ -129,7 +129,6 @@ public class Main {
 
 	@Option(name = "-weapon", usage = "use a lvl 90 weapon for better set boni")
 	private String regina = "";
-	
 
 	/**
 	 * @param args
@@ -218,13 +217,11 @@ public class Main {
 		// overwrite enhance level
 		il.forcePlus(items, plus);
 
-		if (regina.length()>0) {
+		if (regina.length() > 0) {
 			try {
 				ItemSet set = il.searchSet(items, regina);
 				Combo.setReginaweapon(set);
-				for (ItemSetBonus bonus : set.getBoni()) {
-					System.out.println(bonus.getStr());
-				}
+				System.out.println(set.getName()+" found as weaponset");
 			} catch (Exception e) {
 			}
 		}

@@ -181,9 +181,16 @@ public class Combo {
 		sta = staeq;
 
 		// TODO correct object 6 setbonus, instead of this hack...
-		if (wep_f > 5) {
-			sta += 10;
+
+		if (shoes.getLevel() == 90 || pants.getLevel() == 90
+				|| gloves.getLevel() == 90 || armor.getLevel() == 90
+				|| helm.getLevel() == 90)
+		{
+			
 		}
+			if (wep_f > 5) {
+				sta += 10;
+			}
 		if (wep_f == 5) {
 			sta += 7;
 		}

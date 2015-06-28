@@ -33,6 +33,8 @@ import net.nexon.vindictus.itemcomparer.inport.StaticScrolls;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ButtonGroup;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
 
 public class GUI extends JFrame {
 
@@ -63,7 +65,8 @@ public class GUI extends JFrame {
 	private JComboBox asufBox = new JComboBox();
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JCheckBox barha_Check = new JCheckBox("barha weapon");
-
+	private JCheckBox guard_Check;
+	private JCheckBox cloth90_Check;
 	/**
 	 * Launch the application.
 	 */
@@ -122,6 +125,12 @@ public class GUI extends JFrame {
 		}
 		if (barha_Check.isSelected()) {
 			output += " -weapon Barha";
+		}
+		if (guard_Check.isSelected()) {
+			output += " -weapon Guard";
+		}
+		if (cloth90_Check.isSelected()) {
+			output += " -weapon Cloth90";
 		}
 		if (nocsv_Check.isSelected()) {
 			output += " -nocsv";
@@ -317,18 +326,38 @@ public class GUI extends JFrame {
 
 		JPanel panel_17 = new JPanel();
 		panel_19.add(panel_17);
-
-		regina_Check = new JCheckBox("regina weapon");
-		buttonGroup.add(regina_Check);
-		panel_17.add(regina_Check);
-		regina_Check
-				.setToolTipText("assume regina weapon for different set bonus");
-
-		buttonGroup.add(barha_Check);
-		barha_Check
-				.setToolTipText("assume regina weapon for different set bonus");
-		barha_Check.setSelected(true);
-		panel_17.add(barha_Check);
+		
+		JPanel panel_22 = new JPanel();
+		panel_17.add(panel_22);
+		panel_22.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JPanel panel_20 = new JPanel();
+		panel_22.add(panel_20);
+		
+				regina_Check = new JCheckBox("regina weapon");
+				regina_Check.setSelected(true);
+				panel_20.add(regina_Check);
+				buttonGroup.add(regina_Check);
+				regina_Check
+						.setToolTipText("assume regina weapon for different set bonus");
+				
+						buttonGroup.add(barha_Check);
+						panel_20.add(barha_Check);
+						barha_Check
+								.setToolTipText("assume regina weapon for different set bonus");
+						
+						JPanel panel_21 = new JPanel();
+						panel_22.add(panel_21);
+						
+						guard_Check = new JCheckBox("guard weapon");
+						buttonGroup.add(guard_Check);
+						panel_21.add(guard_Check);
+						guard_Check.setToolTipText("assume regina weapon for different set bonus");
+						
+						cloth90_Check = new JCheckBox("cloth90 weapon");
+						buttonGroup.add(cloth90_Check);
+						panel_21.add(cloth90_Check);
+						cloth90_Check.setToolTipText("assume regina weapon for different set bonus");
 
 		JPanel panel_18 = new JPanel();
 		panel_18.setBorder(new TitledBorder(UIManager

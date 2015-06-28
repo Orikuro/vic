@@ -16,6 +16,7 @@ public class ItemSet {
 		setIntBonus();
 		setAtkBonus();
 		setMatkBonus();
+		setStaBonus();
 	}
 
 	private static int counter = 0;
@@ -32,7 +33,10 @@ public class ItemSet {
 	private double[] totalAtkBonus = new double[7];
 	@XmlTransient
 	private int[] totalMatkBonus = new int[7];
+	@XmlTransient
+	private int[] totalStaBonus = new int[7];
 
+	
 	public int getDefBonus(int count) {
 
 		return totaldefBonus[count];
@@ -65,6 +69,12 @@ public class ItemSet {
 		}
 	}
 
+	private void setStaBonus() {
+		for (int i = 0; i < boni.size(); i++) {
+			totalStaBonus[i+2] = boni.get(i).getSta();
+		}
+	}
+	
 	public int getIntBonus(int count) {
 
 		return totalIntBonus[count];
@@ -80,6 +90,11 @@ public class ItemSet {
 		return totalMatkBonus[count];
 	}
 
+	public int getStaBonus(int count) {
+
+		return totalStaBonus[count];
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%s", name);

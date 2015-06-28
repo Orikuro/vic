@@ -179,28 +179,23 @@ public class Combo {
 				+ gloves.getTotalsta() + armor.getTotalsta()
 				+ helm.getTotalsta();
 		sta = staeq;
-
-		// TODO correct object 6 setbonus, instead of this hack...
-
+		int staset = 0;
 		if (shoes.getLevel() == 90 || pants.getLevel() == 90
 				|| gloves.getLevel() == 90 || armor.getLevel() == 90
-				|| helm.getLevel() == 90)
-		{
-			
-		}
-			if (wep_f > 5) {
-				sta += 10;
-			}
-		if (wep_f == 5) {
-			sta += 7;
-		}
-		if (wep_f == 4) {
-			sta += 6;
-		}
-		if (wep_f == 3) {
-			sta += 5;
-		}
+				|| helm.getLevel() == 90) {
+			staset = (int) (shoes.getItemset().getStaBonus(sho_f)
+					/ (sho_f * 1.0) + gloves.getItemset().getStaBonus(glo_f)
+					/ (glo_f * 1.0) + pants.getItemset().getStaBonus(pan_f)
+					/ (pan_f * 1.0) + armor.getItemset().getStaBonus(arm_f)
+					/ (arm_f * 1.0) + helm.getItemset().getStaBonus(hel_f)
+					/ (hel_f * 1.0)
 
+			);
+			if (reginaweapon != null) {
+				staset += reginaweapon.getStaBonus(wep_f) / (wep_f * 1.0);
+			}
+		}
+		sta += staset;
 	}
 
 	private List<ItemSet> setlist = new ArrayList<>();

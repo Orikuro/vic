@@ -188,12 +188,10 @@ public class Combo {
 					/ (glo_f * 1.0) + pants.getItemset().getStaBonus(pan_f)
 					/ (pan_f * 1.0) + armor.getItemset().getStaBonus(arm_f)
 					/ (arm_f * 1.0) + helm.getItemset().getStaBonus(hel_f)
-					/ (hel_f * 1.0)
+					/ (hel_f * 1.0) + reginaweapon.getStaBonus(wep_f)
+					/ (wep_f * 1.0)
 
 			);
-			if (reginaweapon != null) {
-				staset += reginaweapon.getStaBonus(wep_f) / (wep_f * 1.0);
-			}
 		}
 		sta += staset;
 	}

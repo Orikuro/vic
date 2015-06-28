@@ -127,7 +127,7 @@ public class GUI extends JFrame {
 			output += " -weapon Barha";
 		}
 		if (guard_Check.isSelected()) {
-			output += " -weapon Guard";
+			output += " -weapon Guardian";
 		}
 		if (cloth90_Check.isSelected()) {
 			output += " -weapon Cloth90";

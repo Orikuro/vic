@@ -73,6 +73,16 @@ public class Item {
 
 		scrollmatk = scroll_pre.getMatk() + scroll_suf.getMatk() + 2
 				* (scroll_pre.getVint() + scroll_suf.getVint());
+		
+		if (typ.equals(scroll_pre.getBonus_type())){	
+			scrollatk += scroll_pre.getBonus();
+			scrollmatk += scroll_pre.getBonus();
+		}
+		if (typ.equals(scroll_suf.getBonus_type())){	
+			scrollatk += scroll_suf.getBonus();
+			scrollmatk += scroll_suf.getBonus();
+		}
+		
 		totalAtk = (int) (2.7 * str + atk + staratk + scrollatk);
 		totalMatk = matk + 2 * vint + starmatk + scrollmatk;
 		totalSta = scrollsta + stamina;
@@ -140,6 +150,7 @@ public class Item {
 	}
 
 	public double getScrollAtk() {
+		
 		return scrollatk;
 	}
 

@@ -20,7 +20,7 @@ import org.kohsuke.args4j.Option;
 
 public class Main {
 
-	public static final String VERSION = "ALPHA 2.5 - 28.06.15 - by Nekuro/Orikuro - 90 light/cloth, better armorscrolls overwrite";
+	public static final String VERSION = "2.6 - 19.07.15 - by Nekuro/Orikuro - new scroll bonus added";
 
 	private enum VSort {
 		def, atk, matk, sta, staatk, stamatk, cheapdef, cheapatk, cheapmatk, cheapsta
